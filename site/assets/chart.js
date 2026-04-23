@@ -32,13 +32,22 @@ export function renderCitationsChart(container, citationsPerYear) {
     if (p.projected > values[currentIdx]) projection = { idx: currentIdx, ...p };
   }
 
-  const maxVal = Math.max(1, ...values, projection ? projection.projected : 0);
+  // Scale the y-axis to ACTUAL counts only — past-year bars keep their natural
+  // heights. The projection overhang extends above the chart area; the SVG grows
+  // taller to accommodate it.
+  const maxVal = Math.max(1, ...values);
 
   const width = 320;
-  const height = 150;
-  const pad = { top: 16, right: 8, bottom: 22, left: 8 };
+  const baseInnerH = 112;
+  const pad = { top: 20, right: 8, bottom: 22, left: 8 };
   const innerW = width - pad.left - pad.right;
-  const innerH = height - pad.top - pad.bottom;
+  let projExtraH = 0;
+  if (projection) {
+    const projH = (projection.projected / maxVal) * baseInnerH;
+    projExtraH = Math.max(0, projH - baseInnerH);
+  }
+  const height = pad.top + projExtraH + baseInnerH + pad.bottom;
+  const baselineY = pad.top + projExtraH + baseInnerH;
   const barGap = 3;
   const barW = Math.max(4, (innerW - (years.length - 1) * barGap) / years.length);
 
@@ -50,15 +59,15 @@ export function renderCitationsChart(container, citationsPerYear) {
 
   years.forEach((year, i) => {
     const val = values[i];
-    const h = (val / maxVal) * innerH;
+    const h = (val / maxVal) * baseInnerH;
     const x = pad.left + i * (barW + barGap);
-    const y = pad.top + (innerH - h);
+    const y = baselineY - h;
 
     // Projection overhang for the current year: a lighter rect above the actual bar
     // extending up to the projected total.
     if (projection && i === projection.idx) {
-      const projH = (projection.projected / maxVal) * innerH;
-      const projY = pad.top + (innerH - projH);
+      const projH = (projection.projected / maxVal) * baseInnerH;
+      const projY = baselineY - projH;
       const projRect = document.createElementNS(SVG_NS, "rect");
       projRect.setAttribute("class", "chart-bar-proj");
       projRect.setAttribute("x", x);
@@ -104,9 +113,9 @@ export function renderCitationsChart(container, citationsPerYear) {
       svg.appendChild(label);
     }
 
-    // Actual-value label above bar if it fits (skip for the projection year — the
-    // projected label above the overhang is what matters there).
-    if (val > 0 && h > 12 && !(projection && i === projection.idx)) {
+    // Actual-value label above every non-zero bar, including the projection year
+    // (where it sits above the solid portion, below the overhang's "~proj" label).
+    if (val > 0) {
       const valLabel = document.createElementNS(SVG_NS, "text");
       valLabel.setAttribute("class", "chart-tooltip");
       valLabel.setAttribute("x", x + barW / 2);

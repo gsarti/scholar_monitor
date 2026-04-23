@@ -7,6 +7,7 @@ site/index.html, and copies site/ + data/ into dist/.
 from __future__ import annotations
 
 import json
+import os
 import shutil
 from pathlib import Path
 
@@ -19,7 +20,12 @@ CONFIG_PATH = ROOT / "config.json"
 
 def main() -> int:
     config = json.loads(CONFIG_PATH.read_text())
-    base_path = config.get("base_path", "").rstrip("/")
+    # BASE_PATH env var overrides the config for local preview. Pass BASE_PATH=""
+    # to serve the built dist/ at the root (python -m http.server).
+    env_base = os.environ.get("BASE_PATH")
+    base_path = (env_base if env_base is not None else config.get("base_path", "")).rstrip("/")
+    if env_base is not None:
+        config = {**config, "base_path": base_path}
 
     if DIST_DIR.exists():
         shutil.rmtree(DIST_DIR)
