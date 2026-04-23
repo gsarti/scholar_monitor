@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scholar Monitor</title>
+  <link rel="stylesheet" href="{{BASE_PATH}}/assets/styles.css" />
+  <script>
+    window.__SCHOLAR_MONITOR_CONFIG__ = {{CONFIG_JSON}};
+    window.__SCHOLAR_MONITOR_BASE__ = "{{BASE_PATH}}";
+  </script>
+</head>
+<body>
+  <header class="page-header">
+    <div class="page-header-inner">
+      <span class="logo">Scholar Monitor</span>
+      <a class="source-link" href="https://github.com/" id="repo-link" rel="noopener">View on GitHub</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="profile-block">
+      <div class="profile-photo" id="profile-photo"></div>
+      <div class="profile-details">
+        <h1 id="profile-name">—</h1>
+        <div class="profile-affiliation" id="profile-affiliation"></div>
+        <div class="profile-meta">
+          <span id="profile-email"></span>
+          <a id="profile-homepage" href="#" target="_blank" rel="noopener"></a>
+        </div>
+        <ul class="profile-labels" id="profile-labels"></ul>
+      </div>
+
+      <aside class="stats-panel">
+        <table class="stats-table" id="stats-table">
+          <thead>
+            <tr><th></th><th>All</th><th>Since 2021</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Citations</td><td id="stat-citations-all">—</td><td id="stat-citations-recent">—</td></tr>
+            <tr><td>h-index</td><td id="stat-h-all">—</td><td id="stat-h-recent">—</td></tr>
+            <tr><td>i10-index</td><td id="stat-i10-all">—</td><td id="stat-i10-recent">—</td></tr>
+          </tbody>
+        </table>
+        <div class="citations-chart" id="citations-chart"></div>
+      </aside>
+    </section>
+
+    <section class="controls">
+      <div class="date-range">
+        <label>New citations between
+          <input type="date" id="date-from" />
+          and
+          <input type="date" id="date-to" />
+        </label>
+        <button type="button" id="date-reset" class="btn-reset">Reset</button>
+        <span class="date-hint" id="date-hint"></span>
+      </div>
+    </section>
+
+    <section class="publications">
+      <table class="publications-table" id="publications-table">
+        <thead>
+          <tr>
+            <th class="col-title sortable" data-sort="title">Title</th>
+            <th class="col-citations sortable sort-desc" data-sort="citations">Cited by</th>
+            <th class="col-new">New in range</th>
+            <th class="col-year sortable" data-sort="year">Year</th>
+          </tr>
+        </thead>
+        <tbody id="publications-body">
+          <tr class="loading"><td colspan="4">Loading…</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer class="page-footer">
+      <span id="last-updated"></span>
+      <span class="footer-sep">·</span>
+      <a href="https://github.com/scholar-monitor" id="footer-repo" rel="noopener">Fork on GitHub</a>
+    </footer>
+  </main>
+
+  <template id="citations-list-template">
+    <tr class="citations-row">
+      <td colspan="4">
+        <ol class="citing-papers"></ol>
+      </td>
+    </tr>
+  </template>
+
+  <script type="module" src="{{BASE_PATH}}/assets/app.js"></script>
+</body>
+</html>

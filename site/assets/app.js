@@ -1,0 +1,380 @@
+import { renderCitationsChart } from "./chart.js";
+
+const BASE = window.__SCHOLAR_MONITOR_BASE__ || "";
+const CONFIG = window.__SCHOLAR_MONITOR_CONFIG__ || {};
+
+const state = {
+  profile: null,
+  papers: [],
+  citations: [],           // all citing-paper records
+  citationsByPaper: new Map(),
+  citationsByPaperWindowed: new Map(),
+  sort: { key: "citations", dir: "desc" },
+  from: null,
+  to: null,
+  expanded: new Set(),
+};
+
+async function fetchJSON(path, fallback) {
+  try {
+    const res = await fetch(`${BASE}${path}`);
+    if (!res.ok) return fallback;
+    return await res.json();
+  } catch {
+    return fallback;
+  }
+}
+
+async function fetchJSONL(path) {
+  try {
+    const res = await fetch(`${BASE}${path}`);
+    if (!res.ok) return [];
+    const text = await res.text();
+    return text.split("\n").filter(Boolean).map((line) => JSON.parse(line));
+  } catch {
+    return [];
+  }
+}
+
+function latestCount(paper) {
+  const h = paper.citation_count_history || [];
+  return h.length ? h[h.length - 1].count : 0;
+}
+
+function formatDate(d) {
+  return d.toISOString().slice(0, 10);
+}
+
+function parseISODate(s) {
+  if (!s) return null;
+  const parts = s.split("-").map(Number);
+  if (parts.length !== 3 || parts.some(isNaN)) return null;
+  return new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+}
+
+function defaultRange() {
+  const to = new Date();
+  const from = new Date(to);
+  from.setUTCDate(from.getUTCDate() - 30);
+  return { from: formatDate(from), to: formatDate(to) };
+}
+
+function readRangeFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  return { from: params.get("from"), to: params.get("to") };
+}
+
+function writeRangeToURL(from, to, replace = true) {
+  const url = new URL(window.location.href);
+  if (from) url.searchParams.set("from", from); else url.searchParams.delete("from");
+  if (to) url.searchParams.set("to", to); else url.searchParams.delete("to");
+  const method = replace ? "replaceState" : "pushState";
+  history[method]({}, "", url);
+}
+
+// ---------- Rendering ----------
+
+function renderProfile() {
+  const p = state.profile;
+  if (!p) return;
+  document.getElementById("profile-name").textContent = p.name || CONFIG.display_name || "Scholar Monitor";
+  document.title = p.name ? `${p.name} — Scholar Monitor` : "Scholar Monitor";
+  document.getElementById("profile-affiliation").textContent = p.affiliation || "";
+  const emailEl = document.getElementById("profile-email");
+  emailEl.textContent = p.email ? `Verified email at ${p.email}` : "";
+  const homepageEl = document.getElementById("profile-homepage");
+  if (p.homepage) {
+    homepageEl.textContent = "Homepage";
+    homepageEl.href = p.homepage;
+    homepageEl.style.display = "";
+  } else {
+    homepageEl.style.display = "none";
+  }
+  const labelsEl = document.getElementById("profile-labels");
+  labelsEl.innerHTML = "";
+  (p.labels || []).forEach((label) => {
+    const li = document.createElement("li");
+    li.textContent = label;
+    labelsEl.appendChild(li);
+  });
+  const photoEl = document.getElementById("profile-photo");
+  if (p.thumbnail) {
+    photoEl.style.backgroundImage = `url("${p.thumbnail}")`;
+  }
+  const repoLink = document.getElementById("repo-link");
+  if (CONFIG.repo_url) {
+    repoLink.href = CONFIG.repo_url;
+  }
+}
+
+function renderStats() {
+  const history = (state.profile && state.profile.totals_history) || [];
+  const latest = history[history.length - 1] || {};
+  const byId = (id, val) => { document.getElementById(id).textContent = val ?? "—"; };
+  byId("stat-citations-all", latest.citations);
+  byId("stat-citations-recent", latest.citations_recent);
+  byId("stat-h-all", latest.h_index);
+  byId("stat-h-recent", latest.h_index_recent);
+  byId("stat-i10-all", latest.i10_index);
+  byId("stat-i10-recent", latest.i10_index_recent);
+}
+
+function renderChart() {
+  const graph = (state.profile && state.profile.citations_per_year) || {};
+  renderCitationsChart(document.getElementById("citations-chart"), graph);
+}
+
+function comparePapers(a, b) {
+  const { key, dir } = state.sort;
+  const mult = dir === "asc" ? 1 : -1;
+  let av, bv;
+  if (key === "title") { av = (a.title || "").toLowerCase(); bv = (b.title || "").toLowerCase(); }
+  else if (key === "year") { av = a.year || 0; bv = b.year || 0; }
+  else if (key === "new") {
+    av = (state.citationsByPaperWindowed.get(a.id) || []).length;
+    bv = (state.citationsByPaperWindowed.get(b.id) || []).length;
+  } else { av = latestCount(a); bv = latestCount(b); }
+  if (av < bv) return -1 * mult;
+  if (av > bv) return 1 * mult;
+  return 0;
+}
+
+function renderPublications() {
+  const body = document.getElementById("publications-body");
+  body.innerHTML = "";
+  const sorted = [...state.papers].sort(comparePapers);
+
+  for (const paper of sorted) {
+    const tr = document.createElement("tr");
+    tr.dataset.paperId = paper.id;
+
+    const titleTd = document.createElement("td");
+    titleTd.className = "col-title";
+    const titleA = document.createElement("a");
+    titleA.className = "paper-title";
+    titleA.href = paper.link || "#";
+    titleA.target = "_blank";
+    titleA.rel = "noopener";
+    titleA.textContent = paper.title || "(untitled)";
+    titleTd.appendChild(titleA);
+    if (paper.authors) {
+      const a = document.createElement("span");
+      a.className = "paper-authors";
+      a.textContent = paper.authors;
+      titleTd.appendChild(a);
+    }
+    if (paper.venue) {
+      const v = document.createElement("span");
+      v.className = "paper-venue";
+      v.textContent = paper.venue;
+      titleTd.appendChild(v);
+    }
+    tr.appendChild(titleTd);
+
+    const citationsTd = document.createElement("td");
+    citationsTd.className = "col-citations";
+    const count = latestCount(paper);
+    if (count > 0 && paper.cites_id) {
+      const a = document.createElement("a");
+      a.href = `https://scholar.google.com/scholar?cites=${paper.cites_id}`;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = count;
+      citationsTd.appendChild(a);
+    } else {
+      citationsTd.textContent = count || "";
+    }
+    tr.appendChild(citationsTd);
+
+    const newTd = document.createElement("td");
+    newTd.className = "col-new";
+    const windowed = state.citationsByPaperWindowed.get(paper.id) || [];
+    const badge = document.createElement("span");
+    badge.className = windowed.length ? "new-badge" : "new-badge empty";
+    badge.textContent = windowed.length ? `+${windowed.length}` : "—";
+    if (windowed.length) {
+      badge.title = "Click to show new citing papers in this range";
+      badge.addEventListener("click", () => toggleExpansion(paper.id));
+    }
+    newTd.appendChild(badge);
+    tr.appendChild(newTd);
+
+    const yearTd = document.createElement("td");
+    yearTd.className = "col-year";
+    yearTd.textContent = paper.year || "";
+    tr.appendChild(yearTd);
+
+    if (state.expanded.has(paper.id)) tr.classList.add("expanded");
+    body.appendChild(tr);
+
+    if (state.expanded.has(paper.id) && windowed.length) {
+      body.appendChild(renderCitingRow(windowed));
+    }
+  }
+
+  if (!sorted.length) {
+    const empty = document.createElement("tr");
+    empty.innerHTML = '<td colspan="4" style="padding:20px;color:var(--muted);text-align:center;">No publications yet. Run the scrape workflow to fetch data.</td>';
+    body.appendChild(empty);
+  }
+
+  updateSortHeaders();
+}
+
+function renderCitingRow(citing) {
+  const tpl = document.getElementById("citations-list-template");
+  const row = tpl.content.firstElementChild.cloneNode(true);
+  const ol = row.querySelector(".citing-papers");
+  citing
+    .slice()
+    .sort((a, b) => (b.first_seen_date || "").localeCompare(a.first_seen_date || ""))
+    .forEach((c) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = c.citing_link || "#";
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = c.citing_title || "(untitled)";
+      li.appendChild(a);
+      if (c.citing_authors) {
+        const sp = document.createElement("span");
+        sp.className = "citing-authors";
+        sp.textContent = ` — ${c.citing_authors}`;
+        li.appendChild(sp);
+      }
+      if (c.citing_venue || c.citing_year) {
+        const sp = document.createElement("span");
+        sp.className = "citing-venue";
+        sp.textContent = ` (${[c.citing_venue, c.citing_year].filter(Boolean).join(", ")})`;
+        li.appendChild(sp);
+      }
+      const dateSp = document.createElement("span");
+      dateSp.className = "citing-authors";
+      dateSp.textContent = ` · first seen ${c.first_seen_date}`;
+      li.appendChild(dateSp);
+      ol.appendChild(li);
+    });
+  return row;
+}
+
+function updateSortHeaders() {
+  document.querySelectorAll("th.sortable").forEach((th) => {
+    th.classList.remove("sort-asc", "sort-desc");
+    if (th.dataset.sort === state.sort.key) {
+      th.classList.add(state.sort.dir === "asc" ? "sort-asc" : "sort-desc");
+    }
+  });
+}
+
+function toggleExpansion(paperId) {
+  if (state.expanded.has(paperId)) state.expanded.delete(paperId);
+  else state.expanded.add(paperId);
+  renderPublications();
+}
+
+// ---------- Range filter ----------
+
+function computeWindowedCitations() {
+  state.citationsByPaperWindowed = new Map();
+  const from = state.from, to = state.to;
+  if (!from || !to || from > to) return;
+  for (const row of state.citations) {
+    const d = row.first_seen_date;
+    if (!d || d < from || d > to) continue;
+    if (!state.citationsByPaperWindowed.has(row.paper_id)) {
+      state.citationsByPaperWindowed.set(row.paper_id, []);
+    }
+    state.citationsByPaperWindowed.get(row.paper_id).push(row);
+  }
+}
+
+function updateDateHint() {
+  const hint = document.getElementById("date-hint");
+  if (!state.from || !state.to) { hint.textContent = ""; return; }
+  const total = Array.from(state.citationsByPaperWindowed.values()).reduce((a, rows) => a + rows.length, 0);
+  hint.textContent = total
+    ? `${total} new citation${total === 1 ? "" : "s"} across ${state.citationsByPaperWindowed.size} paper${state.citationsByPaperWindowed.size === 1 ? "" : "s"}`
+    : "No new citations in this range";
+}
+
+function applyRange(from, to, { pushURL = true } = {}) {
+  state.from = from;
+  state.to = to;
+  document.getElementById("date-from").value = from || "";
+  document.getElementById("date-to").value = to || "";
+  if (pushURL) writeRangeToURL(from, to);
+  computeWindowedCitations();
+  updateDateHint();
+  renderPublications();
+}
+
+// ---------- Init ----------
+
+function wireControls() {
+  document.getElementById("date-from").addEventListener("change", (e) => {
+    applyRange(e.target.value, state.to);
+  });
+  document.getElementById("date-to").addEventListener("change", (e) => {
+    applyRange(state.from, e.target.value);
+  });
+  document.getElementById("date-reset").addEventListener("click", () => {
+    const { from, to } = defaultRange();
+    applyRange(from, to);
+  });
+
+  document.querySelectorAll("th.sortable").forEach((th) => {
+    th.addEventListener("click", () => {
+      const key = th.dataset.sort;
+      if (state.sort.key === key) {
+        state.sort.dir = state.sort.dir === "asc" ? "desc" : "asc";
+      } else {
+        state.sort.key = key;
+        state.sort.dir = key === "title" ? "asc" : "desc";
+      }
+      renderPublications();
+    });
+  });
+}
+
+function indexCitations() {
+  state.citationsByPaper = new Map();
+  for (const row of state.citations) {
+    if (!state.citationsByPaper.has(row.paper_id)) state.citationsByPaper.set(row.paper_id, []);
+    state.citationsByPaper.get(row.paper_id).push(row);
+  }
+}
+
+function renderFooter() {
+  const history = (state.profile && state.profile.totals_history) || [];
+  const last = history[history.length - 1];
+  const el = document.getElementById("last-updated");
+  el.textContent = last ? `Last updated ${last.date}` : "No data yet";
+}
+
+async function main() {
+  const [profile, papers, citations] = await Promise.all([
+    fetchJSON("/data/profile.json", null),
+    fetchJSON("/data/papers.json", []),
+    fetchJSONL("/data/citations.jsonl"),
+  ]);
+  state.profile = profile;
+  state.papers = papers || [];
+  state.citations = citations || [];
+  indexCitations();
+
+  renderProfile();
+  renderStats();
+  renderChart();
+  renderFooter();
+  wireControls();
+
+  const urlRange = readRangeFromURL();
+  const initial = urlRange.from && urlRange.to ? urlRange : defaultRange();
+  applyRange(initial.from, initial.to, { pushURL: !(urlRange.from && urlRange.to) });
+}
+
+main().catch((err) => {
+  console.error(err);
+  document.getElementById("publications-body").innerHTML =
+    '<tr><td colspan="4" style="padding:20px;color:#c62828;">Failed to load data. Check the browser console.</td></tr>';
+});
