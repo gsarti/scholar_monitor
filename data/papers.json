@@ -1,0 +1,690 @@
+[
+  {
+    "id": "sK0B_08AAAAJ:JV2RwH3_ST0C",
+    "title": "A benchmark of expert-level academic questions to assess AI capabilities",
+    "authors": "CAIS, ScaleAI, HLE Contributors",
+    "venue": "Nature 649 (8099), 1139-1146, 2026",
+    "year": 2026,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:JV2RwH3_ST0C",
+    "cites_id": "7259718440450810100,1274537797459527807,6239537948684441362,5400841999944501731,2590536447730340670,8543454771851269105,2243207134809323996,13215443658187225632,11305600648944309663,15791492313590673259,10731692415063709352,17090770004898352938,13943034964638632091,9903730836790062737,5684619493512235230,1422367768388967541,902408001426373833,14366349368138728060,9999209237935157590",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 596
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:M3ejUd6NZC8C",
+    "title": "A Primer on the Inner Workings of Transformer-based Language Models",
+    "authors": "J Ferrando, G Sarti, A Bisazza, M Costa-jussà",
+    "venue": "arXiv preprint arXiv:2405.00208, 2024",
+    "year": 2024,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:M3ejUd6NZC8C",
+    "cites_id": "15998206508460136065,11956020801561016231,2997858909831536777,5120473468082459894,2018203386478342412,71014782005557458",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 162
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:qxL8FJ1GzNcC",
+    "title": "IT5: Text-to-text Pretraining for Italian Language Understanding and Generation",
+    "authors": "G Sarti, M Nissim",
+    "venue": "LREC-COLING 2024, 9422-9433, 2022",
+    "year": 2022,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:qxL8FJ1GzNcC",
+    "cites_id": "2339143822331892644,3624072485029022427,7916824904475856367",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 114
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:hqOjcs7Dif8C",
+    "title": "Inseq: An Interpretability Toolkit for Sequence Generation Models",
+    "authors": "G Sarti, N Feldhus, L Sickert, O van der Wal, M Nissim, A Bisazza",
+    "venue": "ACL 2023: System Demonstrations Track, 421–435, 2023",
+    "year": 2023,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:hqOjcs7Dif8C",
+    "cites_id": "5282203436926076774",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 107
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:WF5omc3nYNoC",
+    "title": "Contrastive Language-Image Pre-training for the Italian Language",
+    "authors": "F Bianchi, G Attanasio, R Pisoni, S Terragni, G Sarti, D Balestri",
+    "venue": "CLiC-it 2023: Italian Conference on CL 🏆 Best Student Paper, 2023",
+    "year": 2023,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:WF5omc3nYNoC",
+    "cites_id": "14482465181375537246,11137827779909062150",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 61
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:4DMP91E08xMC",
+    "title": "Model Internals-based Answer Attribution for Trustworthy Retrieval-Augmented Generation",
+    "authors": "J Qi*, G Sarti*, R Fernández, A Bisazza",
+    "venue": "EMNLP 2024: Main Track (* = Equal contribution), 2024",
+    "year": 2024,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:4DMP91E08xMC",
+    "cites_id": "12390406060481921862",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 53
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:_kc_bZDykSQC",
+    "title": "DecoderLens: Layerwise Interpretation of Encoder-Decoder Transformers",
+    "authors": "A Langedijk, H Mohebbi, G Sarti, W Zuidema, J Jumelet",
+    "venue": "NAACL 2024: Findings, 4764–4780, 2023",
+    "year": 2023,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:_kc_bZDykSQC",
+    "cites_id": "15673224429711152191",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 29
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:NMxIlDl6LWMC",
+    "title": "Agents of Chaos",
+    "authors": "N Shapira, C Wendler, A Yen, G Sarti, K Pal, O Floody, A Belfki, A Loftus, ...",
+    "venue": "arXiv preprint arXiv:2602.20021, 2026",
+    "year": 2026,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:NMxIlDl6LWMC",
+    "cites_id": "10707270467339951270,16050125323015512355",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 26
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:mVmsd5A6BfQC",
+    "title": "Multi-property Steering of Large Language Models with Dynamic Activation Composition",
+    "authors": "D Scalena, G Sarti, M Nissim",
+    "venue": "BlackboxNLP 2024: Workshop on Analyzing and Interpreting Neural Networks for NLP, 2024",
+    "year": 2024,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:mVmsd5A6BfQC",
+    "cites_id": "5789307694398045804",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 26
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:aqlVkmm33-oC",
+    "title": "Are Character-level Translations Worth the Wait? Comparing ByT5 and mT5 for Machine Translation",
+    "authors": "L Edman, G Sarti, A Toral, G Noord, A Bisazza",
+    "venue": "TACL: Transactions of the Association for Computational Linguistics 12, 392-410, 2024",
+    "year": 2024,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:aqlVkmm33-oC",
+    "cites_id": "15231355904314030969,14782708561017121141",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 25
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:YOwf2qJgpHMC",
+    "title": "Quantifying the Plausibility of Context Reliance in Neural Machine Translation",
+    "authors": "G Sarti, G Chrupała, M Nissim, A Bisazza",
+    "venue": "ICLR 2024: International Conference on Learning Representations, 2023",
+    "year": 2023,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:YOwf2qJgpHMC",
+    "cites_id": "17180830878524850325,18165376002033991669",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 23
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:hC7cP41nSMkC",
+    "title": "DivEMT: Neural machine translation post-editing effort across typologically diverse languages",
+    "authors": "G Sarti, A Bisazza, AG Arenas, A Toral",
+    "venue": "EMNLP 2022: Main Track, 7795–7816, 2022",
+    "year": 2022,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:hC7cP41nSMkC",
+    "cites_id": "443150368853516030",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 23
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:YsMSGLbcyi4C",
+    "title": "That Looks Hard: Characterizing Linguistic Complexity in Humans and Language Models",
+    "authors": "G Sarti, D Brunato, F Dell’Orletta",
+    "venue": "CMCL 2021: Workshop on Cognitive Modeling and CL 🏆 Hon. Best Paper Mention, 2021",
+    "year": 2021,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:YsMSGLbcyi4C",
+    "cites_id": "14531656049779546244",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 23
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:3fE2CSJIrl8C",
+    "title": "RAMP: Retrieval and Attribute-Marking Enhanced Prompting for Attribute-Controlled Translation",
+    "authors": "G Sarti, PM Htut, X Niu, B Hsu, A Currey, G Dinu, M Nadejde",
+    "venue": "ACL 2023: Main Track, 1476–1490, 2023",
+    "year": 2023,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:3fE2CSJIrl8C",
+    "cites_id": "9468731778244167414",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 16
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:2osOgNQ5qMEC",
+    "title": "Italian Transformers Under the Linguistic Lens",
+    "authors": "A Miaschi, G Sarti, D Brunato, F Dell’Orletta, G Venturi",
+    "venue": "CLiC-it 2020: Italian Conference on CL 🏆 Hon. Best Student Paper Mention, 2020",
+    "year": 2020,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:2osOgNQ5qMEC",
+    "cites_id": "11221814606554613014",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 13
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:d1gkVwhDpl0C",
+    "title": "ETC-NLG: End-to-end Topic-Conditioned Natural Language Generation",
+    "authors": "G Carbone, G Sarti",
+    "venue": "IJCoL: Italian Journal of Computational Linguistics 6 (2), 61--77, 2020",
+    "year": 2020,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:d1gkVwhDpl0C",
+    "cites_id": "14868185107234549531,17801491609072026819",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 11
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:Se3iqnhoufwC",
+    "title": "Probing Linguistic Knowledge in Italian Neural Language Models across Language Varieties",
+    "authors": "A Miaschi, G Sarti, D Brunato, F Dell’Orletta, G Venturi",
+    "venue": "IJCoL: Italian Journal of Computational Linguistics 8 (8-1), 2022",
+    "year": 2022,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:Se3iqnhoufwC",
+    "cites_id": "17833697228415407069",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:9yKSN-GCB0IC",
+    "title": "UmBERTo-MTSA@ AcCompl-It: Improving Complexity and Acceptability Prediction with Multi-task Learning on Self-Supervised Annotations",
+    "authors": "G Sarti",
+    "venue": "EVALITA 2020: Evaluation Campaign of Natural Language Processing and Speech …, 2020",
+    "year": 2020,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:9yKSN-GCB0IC",
+    "cites_id": "15104818414416597924,4955133059218079038",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:9ZlFYXVOiuMC",
+    "title": "Non Verbis, Sed Rebus: Large Language Models are Weak Solvers of Italian Rebuses",
+    "authors": "G Sarti, T Caselli, M Nissim, A Bisazza",
+    "venue": "CLiC-it 2024: Italian Conference on Computational Linguistics, 2024",
+    "year": 2024,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:9ZlFYXVOiuMC",
+    "cites_id": "5540889609117213907",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:W7OEmFMy1HYC",
+    "title": "Teaching NLP with Bracelets and Restaurant Menus: An Interactive Workshop for Italian Students",
+    "authors": "L Pannitto, L Busso, CR Combei, L Messina, A Miaschi, G Sarti, M Nissim",
+    "venue": "Teaching NLP Workshop 2021, 160-170, 2021",
+    "year": 2021,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:W7OEmFMy1HYC",
+    "cites_id": "5362758515107038562",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:SeFeTyx0c_EC",
+    "title": "Cruciverb-IT at EVALITA 2026: Overview of the Crossword Solving in Italian Task",
+    "authors": "C Ciaccio, G Sarti, A Miaschi, F Dell'Orletta, M Nissim",
+    "venue": "",
+    "year": 2026,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:SeFeTyx0c_EC",
+    "cites_id": "13132039498266219308",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:j3f4tGmQtD8C",
+    "title": "Crossword Space: Latent Manifold Learning for Italian Crosswords and Beyond",
+    "authors": "C Ciaccio, G Sarti, A Miaschi, F Dell’Orletta",
+    "venue": "CLiC-it 2025: Italian Conference on CL 🏆 Best Student Paper, 2025",
+    "year": 2025,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:j3f4tGmQtD8C",
+    "cites_id": "9212601277310224969",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:Y0pCki6q_DkC",
+    "title": "A dissemination workshop for introducing young Italian students to NLP",
+    "authors": "L Messina, L Busso, CR Combei, L Pannitto, A Miaschi, G Sarti, M Nissim",
+    "venue": "Teaching NLP Workshop 2021, 52–54, 2021",
+    "year": 2021,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:Y0pCki6q_DkC",
+    "cites_id": "244001812972080963",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:hFOr9nPyWt4C",
+    "title": "Steering Large Language Models for Machine Translation Personalization",
+    "authors": "D Scalena*, G Sarti*, A Bisazza, E Fersini, M Nissim",
+    "venue": "EACL 2026: European Chapter of ACL (* = Equal contribution), 2025",
+    "year": 2025,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:hFOr9nPyWt4C",
+    "cites_id": "16729291001233851867",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:dhFuZR0502QC",
+    "title": "EurekaRebus-Verbalized Rebus Solving with LLMs: A CALAMITA Challenge",
+    "authors": "G Sarti, T Caselli, A Bisazza, M Nissim",
+    "venue": "CLiC-it 2024: Italian Conference on Computational Linguistics, 2024",
+    "year": 2024,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:dhFuZR0502QC",
+    "cites_id": "4765284597311200181",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:qjMakFHDy7sC",
+    "title": "ArchiMeDe@ DANKMEMES: A New Model Architecture for Meme Detection",
+    "authors": "J Setpal, G Sarti",
+    "venue": "EVALITA 2020: Evaluation Campaign of Natural Language Processing and Speech …, 2020",
+    "year": 2020,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:qjMakFHDy7sC",
+    "cites_id": "11409377018896492673,2831029752010516707,975704967822606300",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:QIV2ME_5wuYC",
+    "title": "Democratizing Advanced Attribution Analyses of Generative Language Models with the Inseq Toolkit",
+    "authors": "G Sarti, N Feldhus, J Qi, M Nissim, A Bisazza",
+    "venue": "xAI 2024: Late-breaking Work & Demos, 289-296, 2024",
+    "year": 2024,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:QIV2ME_5wuYC",
+    "cites_id": "11777214206839459699",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:Tyk-4Ss8FVUC",
+    "title": "Interpreting Neural Language Models for Linguistic Complexity Assessment",
+    "authors": "G Sarti",
+    "venue": "MSc Thesis in Data Science, UniTS 🏆 AILC Best Italian NLP Thesis, 2020",
+    "year": 2020,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:Tyk-4Ss8FVUC",
+    "cites_id": "8786126951398690028",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:ZHo1McVdvXMC",
+    "title": "TiGRO at FadeIT: E Pluribus Unum–A Multi-task Approach to Fallacy Detection and Span Identification",
+    "authors": "S Atzeni, G Sarti, T Caselli, M Nissim",
+    "venue": "Proceedings of the Ninth Evaluation Campaign of Natural Language Processing …, 2026",
+    "year": 2026,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:ZHo1McVdvXMC",
+    "cites_id": "13658572483319039501",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:e5wmG9Sq2KIC",
+    "title": "Bridging Logic and Learning: Decoding Temporal Logic Embeddings via Transformers",
+    "authors": "S Candussio, G Saveri, G Sarti, L Bortolussi",
+    "venue": "ECML-PKDD 2025: European Conference of Machine Learning, 2025",
+    "year": 2025,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:e5wmG9Sq2KIC",
+    "cites_id": "2885292143692639775",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:maZDTaKrznsC",
+    "title": "Interpreto: An Explainability Library for Transformers",
+    "authors": "A Poché, T Mullor, G Sarti, F Boisnard, C Friedrich, C Claye, F Hoofd, ...",
+    "venue": "arXiv preprint arXiv:2512.09730, 2025",
+    "year": 2025,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:maZDTaKrznsC",
+    "cites_id": "12639665784201989899",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:HDshCWvjkbEC",
+    "title": "Noiser: Bounded Input Perturbations for Attributing Large Language Models",
+    "authors": "MR Ghasemi Madani, A Pradipta Gema, G Sarti, Y Zhao, P Minervini, ...",
+    "venue": "COLM 2025: Conference on Language Modeling, 2025",
+    "year": 2025,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:HDshCWvjkbEC",
+    "cites_id": "13885749889672146306,703033032288785625",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:r0BpntZqJG4C",
+    "title": "Proceedings of the 8th BlackboxNLP Workshop: Analyzing and Interpreting Neural Networks for NLP",
+    "authors": "Y Belinkov, A Mueller, N Kim, H Mohebbi, H Chen, D Arad, G Sarti",
+    "venue": "Workshop Proceedings @ EMNLP 2025, 2025",
+    "year": 2025,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:r0BpntZqJG4C",
+    "cites_id": "657406467970769718",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:IWHjjKOFINEC",
+    "title": "QE4PE: Word-level Quality Estimation for Human Post-Editing",
+    "authors": "G Sarti, V Zouhar, G Chrupała, A Guerberof-Arenas, M Nissim, A Bisazza",
+    "venue": "TACL: Transactions of the Association for Computational Linguistics 13, 1410 …, 2025",
+    "year": 2025,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:IWHjjKOFINEC",
+    "cites_id": "10900811881556457732",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:mB3voiENLucC",
+    "title": "Unsupervised Word-level Quality Estimation for Machine Translation Through the Lens of Annotators (Dis) agreement",
+    "authors": "G Sarti, V Zouhar, M Nissim, A Bisazza",
+    "venue": "EMNLP 2025: Main Track, 2025",
+    "year": 2025,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:mB3voiENLucC",
+    "cites_id": "9061346332882367860",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:blknAaTinKkC",
+    "title": "A Behavioural and Representational Evaluation of Goal-Directedness in Language Model Agents",
+    "authors": "R Arghal, F Chen, N Dalton, E Kortukov, C McNamara, A Nalmpantis, ...",
+    "venue": "arXiv preprint arXiv:2602.08964, 2026",
+    "year": 2026,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:blknAaTinKkC",
+    "cites_id": "",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:YFjsv_pBGBYC",
+    "title": "Distilling Formal Logic into Neural Spaces: A Kernel Alignment Approach for Signal Temporal Logic",
+    "authors": "S Candussio, G Sarti, G Saveri, L Bortolussi",
+    "venue": "arXiv preprint arXiv:2603.05198, 2026",
+    "year": 2026,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:YFjsv_pBGBYC",
+    "cites_id": "",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:k_IJM867U9cC",
+    "title": "Challenging the Abilities of Large Language Models in Italian: a Community Initiative",
+    "authors": "M Nissim, D Croce, V Patti, P Basile, G Attanasio, E Musacchio, M Rinaldi, ...",
+    "venue": "arXiv preprint arXiv:2512.04759, 2025",
+    "year": 2025,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:k_IJM867U9cC",
+    "cites_id": "",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:iH-uZ7U-co4C",
+    "title": "Findings of the BlackboxNLP 2025 Shared Task: Localizing Circuits and Causal Variables in Language Models",
+    "authors": "D Arad, Y Belinkov, H Chen, N Kim, H Mohebbi, A Mueller, G Sarti, ...",
+    "venue": "BlackboxNLP 2025: Workshop on Analyzing and Interpreting Neural Networks for …, 2025",
+    "year": 2025,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:iH-uZ7U-co4C",
+    "cites_id": "",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:isC4tDSrTZIC",
+    "title": "From Insights to Impact: Actionable Interpretability for Neural Machine Translation",
+    "authors": "G Sarti",
+    "venue": "PhD Thesis, University of Groningen 🏆 Cum Laude, EAMT Best Thesis Award, 2025",
+    "year": 2025,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:isC4tDSrTZIC",
+    "cites_id": "",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:RHpTSmoSYBkC",
+    "title": "Reveal-Bangla: A Dataset for Cross-Lingual Multi-Step Reasoning Evaluation",
+    "authors": "KI Islam, G Sarti",
+    "venue": "BLP: Bangla Language Processing Workshop @ AACL 2025, 2025",
+    "year": 2025,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:RHpTSmoSYBkC",
+    "cites_id": "",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:Zph67rFs4hoC",
+    "title": "Let the Models Respond: Interpreting Language Model Detoxification Through the Lens of Prompt Dependence",
+    "authors": "D Scalena, G Sarti, M Nissim, E Fersini",
+    "venue": "BlackBoxNLP 2023 Workshop (Long Abstract), 2023",
+    "year": 2023,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:Zph67rFs4hoC",
+    "cites_id": "",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:roLk4NBRz8UC",
+    "title": "InDeep× NMT: Empowering Human Translators via Interpretable Neural Machine Translation",
+    "authors": "G Sarti, A Bisazza",
+    "venue": "EAMT 2022: Project Description Track, 313-314, 2022",
+    "year": 2022,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:roLk4NBRz8UC",
+    "cites_id": "",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 0
+      }
+    ]
+  }
+]
