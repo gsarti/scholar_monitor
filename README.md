@@ -12,6 +12,7 @@ The author's instance is at **[gsarti.com/citations](https://gsarti.com/citation
 
 1. **Fork this repo.** You can keep the name `scholar_monitor` or rename it (see the deployment section below).
 2. **Edit `config.json`**:
+
    ```json
    {
      "scholar_id": "YOUR_SCHOLAR_ID",
@@ -19,6 +20,7 @@ The author's instance is at **[gsarti.com/citations](https://gsarti.com/citation
      "base_path": "/scholar_monitor"
    }
    ```
+
    Your Scholar ID is the `user=` parameter on your profile URL (e.g. in `scholar.google.com/citations?user=sK0B_08AAAAJ`, the ID is `sK0B_08AAAAJ`). Set `base_path` to match your repo name with a leading slash (for a repo named `citations`, use `/citations`; for a fork kept at `scholar_monitor`, use `/scholar_monitor`).
 3. **Add a `SERPAPI_KEY` secret.** Get a free key from [serpapi.com](https://serpapi.com) (100 queries/month). In your fork: Settings → Secrets and variables → Actions → New repository secret, name `SERPAPI_KEY`.
 4. **Enable Pages.** Settings → Pages → Source: **GitHub Actions**.
@@ -72,7 +74,7 @@ cd dist && python -m http.server 8000
 
 ## Project layout
 
-```
+```text
 .
 ├── config.json                 your settings (scholar_id, base_path)
 ├── scripts/
