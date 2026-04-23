@@ -156,9 +156,11 @@ function renderProfile() {
   if (p.thumbnail) {
     photoEl.style.backgroundImage = `url("${p.thumbnail}")`;
   }
-  const repoLink = document.getElementById("repo-link");
   if (CONFIG.repo_url) {
-    repoLink.href = CONFIG.repo_url;
+    const repoLink = document.getElementById("repo-link");
+    const footerRepo = document.getElementById("footer-repo");
+    if (repoLink) repoLink.href = CONFIG.repo_url;
+    if (footerRepo) footerRepo.href = CONFIG.repo_url;
   }
 }
 

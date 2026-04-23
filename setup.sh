@@ -79,15 +79,18 @@ else
   WEEKLY_DIGEST=false
 fi
 
-python3 - "$SCHOLAR_ID" "$DISPLAY_NAME" "$BASE_PATH" "$WEEKLY_DIGEST" <<'PY'
+REPO_URL="https://github.com/$REPO_SLUG"
+
+python3 - "$SCHOLAR_ID" "$DISPLAY_NAME" "$BASE_PATH" "$WEEKLY_DIGEST" "$REPO_URL" <<'PY'
 import json, sys, pathlib
-scholar_id, display_name, base_path, weekly = sys.argv[1:5]
+scholar_id, display_name, base_path, weekly, repo_url = sys.argv[1:6]
 path = pathlib.Path("config.json")
 cfg = json.loads(path.read_text())
 cfg["scholar_id"] = scholar_id
 cfg["display_name"] = display_name
 cfg["base_path"] = base_path
 cfg["weekly_digest"] = weekly == "true"
+cfg["repo_url"] = repo_url
 path.write_text(json.dumps(cfg, indent=2) + "\n")
 print("Wrote config.json")
 PY
