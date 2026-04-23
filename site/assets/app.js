@@ -1,4 +1,4 @@
-import { renderCitationsChart } from "./chart.js";
+import { renderCitationsChart, renderSparkline, renderHIndexChart } from "./chart.js";
 
 const BASE = window.__SCHOLAR_MONITOR_BASE__ || "";
 const CONFIG = window.__SCHOLAR_MONITOR_CONFIG__ || {};
@@ -13,6 +13,8 @@ const state = {
   from: null,
   to: null,
   expanded: new Set(),
+  excludeSelfCites: false,
+  profileSurname: "",
 };
 
 async function fetchJSON(path, fallback) {
@@ -68,8 +70,60 @@ function writeRangeToURL(from, to, replace = true) {
   const url = new URL(window.location.href);
   if (from) url.searchParams.set("from", from); else url.searchParams.delete("from");
   if (to) url.searchParams.set("to", to); else url.searchParams.delete("to");
+  if (state.excludeSelfCites) url.searchParams.set("exclude_self", "1");
+  else url.searchParams.delete("exclude_self");
   const method = replace ? "replaceState" : "pushState";
   history[method]({}, "", url);
+}
+
+// ---------- Self-citation detection ----------
+
+function extractSurname(name) {
+  const parts = (name || "").trim().split(/\s+/);
+  return parts[parts.length - 1] || "";
+}
+
+function escapeRegex(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function makeSurnameRegex(surname) {
+  if (!surname) return null;
+  return new RegExp(`\\b${escapeRegex(surname)}\\b`, "i");
+}
+
+function isSelfCitation(citingAuthors, surnameRe) {
+  if (!surnameRe) return false;
+  return surnameRe.test(citingAuthors || "");
+}
+
+// ---------- Theme ----------
+
+const THEME_CYCLE = { auto: "light", light: "dark", dark: "auto" };
+const THEME_META = {
+  auto:  { icon: "◐", label: "Auto" },
+  light: { icon: "☀", label: "Light" },
+  dark:  { icon: "☾", label: "Dark" },
+};
+
+function currentTheme() {
+  const stored = document.documentElement.dataset.theme;
+  return stored === "light" || stored === "dark" ? stored : "auto";
+}
+
+function applyTheme(theme) {
+  if (theme === "auto") {
+    delete document.documentElement.dataset.theme;
+    try { localStorage.removeItem("sm-theme"); } catch (_) {}
+  } else {
+    document.documentElement.dataset.theme = theme;
+    try { localStorage.setItem("sm-theme", theme); } catch (_) {}
+  }
+  const btn = document.getElementById("theme-toggle");
+  if (!btn) return;
+  const meta = THEME_META[theme];
+  btn.querySelector(".theme-toggle-icon").textContent = meta.icon;
+  btn.querySelector(".theme-toggle-label").textContent = meta.label;
 }
 
 // ---------- Rendering ----------
@@ -77,11 +131,12 @@ function writeRangeToURL(from, to, replace = true) {
 function renderProfile() {
   const p = state.profile;
   if (!p) return;
+  state.profileSurname = extractSurname(p.name);
   document.getElementById("profile-name").textContent = p.name || CONFIG.display_name || "Scholar Monitor";
   document.title = p.name ? `${p.name} — Scholar Monitor` : "Scholar Monitor";
   document.getElementById("profile-affiliation").textContent = p.affiliation || "";
   const emailEl = document.getElementById("profile-email");
-  emailEl.textContent = p.email ? `Verified email at ${p.email}` : "";
+  emailEl.textContent = p.email || "";
   const homepageEl = document.getElementById("profile-homepage");
   if (p.homepage) {
     homepageEl.textContent = "Homepage";
@@ -122,6 +177,18 @@ function renderStats() {
 function renderChart() {
   const graph = (state.profile && state.profile.citations_per_year) || {};
   renderCitationsChart(document.getElementById("citations-chart"), graph);
+}
+
+function renderHIndex() {
+  const history = (state.profile && state.profile.totals_history) || [];
+  const heading = document.getElementById("hindex-heading");
+  if (history.length >= 2) {
+    heading.hidden = false;
+    renderHIndexChart(document.getElementById("hindex-chart"), history);
+  } else {
+    heading.hidden = true;
+    document.getElementById("hindex-chart").innerHTML = "";
+  }
 }
 
 function comparePapers(a, b) {
@@ -173,6 +240,8 @@ function renderPublications() {
 
     const citationsTd = document.createElement("td");
     citationsTd.className = "col-citations";
+    const wrap = document.createElement("div");
+    wrap.className = "cited-by-cell";
     const count = latestCount(paper);
     if (count > 0 && paper.cites_id) {
       const a = document.createElement("a");
@@ -180,10 +249,17 @@ function renderPublications() {
       a.target = "_blank";
       a.rel = "noopener";
       a.textContent = count;
-      citationsTd.appendChild(a);
+      wrap.appendChild(a);
     } else {
-      citationsTd.textContent = count || "";
+      const span = document.createElement("span");
+      span.textContent = count || "";
+      wrap.appendChild(span);
     }
+    const sparkWrap = document.createElement("div");
+    sparkWrap.className = "sparkline-wrap";
+    renderSparkline(sparkWrap, paper.citation_count_history);
+    wrap.appendChild(sparkWrap);
+    citationsTd.appendChild(wrap);
     tr.appendChild(citationsTd);
 
     const newTd = document.createElement("td");
@@ -278,7 +354,10 @@ function computeWindowedCitations() {
   state.citationsByPaperWindowed = new Map();
   const from = state.from, to = state.to;
   if (!from || !to || from > to) return;
+  const surnameRe = state.excludeSelfCites ? makeSurnameRegex(state.profileSurname) : null;
   for (const row of state.citations) {
+    if (row.bootstrap) continue;
+    if (surnameRe && isSelfCitation(row.citing_authors, surnameRe)) continue;
     const d = row.first_seen_date;
     if (!d || d < from || d > to) continue;
     if (!state.citationsByPaperWindowed.has(row.paper_id)) {
@@ -286,6 +365,71 @@ function computeWindowedCitations() {
     }
     state.citationsByPaperWindowed.get(row.paper_id).push(row);
   }
+}
+
+// ---------- Aggregates: top citing authors / venues ----------
+
+function aggregateTopAuthors(limit = 10) {
+  const surnameRe = makeSurnameRegex(state.profileSurname);
+  const counts = new Map();
+  for (const row of state.citations) {
+    if (state.excludeSelfCites && isSelfCitation(row.citing_authors, surnameRe)) continue;
+    const raw = row.citing_authors || "";
+    for (const name of raw.split(",")) {
+      const n = name.trim();
+      if (!n) continue;
+      if (surnameRe && surnameRe.test(n)) continue; // never count the profile owner
+      counts.set(n, (counts.get(n) || 0) + 1);
+    }
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, limit);
+}
+
+function aggregateTopVenues(limit = 10) {
+  const surnameRe = state.excludeSelfCites ? makeSurnameRegex(state.profileSurname) : null;
+  const counts = new Map();
+  for (const row of state.citations) {
+    if (surnameRe && isSelfCitation(row.citing_authors, surnameRe)) continue;
+    const v = (row.citing_venue || "").trim();
+    if (!v) continue;
+    counts.set(v, (counts.get(v) || 0) + 1);
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, limit);
+}
+
+function renderAggregates() {
+  const authorsList = document.getElementById("top-authors-list");
+  const venuesList = document.getElementById("top-venues-list");
+  authorsList.innerHTML = "";
+  venuesList.innerHTML = "";
+
+  const authors = aggregateTopAuthors();
+  const venues = aggregateTopVenues();
+  const emptyMsg = (msg) => `<li style="color:var(--muted);border:none;font-style:italic;">${msg}</li>`;
+
+  if (!authors.length) authorsList.innerHTML = emptyMsg("No citations yet.");
+  else authors.forEach(([name, count]) => authorsList.appendChild(aggregateLi(name, count)));
+
+  if (!venues.length) venuesList.innerHTML = emptyMsg("No citations yet.");
+  else venues.forEach(([name, count]) => venuesList.appendChild(aggregateLi(name, count)));
+
+  const hint = state.excludeSelfCites ? "All-time, self-citations excluded" : "All-time, across all tracked papers";
+  document.getElementById("top-authors-hint").textContent = hint;
+  document.getElementById("top-venues-hint").textContent = hint;
+}
+
+function aggregateLi(name, count) {
+  const li = document.createElement("li");
+  const nameEl = document.createElement("span");
+  nameEl.className = "name";
+  nameEl.textContent = name;
+  nameEl.title = name;
+  const countEl = document.createElement("span");
+  countEl.className = "count";
+  countEl.textContent = `${count}`;
+  li.appendChild(nameEl);
+  li.appendChild(countEl);
+  return li;
 }
 
 function updateDateHint() {
@@ -306,6 +450,7 @@ function applyRange(from, to, { pushURL = true } = {}) {
   computeWindowedCitations();
   updateDateHint();
   renderPublications();
+  renderAggregates();
 }
 
 // ---------- Init ----------
@@ -320,6 +465,21 @@ function wireControls() {
   document.getElementById("date-reset").addEventListener("click", () => {
     const { from, to } = defaultRange();
     applyRange(from, to);
+  });
+
+  const selfCiteBox = document.getElementById("exclude-self-cites");
+  selfCiteBox.checked = state.excludeSelfCites;
+  selfCiteBox.addEventListener("change", (e) => {
+    state.excludeSelfCites = e.target.checked;
+    writeRangeToURL(state.from, state.to);
+    computeWindowedCitations();
+    updateDateHint();
+    renderPublications();
+    renderAggregates();
+  });
+
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    applyTheme(THEME_CYCLE[currentTheme()]);
   });
 
   document.querySelectorAll("th.sortable").forEach((th) => {
@@ -362,9 +522,14 @@ async function main() {
   state.citations = citations || [];
   indexCitations();
 
+  const urlParams = new URLSearchParams(window.location.search);
+  state.excludeSelfCites = urlParams.get("exclude_self") === "1";
+
+  applyTheme(currentTheme());
   renderProfile();
   renderStats();
   renderChart();
+  renderHIndex();
   renderFooter();
   wireControls();
 

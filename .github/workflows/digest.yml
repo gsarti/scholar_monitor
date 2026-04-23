@@ -1,0 +1,49 @@
+name: Weekly digest
+
+on:
+  schedule:
+    - cron: "0 8 * * 0"  # Sundays, 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check weekly_digest flag
+        id: flag
+        run: |
+          enabled=$(python -c "import json; print(json.load(open('config.json')).get('weekly_digest', True))")
+          echo "enabled=$enabled" >> "$GITHUB_OUTPUT"
+
+      - name: Generate digest
+        if: steps.flag.outputs.enabled == 'True'
+        id: digest
+        run: |
+          python scripts/digest.py > /tmp/digest.md
+          if [ -s /tmp/digest.md ]; then
+            echo "has_content=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_content=false" >> "$GITHUB_OUTPUT"
+            echo "No new citations this week; skipping issue creation."
+          fi
+
+      - name: Ensure digest label exists
+        if: steps.digest.outputs.has_content == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create digest --color "0E8A16" --description "Weekly citation digest" 2>/dev/null || true
+
+      - name: Open issue
+        if: steps.digest.outputs.has_content == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="Weekly citations digest — $(date -u +%Y-%m-%d)"
+          gh issue create --title "$TITLE" --body-file /tmp/digest.md --label digest

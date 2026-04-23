@@ -277,7 +277,7 @@ def update_papers(
     return ordered, queue
 
 
-def extract_citing_row(paper_id: str, result: dict) -> dict:
+def extract_citing_row(paper_id: str, result: dict, bootstrap: bool) -> dict:
     result_id = result.get("result_id") or stable_id(result.get("title", "") + paper_id)
     pub_info = (result.get("publication_info") or {}).get("summary", "") or ""
     authors, venue, year = parse_publication_info(pub_info)
@@ -290,7 +290,31 @@ def extract_citing_row(paper_id: str, result: dict) -> dict:
         "citing_year": year,
         "citing_link": result.get("link", ""),
         "first_seen_date": TODAY,
+        "bootstrap": bootstrap,
     }
+
+
+def migrate_bootstrap_flag(citations: list[dict], papers: list[dict]) -> tuple[list[dict], bool]:
+    """Back-stamp a `bootstrap` flag onto pre-existing rows that lack it.
+
+    Heuristic: a citing paper fetched on the same day its parent paper was first
+    added to the profile was part of the initial inventory, not a truly new citation.
+    """
+    if not citations or any("bootstrap" in row for row in citations):
+        return citations, False
+    first_seen_by_paper = {p["id"]: p.get("first_seen") for p in papers}
+    migrated: list[dict] = []
+    for row in citations:
+        is_bootstrap = row.get("first_seen_date") == first_seen_by_paper.get(row["paper_id"])
+        migrated.append({**row, "bootstrap": is_bootstrap})
+    return migrated, True
+
+
+def rewrite_jsonl(path: Path, rows: list[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w") as f:
+        for row in rows:
+            f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
 def main() -> int:
@@ -304,6 +328,12 @@ def main() -> int:
     existing_profile = load_json(PROFILE_PATH, None)
     existing_papers = load_json(PAPERS_PATH, [])
     existing_citations = load_jsonl(CITATIONS_PATH)
+
+    # One-shot migration for pre-flag data: add bootstrap=True/False to legacy rows.
+    existing_citations, migrated = migrate_bootstrap_flag(existing_citations, existing_papers)
+    if migrated:
+        log.info("migrating %d legacy citation rows with bootstrap flag", len(existing_citations))
+        rewrite_jsonl(CITATIONS_PATH, existing_citations)
 
     known_by_paper: dict[str, set[str]] = {}
     for row in existing_citations:
@@ -326,8 +356,9 @@ def main() -> int:
         cites_id = paper.get("cites_id")
         if not cites_id:
             continue
+        is_bootstrap = delta == -1
         needed = delta if delta > 0 else (paper["citation_count_history"][-1]["count"] if paper.get("citation_count_history") else 0)
-        log.info("  fetching cited-by for %s (needed=%d) %s", paper_id, needed, paper.get("title", "")[:80])
+        log.info("  fetching cited-by for %s (needed=%d, bootstrap=%s) %s", paper_id, needed, is_bootstrap, paper.get("title", "")[:80])
         try:
             results = fetch_cited_by(api_key, cites_id, needed)
         except Exception as e:
@@ -335,7 +366,7 @@ def main() -> int:
             continue
         known = known_by_paper.setdefault(paper_id, set())
         for result in results:
-            row = extract_citing_row(paper_id, result)
+            row = extract_citing_row(paper_id, result, bootstrap=is_bootstrap)
             if row["citing_id"] in known:
                 continue
             known.add(row["citing_id"])

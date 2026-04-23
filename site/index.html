@@ -8,13 +8,26 @@
   <script>
     window.__SCHOLAR_MONITOR_CONFIG__ = {{CONFIG_JSON}};
     window.__SCHOLAR_MONITOR_BASE__ = "{{BASE_PATH}}";
+    // Apply stored theme before body renders to avoid a flash of the wrong palette.
+    (function () {
+      try {
+        var t = localStorage.getItem("sm-theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      } catch (_) {}
+    })();
   </script>
 </head>
 <body>
   <header class="page-header">
     <div class="page-header-inner">
       <span class="logo">Scholar Monitor</span>
-      <a class="source-link" href="https://github.com/" id="repo-link" rel="noopener">View on GitHub</a>
+      <div class="header-actions">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme">
+          <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+          <span class="theme-toggle-label">Auto</span>
+        </button>
+        <a class="source-link" href="https://github.com/" id="repo-link" rel="noopener">View on GitHub</a>
+      </div>
     </div>
   </header>
 
@@ -42,7 +55,10 @@
             <tr><td>i10-index</td><td id="stat-i10-all">—</td><td id="stat-i10-recent">—</td></tr>
           </tbody>
         </table>
+        <div class="chart-heading">Citations per year</div>
         <div class="citations-chart" id="citations-chart"></div>
+        <div class="chart-heading" id="hindex-heading" hidden>h-index over time</div>
+        <div class="hindex-chart" id="hindex-chart"></div>
       </aside>
     </section>
 
@@ -54,8 +70,12 @@
           <input type="date" id="date-to" />
         </label>
         <button type="button" id="date-reset" class="btn-reset">Reset</button>
-        <span class="date-hint" id="date-hint"></span>
       </div>
+      <label class="self-cite-toggle">
+        <input type="checkbox" id="exclude-self-cites" />
+        Exclude self-citations
+      </label>
+      <span class="date-hint" id="date-hint"></span>
     </section>
 
     <section class="publications">
@@ -64,7 +84,7 @@
           <tr>
             <th class="col-title sortable" data-sort="title">Title</th>
             <th class="col-citations sortable sort-desc" data-sort="citations">Cited by</th>
-            <th class="col-new">New in range</th>
+            <th class="col-new sortable" data-sort="new">New in range</th>
             <th class="col-year sortable" data-sort="year">Year</th>
           </tr>
         </thead>
@@ -72,6 +92,19 @@
           <tr class="loading"><td colspan="4">Loading…</td></tr>
         </tbody>
       </table>
+    </section>
+
+    <section class="aggregates">
+      <div class="aggregate-panel">
+        <h2>Top citing authors</h2>
+        <div class="panel-hint" id="top-authors-hint">All-time, across all tracked papers</div>
+        <ol class="aggregate-list" id="top-authors-list"></ol>
+      </div>
+      <div class="aggregate-panel">
+        <h2>Top citing venues</h2>
+        <div class="panel-hint" id="top-venues-hint">All-time, across all tracked papers</div>
+        <ol class="aggregate-list" id="top-venues-list"></ol>
+      </div>
     </section>
 
     <footer class="page-footer">
