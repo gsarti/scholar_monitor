@@ -438,9 +438,29 @@ function updateDateHint() {
   const hint = document.getElementById("date-hint");
   if (!state.from || !state.to) { hint.textContent = ""; return; }
   const total = Array.from(state.citationsByPaperWindowed.values()).reduce((a, rows) => a + rows.length, 0);
-  hint.textContent = total
+  const base = total
     ? `${total} new citation${total === 1 ? "" : "s"} across ${state.citationsByPaperWindowed.size} paper${state.citationsByPaperWindowed.size === 1 ? "" : "s"}`
     : "No new citations in this range";
+
+  // Count self-cites that fall in range (regardless of whether the toggle is on)
+  // so the user sees the toggle's effect even when the count is small.
+  let selfInRange = 0;
+  if (state.profileSurname) {
+    const re = makeSurnameRegex(state.profileSurname);
+    for (const row of state.citations) {
+      if (row.bootstrap) continue;
+      const d = row.first_seen_date;
+      if (!d || d < state.from || d > state.to) continue;
+      if (isSelfCitation(row.citing_authors, re)) selfInRange++;
+    }
+  }
+  let suffix = "";
+  if (selfInRange > 0) {
+    suffix = state.excludeSelfCites
+      ? ` · ${selfInRange} self-citation${selfInRange === 1 ? "" : "s"} excluded`
+      : ` · ${selfInRange} self-citation${selfInRange === 1 ? "" : "s"} included`;
+  }
+  hint.textContent = base + suffix;
 }
 
 function applyRange(from, to, { pushURL = true } = {}) {
