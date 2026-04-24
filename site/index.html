@@ -55,10 +55,16 @@
             <tr><td>i10-index</td><td id="stat-i10-all">—</td><td id="stat-i10-recent">—</td></tr>
           </tbody>
         </table>
-        <div class="chart-heading">Citations per year</div>
-        <div class="citations-chart" id="citations-chart"></div>
-        <div class="chart-heading" id="hindex-heading" hidden>h-index over time</div>
-        <div class="hindex-chart" id="hindex-chart"></div>
+        <div class="stats-charts">
+          <div class="chart-group">
+            <div class="chart-heading">Citations per year</div>
+            <div class="citations-chart" id="citations-chart"></div>
+          </div>
+          <div class="chart-group" id="hindex-group" hidden>
+            <div class="chart-heading">h-index over time</div>
+            <div class="hindex-chart" id="hindex-chart"></div>
+          </div>
+        </div>
       </aside>
     </section>
 
@@ -92,6 +98,7 @@
           <tr class="loading"><td colspan="4">Loading…</td></tr>
         </tbody>
       </table>
+      <button type="button" id="publications-toggle" class="btn-more" hidden></button>
     </section>
 
     <section class="aggregates">

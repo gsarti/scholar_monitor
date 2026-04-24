@@ -186,18 +186,28 @@ export function renderHIndexChart(container, totalsHistory) {
 
   const width = 320;
   const height = 110;
-  const pad = { top: 12, right: 28, bottom: 22, left: 8 };
+  const pad = { top: 14, right: 56, bottom: 22, left: 8 };
   const innerW = width - pad.left - pad.right;
   const innerH = height - pad.top - pad.bottom;
 
   const allVals = history.map((p) => p.h_index);
-  const recentVals = history.map((p) => p.h_index_recent).filter((v) => typeof v === "number");
-  const maxV = Math.max(...allVals, ...recentVals, 1);
-  const minV = Math.min(...allVals, ...recentVals, 0);
-  const range = Math.max(1, maxV - minV);
+  const recentRaw = history.map((p) => p.h_index_recent);
+  const hasRecent = recentRaw.every((v) => typeof v === "number");
+  const recentVals = hasRecent ? recentRaw : [];
+  const seriesIdentical = hasRecent && allVals.every((v, i) => v === recentVals[i]);
+
+  // Pad the y-range so flat or near-flat lines are not crushed against the top
+  // edge of the plot area. When the series is constant, this centers it.
+  const pool = hasRecent && !seriesIdentical ? allVals.concat(recentVals) : allVals;
+  const maxV = Math.max(...pool);
+  const minV = Math.min(...pool);
+  const span = Math.max(1, maxV - minV);
+  const yMax = maxV + span * 0.3;
+  const yMin = Math.max(0, minV - span * 0.3);
+  const range = Math.max(1, yMax - yMin);
 
   const x = (i) => pad.left + (history.length === 1 ? innerW / 2 : (i / (history.length - 1)) * innerW);
-  const y = (v) => pad.top + innerH - ((v - minV) / range) * innerH;
+  const y = (v) => pad.top + innerH - ((v - yMin) / range) * innerH;
 
   const svg = document.createElementNS(SVG_NS, "svg");
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
@@ -205,7 +215,7 @@ export function renderHIndexChart(container, totalsHistory) {
   svg.setAttribute("role", "img");
   svg.setAttribute("aria-label", "h-index over time");
 
-  function drawLine(values, className, endLabel) {
+  function drawLine(values, className, endLabel, labelDy = 0) {
     const d = values.map((v, i) => `${i === 0 ? "M" : "L"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
     const line = document.createElementNS(SVG_NS, "path");
     line.setAttribute("class", className);
@@ -222,15 +232,19 @@ export function renderHIndexChart(container, totalsHistory) {
 
     const label = document.createElementNS(SVG_NS, "text");
     label.setAttribute("class", "hindex-label");
-    label.setAttribute("x", x(lastI) + 4);
-    label.setAttribute("y", y(values[lastI]) + 3);
+    label.setAttribute("x", x(lastI) + 5);
+    label.setAttribute("y", y(values[lastI]) + 3 + labelDy);
     label.textContent = `${endLabel}: ${values[lastI]}`;
     svg.appendChild(label);
   }
 
-  drawLine(allVals, "hindex-line", "all");
-  if (recentVals.length === history.length) {
-    drawLine(recentVals, "hindex-line recent", "recent");
+  if (seriesIdentical || !hasRecent) {
+    drawLine(allVals, "hindex-line", "h-index");
+  } else {
+    // Stack labels vertically so they never collide, even when the two series
+    // share the same endpoint value.
+    drawLine(allVals, "hindex-line", "all", -4);
+    drawLine(recentVals, "hindex-line recent", "recent", 8);
   }
 
   // X-axis: first and last date.

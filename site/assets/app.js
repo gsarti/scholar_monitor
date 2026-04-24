@@ -3,6 +3,8 @@ import { renderCitationsChart, renderSparkline, renderHIndexChart } from "./char
 const BASE = window.__SCHOLAR_MONITOR_BASE__ || "";
 const CONFIG = window.__SCHOLAR_MONITOR_CONFIG__ || {};
 
+const PAPERS_COLLAPSED_LIMIT = 10;
+
 const state = {
   profile: null,
   papers: [],
@@ -15,6 +17,7 @@ const state = {
   expanded: new Set(),
   excludeSelfCites: false,
   profileSurname: "",
+  papersExpanded: false,
 };
 
 async function fetchJSON(path, fallback) {
@@ -183,12 +186,12 @@ function renderChart() {
 
 function renderHIndex() {
   const history = (state.profile && state.profile.totals_history) || [];
-  const heading = document.getElementById("hindex-heading");
+  const group = document.getElementById("hindex-group");
   if (history.length >= 2) {
-    heading.hidden = false;
+    group.hidden = false;
     renderHIndexChart(document.getElementById("hindex-chart"), history);
   } else {
-    heading.hidden = true;
+    group.hidden = true;
     document.getElementById("hindex-chart").innerHTML = "";
   }
 }
@@ -212,8 +215,9 @@ function renderPublications() {
   const body = document.getElementById("publications-body");
   body.innerHTML = "";
   const sorted = [...state.papers].sort(comparePapers);
+  const visible = state.papersExpanded ? sorted : sorted.slice(0, PAPERS_COLLAPSED_LIMIT);
 
-  for (const paper of sorted) {
+  for (const paper of visible) {
     const tr = document.createElement("tr");
     tr.dataset.paperId = paper.id;
 
@@ -294,6 +298,19 @@ function renderPublications() {
     const empty = document.createElement("tr");
     empty.innerHTML = '<td colspan="4" style="padding:20px;color:var(--muted);text-align:center;">No publications yet. Run the scrape workflow to fetch data.</td>';
     body.appendChild(empty);
+  }
+
+  const toggle = document.getElementById("publications-toggle");
+  if (toggle) {
+    const hidden = sorted.length - visible.length;
+    if (sorted.length > PAPERS_COLLAPSED_LIMIT) {
+      toggle.hidden = false;
+      toggle.textContent = state.papersExpanded
+        ? "Show fewer papers"
+        : `Show ${hidden} more paper${hidden === 1 ? "" : "s"}`;
+    } else {
+      toggle.hidden = true;
+    }
   }
 
   updateSortHeaders();
@@ -516,6 +533,14 @@ function wireControls() {
       renderPublications();
     });
   });
+
+  const toggle = document.getElementById("publications-toggle");
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      state.papersExpanded = !state.papersExpanded;
+      renderPublications();
+    });
+  }
 }
 
 function indexCitations() {
