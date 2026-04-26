@@ -1,16 +1,11 @@
 {
   "scholar_id": "sK0B_08AAAAJ",
-  "name": "Gabriele Sarti",
-  "affiliation": "Postdoctoral Researcher, Northeastern University",
-  "email": "Verified email at northeastern.edu",
-  "homepage": "http://gsarti.com/",
-  "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=sK0B_08AAAAJ&citpid=7",
-  "labels": [
-    "natural language processing",
-    "interpretability",
-    "human-computer interaction",
-    "deep learning"
-  ],
+  "name": "",
+  "affiliation": "",
+  "email": "",
+  "homepage": "",
+  "thumbnail": "",
+  "labels": [],
   "totals_history": [
     {
       "date": "2026-04-23",
@@ -38,15 +33,16 @@
       "h_index_recent": 14,
       "i10_index": 18,
       "i10_index_recent": 17
+    },
+    {
+      "date": "2026-04-26",
+      "citations": null,
+      "citations_recent": null,
+      "h_index": null,
+      "h_index_recent": null,
+      "i10_index": null,
+      "i10_index_recent": null
     }
   ],
-  "citations_per_year": {
-    "2020": 7,
-    "2021": 12,
-    "2022": 36,
-    "2023": 99,
-    "2024": 193,
-    "2025": 688,
-    "2026": 352
-  }
+  "citations_per_year": {}
 }
