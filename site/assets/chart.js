@@ -179,19 +179,24 @@ export function renderSparkline(container, history, { width = 80, height = 20 } 
   container.appendChild(svg);
 }
 
-export function renderHIndexChart(container, totalsHistory) {
+export function renderTotalLineChart(container, totalsHistory, opts) {
   container.innerHTML = "";
-  const history = (totalsHistory || []).filter((p) => typeof p.h_index === "number");
+  const allKey = opts.allKey;
+  const recentKey = opts.recentKey;
+  const label = opts.label;
+  const height = opts.height ?? 110;
+  const showDates = opts.showDates !== false;
+
+  const history = (totalsHistory || []).filter((p) => typeof p[allKey] === "number");
   if (history.length < 2) return;
 
   const width = 320;
-  const height = 110;
-  const pad = { top: 14, right: 56, bottom: 22, left: 8 };
+  const pad = { top: 12, right: 64, bottom: showDates ? 18 : 4, left: 8 };
   const innerW = width - pad.left - pad.right;
   const innerH = height - pad.top - pad.bottom;
 
-  const allVals = history.map((p) => p.h_index);
-  const recentRaw = history.map((p) => p.h_index_recent);
+  const allVals = history.map((p) => p[allKey]);
+  const recentRaw = history.map((p) => p[recentKey]);
   const hasRecent = recentRaw.every((v) => typeof v === "number");
   const recentVals = hasRecent ? recentRaw : [];
   const seriesIdentical = hasRecent && allVals.every((v, i) => v === recentVals[i]);
@@ -213,7 +218,7 @@ export function renderHIndexChart(container, totalsHistory) {
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
   svg.setAttribute("class", "chart-svg");
   svg.setAttribute("role", "img");
-  svg.setAttribute("aria-label", "h-index over time");
+  svg.setAttribute("aria-label", `${label} over time`);
 
   function drawLine(values, className, endLabel, labelDy = 0) {
     const d = values.map((v, i) => `${i === 0 ? "M" : "L"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
@@ -239,31 +244,32 @@ export function renderHIndexChart(container, totalsHistory) {
   }
 
   if (seriesIdentical || !hasRecent) {
-    drawLine(allVals, "hindex-line", "h-index");
+    drawLine(allVals, "hindex-line", label);
   } else {
     // Stack labels vertically so they never collide, even when the two series
     // share the same endpoint value.
     drawLine(allVals, "hindex-line", "all", -4);
-    drawLine(recentVals, "hindex-line recent", "recent", 8);
+    drawLine(recentVals, "hindex-line recent", "rec", 8);
   }
 
-  // X-axis: first and last date.
-  const dateLabels = document.createElementNS(SVG_NS, "g");
-  const first = document.createElementNS(SVG_NS, "text");
-  first.setAttribute("class", "chart-axis-label");
-  first.setAttribute("x", pad.left);
-  first.setAttribute("y", height - 6);
-  first.textContent = history[0].date;
-  dateLabels.appendChild(first);
+  if (showDates) {
+    const dateLabels = document.createElementNS(SVG_NS, "g");
+    const first = document.createElementNS(SVG_NS, "text");
+    first.setAttribute("class", "chart-axis-label");
+    first.setAttribute("x", pad.left);
+    first.setAttribute("y", height - 4);
+    first.textContent = history[0].date;
+    dateLabels.appendChild(first);
 
-  const last = document.createElementNS(SVG_NS, "text");
-  last.setAttribute("class", "chart-axis-label");
-  last.setAttribute("x", pad.left + innerW);
-  last.setAttribute("y", height - 6);
-  last.setAttribute("text-anchor", "end");
-  last.textContent = history[history.length - 1].date;
-  dateLabels.appendChild(last);
-  svg.appendChild(dateLabels);
+    const last = document.createElementNS(SVG_NS, "text");
+    last.setAttribute("class", "chart-axis-label");
+    last.setAttribute("x", pad.left + innerW);
+    last.setAttribute("y", height - 4);
+    last.setAttribute("text-anchor", "end");
+    last.textContent = history[history.length - 1].date;
+    dateLabels.appendChild(last);
+    svg.appendChild(dateLabels);
+  }
 
   container.appendChild(svg);
 }

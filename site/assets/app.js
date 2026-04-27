@@ -1,4 +1,4 @@
-import { renderCitationsChart, renderSparkline, renderHIndexChart } from "./chart.js";
+import { renderCitationsChart, renderSparkline, renderTotalLineChart } from "./chart.js";
 
 const BASE = window.__SCHOLAR_MONITOR_BASE__ || "";
 const CONFIG = window.__SCHOLAR_MONITOR_CONFIG__ || {};
@@ -184,15 +184,25 @@ function renderChart() {
   renderCitationsChart(document.getElementById("citations-chart"), graph);
 }
 
-function renderHIndex() {
+function renderTotals() {
   const history = (state.profile && state.profile.totals_history) || [];
   const group = document.getElementById("hindex-group");
+  const hindexEl = document.getElementById("hindex-chart");
+  const totalsEl = document.getElementById("totals-chart");
   if (history.length >= 2) {
     group.hidden = false;
-    renderHIndexChart(document.getElementById("hindex-chart"), history);
+    renderTotalLineChart(hindexEl, history, {
+      allKey: "h_index", recentKey: "h_index_recent",
+      label: "h-index", height: 50, showDates: false,
+    });
+    renderTotalLineChart(totalsEl, history, {
+      allKey: "citations", recentKey: "citations_recent",
+      label: "cites", height: 60, showDates: true,
+    });
   } else {
     group.hidden = true;
-    document.getElementById("hindex-chart").innerHTML = "";
+    hindexEl.innerHTML = "";
+    totalsEl.innerHTML = "";
   }
 }
 
@@ -576,7 +586,7 @@ async function main() {
   renderProfile();
   renderStats();
   renderChart();
-  renderHIndex();
+  renderTotals();
   renderFooter();
   wireControls();
 
