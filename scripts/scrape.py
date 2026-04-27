@@ -172,6 +172,7 @@ def build_profile(response: dict, scholar_id: str, previous: dict | None) -> dic
     author = response.get("author") or {}
     cited_by = response.get("cited_by") or {}
     table = cited_by.get("table") or []
+    prev = previous or {}
 
     def pick(key: str) -> dict:
         for row in table:
@@ -185,7 +186,7 @@ def build_profile(response: dict, scholar_id: str, previous: dict | None) -> dic
 
     graph = {str(row.get("year")): row.get("citations", 0) for row in (cited_by.get("graph") or [])}
 
-    history = (previous or {}).get("totals_history", [])
+    history = list(prev.get("totals_history", []))
     todays_entry = {
         "date": TODAY,
         "citations": citations_row.get("all"),
@@ -195,19 +196,27 @@ def build_profile(response: dict, scholar_id: str, previous: dict | None) -> dic
         "i10_index": i10_row.get("all"),
         "i10_index_recent": i10_row.get("since_2021") or i10_row.get("since_2020"),
     }
-    # Replace today's entry if we're re-running on the same day.
-    history = [h for h in history if h.get("date") != TODAY] + [todays_entry]
+    metric_keys = ("citations", "citations_recent", "h_index", "h_index_recent", "i10_index", "i10_index_recent")
+    if any(todays_entry[k] is not None for k in metric_keys):
+        # Replace today's entry if we're re-running on the same day.
+        history = [h for h in history if h.get("date") != TODAY] + [todays_entry]
+    else:
+        # SerpAPI sometimes returns an empty cited_by table; preserve prior history rather than
+        # appending an all-null row that breaks the dashboard.
+        log.warning("response had no totals; keeping previous totals_history unchanged")
+
+    new_labels = [i.get("title", "") for i in (author.get("interests") or [])]
 
     return {
         "scholar_id": scholar_id,
-        "name": author.get("name", ""),
-        "affiliation": author.get("affiliations", ""),
-        "email": author.get("email", ""),
-        "homepage": author.get("website", ""),
-        "thumbnail": author.get("thumbnail", ""),
-        "labels": [i.get("title", "") for i in (author.get("interests") or [])],
+        "name": author.get("name") or prev.get("name", ""),
+        "affiliation": author.get("affiliations") or prev.get("affiliation", ""),
+        "email": author.get("email") or prev.get("email", ""),
+        "homepage": author.get("website") or prev.get("homepage", ""),
+        "thumbnail": author.get("thumbnail") or prev.get("thumbnail", ""),
+        "labels": new_labels or prev.get("labels", []),
         "totals_history": history,
-        "citations_per_year": graph,
+        "citations_per_year": graph or prev.get("citations_per_year", {}),
     }
 
 
