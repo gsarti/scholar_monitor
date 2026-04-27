@@ -15,7 +15,7 @@ A GitHub Actions cron job scrapes your profile every day at midnight UTC via Ser
 
 ## Live example
 
-The author's instance: **[gsarti.com/citations](https://gsarti.com/citations)**.
+The author's instance: **[gsarti.com/scholar_monitor](https://gsarti.com/scholar_monitor)**.
 
 ## Quick fork (one command)
 
@@ -56,14 +56,14 @@ If you'd rather skip the script:
 4. **Enable Pages** — Settings → Pages → Source: **GitHub Actions**.
 5. **Bootstrap the data** — Actions tab → "Scrape + Deploy" → "Run workflow".
 
-## Deploying at a subpath of a custom domain (e.g. `yourdomain.com/citations`)
+## Deploying at a subpath of a custom domain (e.g. `yourdomain.com/scholar_monitor`)
 
 GitHub Pages serves project repositories at `<user>.github.io/<reponame>`. If you already have a user site (`<user>.github.io`) pointed at a custom domain, **project repos are automatically served at `yourdomain.com/<reponame>`** — no CNAME changes needed.
 
-So to host this at `gsarti.com/citations`:
+So to host this at `gsarti.com/scholar_monitor`:
 
-1. Rename the fork to `citations` (Settings → General → Rename).
-2. Set `"base_path": "/citations"` in `config.json`.
+1. Rename the fork to `scholar_monitor` (Settings → General → Rename).
+2. Set `"base_path": "/scholar_monitor"` in `config.json`.
 
 ## Weekly digest
 
