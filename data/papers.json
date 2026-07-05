@@ -296,6 +296,10 @@
       {
         "date": "2026-07-04",
         "count": 757
+      },
+      {
+        "date": "2026-07-05",
+        "count": 761
       }
     ]
   },
@@ -596,6 +600,10 @@
       {
         "date": "2026-07-04",
         "count": 190
+      },
+      {
+        "date": "2026-07-05",
+        "count": 192
       }
     ]
   },
@@ -895,6 +903,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 118
+      },
+      {
+        "date": "2026-07-05",
         "count": 118
       }
     ]
@@ -1196,6 +1208,10 @@
       {
         "date": "2026-07-04",
         "count": 116
+      },
+      {
+        "date": "2026-07-05",
+        "count": 117
       }
     ]
   },
@@ -1496,6 +1512,10 @@
       {
         "date": "2026-07-04",
         "count": 75
+      },
+      {
+        "date": "2026-07-05",
+        "count": 76
       }
     ]
   },
@@ -1795,6 +1815,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 67
+      },
+      {
+        "date": "2026-07-05",
         "count": 67
       }
     ]
@@ -2096,6 +2120,10 @@
       {
         "date": "2026-07-04",
         "count": 61
+      },
+      {
+        "date": "2026-07-05",
+        "count": 61
       }
     ]
   },
@@ -2395,6 +2423,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 37
+      },
+      {
+        "date": "2026-07-05",
         "count": 37
       }
     ]
@@ -2696,6 +2728,10 @@
       {
         "date": "2026-07-04",
         "count": 36
+      },
+      {
+        "date": "2026-07-05",
+        "count": 36
       }
     ]
   },
@@ -2996,6 +3032,314 @@
       {
         "date": "2026-07-04",
         "count": 28
+      },
+      {
+        "date": "2026-07-05",
+        "count": 28
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:hC7cP41nSMkC",
+    "title": "DivEMT: Neural machine translation post-editing effort across typologically diverse languages",
+    "authors": "G Sarti, A Bisazza, AG Arenas, A Toral",
+    "venue": "EMNLP 2022: Main Track, 7795–7816, 2022",
+    "year": 2022,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:hC7cP41nSMkC",
+    "cites_id": "443150368853516030",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 23
+      },
+      {
+        "date": "2026-04-24",
+        "count": 23
+      },
+      {
+        "date": "2026-04-25",
+        "count": 23
+      },
+      {
+        "date": "2026-04-27",
+        "count": 23
+      },
+      {
+        "date": "2026-04-28",
+        "count": 23
+      },
+      {
+        "date": "2026-04-29",
+        "count": 23
+      },
+      {
+        "date": "2026-04-30",
+        "count": 23
+      },
+      {
+        "date": "2026-05-01",
+        "count": 23
+      },
+      {
+        "date": "2026-05-02",
+        "count": 23
+      },
+      {
+        "date": "2026-05-03",
+        "count": 23
+      },
+      {
+        "date": "2026-05-04",
+        "count": 23
+      },
+      {
+        "date": "2026-05-05",
+        "count": 23
+      },
+      {
+        "date": "2026-05-06",
+        "count": 23
+      },
+      {
+        "date": "2026-05-07",
+        "count": 23
+      },
+      {
+        "date": "2026-05-08",
+        "count": 23
+      },
+      {
+        "date": "2026-05-09",
+        "count": 23
+      },
+      {
+        "date": "2026-05-10",
+        "count": 23
+      },
+      {
+        "date": "2026-05-11",
+        "count": 23
+      },
+      {
+        "date": "2026-05-12",
+        "count": 23
+      },
+      {
+        "date": "2026-05-13",
+        "count": 23
+      },
+      {
+        "date": "2026-05-14",
+        "count": 23
+      },
+      {
+        "date": "2026-05-15",
+        "count": 23
+      },
+      {
+        "date": "2026-05-16",
+        "count": 23
+      },
+      {
+        "date": "2026-05-17",
+        "count": 23
+      },
+      {
+        "date": "2026-05-18",
+        "count": 23
+      },
+      {
+        "date": "2026-05-19",
+        "count": 23
+      },
+      {
+        "date": "2026-05-20",
+        "count": 23
+      },
+      {
+        "date": "2026-05-21",
+        "count": 23
+      },
+      {
+        "date": "2026-05-22",
+        "count": 23
+      },
+      {
+        "date": "2026-05-23",
+        "count": 23
+      },
+      {
+        "date": "2026-05-24",
+        "count": 23
+      },
+      {
+        "date": "2026-05-25",
+        "count": 23
+      },
+      {
+        "date": "2026-05-26",
+        "count": 23
+      },
+      {
+        "date": "2026-05-27",
+        "count": 23
+      },
+      {
+        "date": "2026-05-28",
+        "count": 23
+      },
+      {
+        "date": "2026-05-29",
+        "count": 23
+      },
+      {
+        "date": "2026-05-30",
+        "count": 23
+      },
+      {
+        "date": "2026-05-31",
+        "count": 23
+      },
+      {
+        "date": "2026-06-01",
+        "count": 23
+      },
+      {
+        "date": "2026-06-02",
+        "count": 24
+      },
+      {
+        "date": "2026-06-03",
+        "count": 24
+      },
+      {
+        "date": "2026-06-04",
+        "count": 24
+      },
+      {
+        "date": "2026-06-05",
+        "count": 24
+      },
+      {
+        "date": "2026-06-06",
+        "count": 24
+      },
+      {
+        "date": "2026-06-07",
+        "count": 24
+      },
+      {
+        "date": "2026-06-08",
+        "count": 24
+      },
+      {
+        "date": "2026-06-09",
+        "count": 24
+      },
+      {
+        "date": "2026-06-10",
+        "count": 24
+      },
+      {
+        "date": "2026-06-11",
+        "count": 24
+      },
+      {
+        "date": "2026-06-12",
+        "count": 24
+      },
+      {
+        "date": "2026-06-13",
+        "count": 24
+      },
+      {
+        "date": "2026-06-14",
+        "count": 24
+      },
+      {
+        "date": "2026-06-15",
+        "count": 24
+      },
+      {
+        "date": "2026-06-16",
+        "count": 24
+      },
+      {
+        "date": "2026-06-17",
+        "count": 24
+      },
+      {
+        "date": "2026-06-18",
+        "count": 24
+      },
+      {
+        "date": "2026-06-19",
+        "count": 24
+      },
+      {
+        "date": "2026-06-20",
+        "count": 24
+      },
+      {
+        "date": "2026-06-21",
+        "count": 25
+      },
+      {
+        "date": "2026-06-22",
+        "count": 25
+      },
+      {
+        "date": "2026-06-23",
+        "count": 25
+      },
+      {
+        "date": "2026-06-24",
+        "count": 25
+      },
+      {
+        "date": "2026-06-25",
+        "count": 25
+      },
+      {
+        "date": "2026-06-26",
+        "count": 25
+      },
+      {
+        "date": "2026-06-27",
+        "count": 25
+      },
+      {
+        "date": "2026-06-28",
+        "count": 25
+      },
+      {
+        "date": "2026-06-29",
+        "count": 25
+      },
+      {
+        "date": "2026-06-30",
+        "count": 25
+      },
+      {
+        "date": "2026-07-01",
+        "count": 25
+      },
+      {
+        "date": "2026-07-02",
+        "count": 25
+      },
+      {
+        "date": "2026-07-03",
+        "count": 25
+      },
+      {
+        "date": "2026-07-04",
+        "count": 25
+      },
+      {
+        "date": "2026-07-05",
+        "count": 26
       }
     ]
   },
@@ -3296,305 +3640,9 @@
       {
         "date": "2026-07-04",
         "count": 25
-      }
-    ]
-  },
-  {
-    "id": "sK0B_08AAAAJ:hC7cP41nSMkC",
-    "title": "DivEMT: Neural machine translation post-editing effort across typologically diverse languages",
-    "authors": "G Sarti, A Bisazza, AG Arenas, A Toral",
-    "venue": "EMNLP 2022: Main Track, 7795–7816, 2022",
-    "year": 2022,
-    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:hC7cP41nSMkC",
-    "cites_id": "443150368853516030",
-    "first_seen": "2026-04-23",
-    "citation_count_history": [
-      {
-        "date": "2026-04-23",
-        "count": 23
-      },
-      {
-        "date": "2026-04-24",
-        "count": 23
-      },
-      {
-        "date": "2026-04-25",
-        "count": 23
-      },
-      {
-        "date": "2026-04-27",
-        "count": 23
-      },
-      {
-        "date": "2026-04-28",
-        "count": 23
-      },
-      {
-        "date": "2026-04-29",
-        "count": 23
-      },
-      {
-        "date": "2026-04-30",
-        "count": 23
-      },
-      {
-        "date": "2026-05-01",
-        "count": 23
-      },
-      {
-        "date": "2026-05-02",
-        "count": 23
-      },
-      {
-        "date": "2026-05-03",
-        "count": 23
-      },
-      {
-        "date": "2026-05-04",
-        "count": 23
-      },
-      {
-        "date": "2026-05-05",
-        "count": 23
-      },
-      {
-        "date": "2026-05-06",
-        "count": 23
-      },
-      {
-        "date": "2026-05-07",
-        "count": 23
-      },
-      {
-        "date": "2026-05-08",
-        "count": 23
-      },
-      {
-        "date": "2026-05-09",
-        "count": 23
-      },
-      {
-        "date": "2026-05-10",
-        "count": 23
-      },
-      {
-        "date": "2026-05-11",
-        "count": 23
-      },
-      {
-        "date": "2026-05-12",
-        "count": 23
-      },
-      {
-        "date": "2026-05-13",
-        "count": 23
-      },
-      {
-        "date": "2026-05-14",
-        "count": 23
-      },
-      {
-        "date": "2026-05-15",
-        "count": 23
-      },
-      {
-        "date": "2026-05-16",
-        "count": 23
-      },
-      {
-        "date": "2026-05-17",
-        "count": 23
-      },
-      {
-        "date": "2026-05-18",
-        "count": 23
-      },
-      {
-        "date": "2026-05-19",
-        "count": 23
-      },
-      {
-        "date": "2026-05-20",
-        "count": 23
-      },
-      {
-        "date": "2026-05-21",
-        "count": 23
-      },
-      {
-        "date": "2026-05-22",
-        "count": 23
-      },
-      {
-        "date": "2026-05-23",
-        "count": 23
-      },
-      {
-        "date": "2026-05-24",
-        "count": 23
-      },
-      {
-        "date": "2026-05-25",
-        "count": 23
-      },
-      {
-        "date": "2026-05-26",
-        "count": 23
-      },
-      {
-        "date": "2026-05-27",
-        "count": 23
-      },
-      {
-        "date": "2026-05-28",
-        "count": 23
-      },
-      {
-        "date": "2026-05-29",
-        "count": 23
-      },
-      {
-        "date": "2026-05-30",
-        "count": 23
-      },
-      {
-        "date": "2026-05-31",
-        "count": 23
-      },
-      {
-        "date": "2026-06-01",
-        "count": 23
-      },
-      {
-        "date": "2026-06-02",
-        "count": 24
-      },
-      {
-        "date": "2026-06-03",
-        "count": 24
-      },
-      {
-        "date": "2026-06-04",
-        "count": 24
-      },
-      {
-        "date": "2026-06-05",
-        "count": 24
-      },
-      {
-        "date": "2026-06-06",
-        "count": 24
-      },
-      {
-        "date": "2026-06-07",
-        "count": 24
-      },
-      {
-        "date": "2026-06-08",
-        "count": 24
-      },
-      {
-        "date": "2026-06-09",
-        "count": 24
-      },
-      {
-        "date": "2026-06-10",
-        "count": 24
-      },
-      {
-        "date": "2026-06-11",
-        "count": 24
-      },
-      {
-        "date": "2026-06-12",
-        "count": 24
-      },
-      {
-        "date": "2026-06-13",
-        "count": 24
-      },
-      {
-        "date": "2026-06-14",
-        "count": 24
-      },
-      {
-        "date": "2026-06-15",
-        "count": 24
-      },
-      {
-        "date": "2026-06-16",
-        "count": 24
-      },
-      {
-        "date": "2026-06-17",
-        "count": 24
-      },
-      {
-        "date": "2026-06-18",
-        "count": 24
-      },
-      {
-        "date": "2026-06-19",
-        "count": 24
-      },
-      {
-        "date": "2026-06-20",
-        "count": 24
-      },
-      {
-        "date": "2026-06-21",
-        "count": 25
-      },
-      {
-        "date": "2026-06-22",
-        "count": 25
-      },
-      {
-        "date": "2026-06-23",
-        "count": 25
-      },
-      {
-        "date": "2026-06-24",
-        "count": 25
-      },
-      {
-        "date": "2026-06-25",
-        "count": 25
-      },
-      {
-        "date": "2026-06-26",
-        "count": 25
-      },
-      {
-        "date": "2026-06-27",
-        "count": 25
-      },
-      {
-        "date": "2026-06-28",
-        "count": 25
-      },
-      {
-        "date": "2026-06-29",
-        "count": 25
-      },
-      {
-        "date": "2026-06-30",
-        "count": 25
-      },
-      {
-        "date": "2026-07-01",
-        "count": 25
-      },
-      {
-        "date": "2026-07-02",
-        "count": 25
-      },
-      {
-        "date": "2026-07-03",
-        "count": 25
       },
       {
-        "date": "2026-07-04",
+        "date": "2026-07-05",
         "count": 25
       }
     ]
@@ -3896,6 +3944,10 @@
       {
         "date": "2026-07-04",
         "count": 23
+      },
+      {
+        "date": "2026-07-05",
+        "count": 23
       }
     ]
   },
@@ -4195,6 +4247,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 18
+      },
+      {
+        "date": "2026-07-05",
         "count": 18
       }
     ]
@@ -4496,6 +4552,10 @@
       {
         "date": "2026-07-04",
         "count": 13
+      },
+      {
+        "date": "2026-07-05",
+        "count": 13
       }
     ]
   },
@@ -4796,6 +4856,314 @@
       {
         "date": "2026-07-04",
         "count": 12
+      },
+      {
+        "date": "2026-07-05",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:9ZlFYXVOiuMC",
+    "title": "Non Verbis, Sed Rebus: Large Language Models are Weak Solvers of Italian Rebuses",
+    "authors": "G Sarti, T Caselli, M Nissim, A Bisazza",
+    "venue": "CLiC-it 2024: Italian Conference on Computational Linguistics, 2024",
+    "year": 2024,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:9ZlFYXVOiuMC",
+    "cites_id": "5540889609117213907",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 9
+      },
+      {
+        "date": "2026-04-24",
+        "count": 9
+      },
+      {
+        "date": "2026-04-25",
+        "count": 9
+      },
+      {
+        "date": "2026-04-27",
+        "count": 9
+      },
+      {
+        "date": "2026-04-28",
+        "count": 9
+      },
+      {
+        "date": "2026-04-29",
+        "count": 9
+      },
+      {
+        "date": "2026-04-30",
+        "count": 9
+      },
+      {
+        "date": "2026-05-01",
+        "count": 9
+      },
+      {
+        "date": "2026-05-02",
+        "count": 9
+      },
+      {
+        "date": "2026-05-03",
+        "count": 9
+      },
+      {
+        "date": "2026-05-04",
+        "count": 9
+      },
+      {
+        "date": "2026-05-05",
+        "count": 9
+      },
+      {
+        "date": "2026-05-06",
+        "count": 9
+      },
+      {
+        "date": "2026-05-07",
+        "count": 9
+      },
+      {
+        "date": "2026-05-08",
+        "count": 9
+      },
+      {
+        "date": "2026-05-09",
+        "count": 9
+      },
+      {
+        "date": "2026-05-10",
+        "count": 9
+      },
+      {
+        "date": "2026-05-11",
+        "count": 9
+      },
+      {
+        "date": "2026-05-12",
+        "count": 9
+      },
+      {
+        "date": "2026-05-13",
+        "count": 9
+      },
+      {
+        "date": "2026-05-14",
+        "count": 9
+      },
+      {
+        "date": "2026-05-15",
+        "count": 9
+      },
+      {
+        "date": "2026-05-16",
+        "count": 9
+      },
+      {
+        "date": "2026-05-17",
+        "count": 9
+      },
+      {
+        "date": "2026-05-18",
+        "count": 9
+      },
+      {
+        "date": "2026-05-19",
+        "count": 9
+      },
+      {
+        "date": "2026-05-20",
+        "count": 9
+      },
+      {
+        "date": "2026-05-21",
+        "count": 9
+      },
+      {
+        "date": "2026-05-22",
+        "count": 9
+      },
+      {
+        "date": "2026-05-23",
+        "count": 9
+      },
+      {
+        "date": "2026-05-24",
+        "count": 9
+      },
+      {
+        "date": "2026-05-25",
+        "count": 9
+      },
+      {
+        "date": "2026-05-26",
+        "count": 9
+      },
+      {
+        "date": "2026-05-27",
+        "count": 9
+      },
+      {
+        "date": "2026-05-28",
+        "count": 9
+      },
+      {
+        "date": "2026-05-29",
+        "count": 9
+      },
+      {
+        "date": "2026-05-30",
+        "count": 9
+      },
+      {
+        "date": "2026-05-31",
+        "count": 9
+      },
+      {
+        "date": "2026-06-01",
+        "count": 9
+      },
+      {
+        "date": "2026-06-02",
+        "count": 9
+      },
+      {
+        "date": "2026-06-03",
+        "count": 9
+      },
+      {
+        "date": "2026-06-04",
+        "count": 9
+      },
+      {
+        "date": "2026-06-05",
+        "count": 9
+      },
+      {
+        "date": "2026-06-06",
+        "count": 9
+      },
+      {
+        "date": "2026-06-07",
+        "count": 9
+      },
+      {
+        "date": "2026-06-08",
+        "count": 9
+      },
+      {
+        "date": "2026-06-09",
+        "count": 9
+      },
+      {
+        "date": "2026-06-10",
+        "count": 9
+      },
+      {
+        "date": "2026-06-11",
+        "count": 9
+      },
+      {
+        "date": "2026-06-12",
+        "count": 9
+      },
+      {
+        "date": "2026-06-13",
+        "count": 9
+      },
+      {
+        "date": "2026-06-14",
+        "count": 9
+      },
+      {
+        "date": "2026-06-15",
+        "count": 9
+      },
+      {
+        "date": "2026-06-16",
+        "count": 9
+      },
+      {
+        "date": "2026-06-17",
+        "count": 9
+      },
+      {
+        "date": "2026-06-18",
+        "count": 9
+      },
+      {
+        "date": "2026-06-19",
+        "count": 9
+      },
+      {
+        "date": "2026-06-20",
+        "count": 9
+      },
+      {
+        "date": "2026-06-21",
+        "count": 9
+      },
+      {
+        "date": "2026-06-22",
+        "count": 9
+      },
+      {
+        "date": "2026-06-23",
+        "count": 9
+      },
+      {
+        "date": "2026-06-24",
+        "count": 9
+      },
+      {
+        "date": "2026-06-25",
+        "count": 9
+      },
+      {
+        "date": "2026-06-26",
+        "count": 9
+      },
+      {
+        "date": "2026-06-27",
+        "count": 9
+      },
+      {
+        "date": "2026-06-28",
+        "count": 9
+      },
+      {
+        "date": "2026-06-29",
+        "count": 9
+      },
+      {
+        "date": "2026-06-30",
+        "count": 9
+      },
+      {
+        "date": "2026-07-01",
+        "count": 9
+      },
+      {
+        "date": "2026-07-02",
+        "count": 9
+      },
+      {
+        "date": "2026-07-03",
+        "count": 9
+      },
+      {
+        "date": "2026-07-04",
+        "count": 9
+      },
+      {
+        "date": "2026-07-05",
+        "count": 10
       }
     ]
   },
@@ -5095,6 +5463,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 10
+      },
+      {
+        "date": "2026-07-05",
         "count": 10
       }
     ]
@@ -5396,606 +5768,10 @@
       {
         "date": "2026-07-04",
         "count": 10
-      }
-    ]
-  },
-  {
-    "id": "sK0B_08AAAAJ:9ZlFYXVOiuMC",
-    "title": "Non Verbis, Sed Rebus: Large Language Models are Weak Solvers of Italian Rebuses",
-    "authors": "G Sarti, T Caselli, M Nissim, A Bisazza",
-    "venue": "CLiC-it 2024: Italian Conference on Computational Linguistics, 2024",
-    "year": 2024,
-    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:9ZlFYXVOiuMC",
-    "cites_id": "5540889609117213907",
-    "first_seen": "2026-04-23",
-    "citation_count_history": [
-      {
-        "date": "2026-04-23",
-        "count": 9
-      },
-      {
-        "date": "2026-04-24",
-        "count": 9
-      },
-      {
-        "date": "2026-04-25",
-        "count": 9
-      },
-      {
-        "date": "2026-04-27",
-        "count": 9
-      },
-      {
-        "date": "2026-04-28",
-        "count": 9
-      },
-      {
-        "date": "2026-04-29",
-        "count": 9
-      },
-      {
-        "date": "2026-04-30",
-        "count": 9
-      },
-      {
-        "date": "2026-05-01",
-        "count": 9
-      },
-      {
-        "date": "2026-05-02",
-        "count": 9
-      },
-      {
-        "date": "2026-05-03",
-        "count": 9
-      },
-      {
-        "date": "2026-05-04",
-        "count": 9
-      },
-      {
-        "date": "2026-05-05",
-        "count": 9
-      },
-      {
-        "date": "2026-05-06",
-        "count": 9
-      },
-      {
-        "date": "2026-05-07",
-        "count": 9
-      },
-      {
-        "date": "2026-05-08",
-        "count": 9
-      },
-      {
-        "date": "2026-05-09",
-        "count": 9
-      },
-      {
-        "date": "2026-05-10",
-        "count": 9
-      },
-      {
-        "date": "2026-05-11",
-        "count": 9
-      },
-      {
-        "date": "2026-05-12",
-        "count": 9
-      },
-      {
-        "date": "2026-05-13",
-        "count": 9
-      },
-      {
-        "date": "2026-05-14",
-        "count": 9
-      },
-      {
-        "date": "2026-05-15",
-        "count": 9
-      },
-      {
-        "date": "2026-05-16",
-        "count": 9
-      },
-      {
-        "date": "2026-05-17",
-        "count": 9
-      },
-      {
-        "date": "2026-05-18",
-        "count": 9
-      },
-      {
-        "date": "2026-05-19",
-        "count": 9
-      },
-      {
-        "date": "2026-05-20",
-        "count": 9
-      },
-      {
-        "date": "2026-05-21",
-        "count": 9
-      },
-      {
-        "date": "2026-05-22",
-        "count": 9
-      },
-      {
-        "date": "2026-05-23",
-        "count": 9
-      },
-      {
-        "date": "2026-05-24",
-        "count": 9
-      },
-      {
-        "date": "2026-05-25",
-        "count": 9
-      },
-      {
-        "date": "2026-05-26",
-        "count": 9
-      },
-      {
-        "date": "2026-05-27",
-        "count": 9
-      },
-      {
-        "date": "2026-05-28",
-        "count": 9
-      },
-      {
-        "date": "2026-05-29",
-        "count": 9
-      },
-      {
-        "date": "2026-05-30",
-        "count": 9
-      },
-      {
-        "date": "2026-05-31",
-        "count": 9
-      },
-      {
-        "date": "2026-06-01",
-        "count": 9
-      },
-      {
-        "date": "2026-06-02",
-        "count": 9
-      },
-      {
-        "date": "2026-06-03",
-        "count": 9
-      },
-      {
-        "date": "2026-06-04",
-        "count": 9
-      },
-      {
-        "date": "2026-06-05",
-        "count": 9
-      },
-      {
-        "date": "2026-06-06",
-        "count": 9
-      },
-      {
-        "date": "2026-06-07",
-        "count": 9
-      },
-      {
-        "date": "2026-06-08",
-        "count": 9
-      },
-      {
-        "date": "2026-06-09",
-        "count": 9
-      },
-      {
-        "date": "2026-06-10",
-        "count": 9
-      },
-      {
-        "date": "2026-06-11",
-        "count": 9
-      },
-      {
-        "date": "2026-06-12",
-        "count": 9
-      },
-      {
-        "date": "2026-06-13",
-        "count": 9
-      },
-      {
-        "date": "2026-06-14",
-        "count": 9
-      },
-      {
-        "date": "2026-06-15",
-        "count": 9
-      },
-      {
-        "date": "2026-06-16",
-        "count": 9
-      },
-      {
-        "date": "2026-06-17",
-        "count": 9
-      },
-      {
-        "date": "2026-06-18",
-        "count": 9
-      },
-      {
-        "date": "2026-06-19",
-        "count": 9
-      },
-      {
-        "date": "2026-06-20",
-        "count": 9
-      },
-      {
-        "date": "2026-06-21",
-        "count": 9
-      },
-      {
-        "date": "2026-06-22",
-        "count": 9
-      },
-      {
-        "date": "2026-06-23",
-        "count": 9
-      },
-      {
-        "date": "2026-06-24",
-        "count": 9
-      },
-      {
-        "date": "2026-06-25",
-        "count": 9
-      },
-      {
-        "date": "2026-06-26",
-        "count": 9
-      },
-      {
-        "date": "2026-06-27",
-        "count": 9
-      },
-      {
-        "date": "2026-06-28",
-        "count": 9
-      },
-      {
-        "date": "2026-06-29",
-        "count": 9
-      },
-      {
-        "date": "2026-06-30",
-        "count": 9
-      },
-      {
-        "date": "2026-07-01",
-        "count": 9
-      },
-      {
-        "date": "2026-07-02",
-        "count": 9
-      },
-      {
-        "date": "2026-07-03",
-        "count": 9
-      },
-      {
-        "date": "2026-07-04",
-        "count": 9
-      }
-    ]
-  },
-  {
-    "id": "sK0B_08AAAAJ:W7OEmFMy1HYC",
-    "title": "Teaching NLP with Bracelets and Restaurant Menus: An Interactive Workshop for Italian Students",
-    "authors": "L Pannitto, L Busso, CR Combei, L Messina, A Miaschi, G Sarti, M Nissim",
-    "venue": "Teaching NLP Workshop 2021, 160-170, 2021",
-    "year": 2021,
-    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:W7OEmFMy1HYC",
-    "cites_id": "5362758515107038562",
-    "first_seen": "2026-04-23",
-    "citation_count_history": [
-      {
-        "date": "2026-04-23",
-        "count": 7
-      },
-      {
-        "date": "2026-04-24",
-        "count": 7
-      },
-      {
-        "date": "2026-04-25",
-        "count": 7
-      },
-      {
-        "date": "2026-04-27",
-        "count": 7
-      },
-      {
-        "date": "2026-04-28",
-        "count": 7
-      },
-      {
-        "date": "2026-04-29",
-        "count": 7
-      },
-      {
-        "date": "2026-04-30",
-        "count": 7
-      },
-      {
-        "date": "2026-05-01",
-        "count": 7
-      },
-      {
-        "date": "2026-05-02",
-        "count": 7
-      },
-      {
-        "date": "2026-05-03",
-        "count": 7
-      },
-      {
-        "date": "2026-05-04",
-        "count": 7
-      },
-      {
-        "date": "2026-05-05",
-        "count": 7
-      },
-      {
-        "date": "2026-05-06",
-        "count": 7
-      },
-      {
-        "date": "2026-05-07",
-        "count": 7
-      },
-      {
-        "date": "2026-05-08",
-        "count": 7
-      },
-      {
-        "date": "2026-05-09",
-        "count": 7
-      },
-      {
-        "date": "2026-05-10",
-        "count": 7
-      },
-      {
-        "date": "2026-05-11",
-        "count": 7
-      },
-      {
-        "date": "2026-05-12",
-        "count": 7
-      },
-      {
-        "date": "2026-05-13",
-        "count": 7
-      },
-      {
-        "date": "2026-05-14",
-        "count": 7
-      },
-      {
-        "date": "2026-05-15",
-        "count": 7
-      },
-      {
-        "date": "2026-05-16",
-        "count": 7
-      },
-      {
-        "date": "2026-05-17",
-        "count": 7
-      },
-      {
-        "date": "2026-05-18",
-        "count": 7
-      },
-      {
-        "date": "2026-05-19",
-        "count": 7
-      },
-      {
-        "date": "2026-05-20",
-        "count": 7
-      },
-      {
-        "date": "2026-05-21",
-        "count": 7
-      },
-      {
-        "date": "2026-05-22",
-        "count": 7
-      },
-      {
-        "date": "2026-05-23",
-        "count": 7
-      },
-      {
-        "date": "2026-05-24",
-        "count": 7
-      },
-      {
-        "date": "2026-05-25",
-        "count": 7
-      },
-      {
-        "date": "2026-05-26",
-        "count": 7
-      },
-      {
-        "date": "2026-05-27",
-        "count": 7
-      },
-      {
-        "date": "2026-05-28",
-        "count": 7
-      },
-      {
-        "date": "2026-05-29",
-        "count": 7
-      },
-      {
-        "date": "2026-05-30",
-        "count": 7
-      },
-      {
-        "date": "2026-05-31",
-        "count": 7
-      },
-      {
-        "date": "2026-06-01",
-        "count": 7
-      },
-      {
-        "date": "2026-06-02",
-        "count": 7
-      },
-      {
-        "date": "2026-06-03",
-        "count": 7
-      },
-      {
-        "date": "2026-06-04",
-        "count": 7
-      },
-      {
-        "date": "2026-06-05",
-        "count": 7
-      },
-      {
-        "date": "2026-06-06",
-        "count": 7
-      },
-      {
-        "date": "2026-06-07",
-        "count": 7
-      },
-      {
-        "date": "2026-06-08",
-        "count": 7
-      },
-      {
-        "date": "2026-06-09",
-        "count": 7
-      },
-      {
-        "date": "2026-06-10",
-        "count": 7
-      },
-      {
-        "date": "2026-06-11",
-        "count": 7
-      },
-      {
-        "date": "2026-06-12",
-        "count": 7
-      },
-      {
-        "date": "2026-06-13",
-        "count": 7
-      },
-      {
-        "date": "2026-06-14",
-        "count": 7
-      },
-      {
-        "date": "2026-06-15",
-        "count": 7
-      },
-      {
-        "date": "2026-06-16",
-        "count": 7
-      },
-      {
-        "date": "2026-06-17",
-        "count": 7
-      },
-      {
-        "date": "2026-06-18",
-        "count": 7
-      },
-      {
-        "date": "2026-06-19",
-        "count": 7
-      },
-      {
-        "date": "2026-06-20",
-        "count": 7
-      },
-      {
-        "date": "2026-06-21",
-        "count": 7
-      },
-      {
-        "date": "2026-06-22",
-        "count": 7
-      },
-      {
-        "date": "2026-06-23",
-        "count": 7
-      },
-      {
-        "date": "2026-06-24",
-        "count": 7
-      },
-      {
-        "date": "2026-06-25",
-        "count": 7
-      },
-      {
-        "date": "2026-06-26",
-        "count": 7
-      },
-      {
-        "date": "2026-06-27",
-        "count": 7
-      },
-      {
-        "date": "2026-06-28",
-        "count": 7
-      },
-      {
-        "date": "2026-06-29",
-        "count": 7
-      },
-      {
-        "date": "2026-06-30",
-        "count": 7
-      },
-      {
-        "date": "2026-07-01",
-        "count": 7
-      },
-      {
-        "date": "2026-07-02",
-        "count": 7
-      },
-      {
-        "date": "2026-07-03",
-        "count": 7
       },
       {
-        "date": "2026-07-04",
-        "count": 7
+        "date": "2026-07-05",
+        "count": 10
       }
     ]
   },
@@ -6296,6 +6072,314 @@
       {
         "date": "2026-07-04",
         "count": 6
+      },
+      {
+        "date": "2026-07-05",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:W7OEmFMy1HYC",
+    "title": "Teaching NLP with Bracelets and Restaurant Menus: An Interactive Workshop for Italian Students",
+    "authors": "L Pannitto, L Busso, CR Combei, L Messina, A Miaschi, G Sarti, M Nissim",
+    "venue": "Teaching NLP Workshop 2021, 160-170, 2021",
+    "year": 2021,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:W7OEmFMy1HYC",
+    "cites_id": "5362758515107038562",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 7
+      },
+      {
+        "date": "2026-04-24",
+        "count": 7
+      },
+      {
+        "date": "2026-04-25",
+        "count": 7
+      },
+      {
+        "date": "2026-04-27",
+        "count": 7
+      },
+      {
+        "date": "2026-04-28",
+        "count": 7
+      },
+      {
+        "date": "2026-04-29",
+        "count": 7
+      },
+      {
+        "date": "2026-04-30",
+        "count": 7
+      },
+      {
+        "date": "2026-05-01",
+        "count": 7
+      },
+      {
+        "date": "2026-05-02",
+        "count": 7
+      },
+      {
+        "date": "2026-05-03",
+        "count": 7
+      },
+      {
+        "date": "2026-05-04",
+        "count": 7
+      },
+      {
+        "date": "2026-05-05",
+        "count": 7
+      },
+      {
+        "date": "2026-05-06",
+        "count": 7
+      },
+      {
+        "date": "2026-05-07",
+        "count": 7
+      },
+      {
+        "date": "2026-05-08",
+        "count": 7
+      },
+      {
+        "date": "2026-05-09",
+        "count": 7
+      },
+      {
+        "date": "2026-05-10",
+        "count": 7
+      },
+      {
+        "date": "2026-05-11",
+        "count": 7
+      },
+      {
+        "date": "2026-05-12",
+        "count": 7
+      },
+      {
+        "date": "2026-05-13",
+        "count": 7
+      },
+      {
+        "date": "2026-05-14",
+        "count": 7
+      },
+      {
+        "date": "2026-05-15",
+        "count": 7
+      },
+      {
+        "date": "2026-05-16",
+        "count": 7
+      },
+      {
+        "date": "2026-05-17",
+        "count": 7
+      },
+      {
+        "date": "2026-05-18",
+        "count": 7
+      },
+      {
+        "date": "2026-05-19",
+        "count": 7
+      },
+      {
+        "date": "2026-05-20",
+        "count": 7
+      },
+      {
+        "date": "2026-05-21",
+        "count": 7
+      },
+      {
+        "date": "2026-05-22",
+        "count": 7
+      },
+      {
+        "date": "2026-05-23",
+        "count": 7
+      },
+      {
+        "date": "2026-05-24",
+        "count": 7
+      },
+      {
+        "date": "2026-05-25",
+        "count": 7
+      },
+      {
+        "date": "2026-05-26",
+        "count": 7
+      },
+      {
+        "date": "2026-05-27",
+        "count": 7
+      },
+      {
+        "date": "2026-05-28",
+        "count": 7
+      },
+      {
+        "date": "2026-05-29",
+        "count": 7
+      },
+      {
+        "date": "2026-05-30",
+        "count": 7
+      },
+      {
+        "date": "2026-05-31",
+        "count": 7
+      },
+      {
+        "date": "2026-06-01",
+        "count": 7
+      },
+      {
+        "date": "2026-06-02",
+        "count": 7
+      },
+      {
+        "date": "2026-06-03",
+        "count": 7
+      },
+      {
+        "date": "2026-06-04",
+        "count": 7
+      },
+      {
+        "date": "2026-06-05",
+        "count": 7
+      },
+      {
+        "date": "2026-06-06",
+        "count": 7
+      },
+      {
+        "date": "2026-06-07",
+        "count": 7
+      },
+      {
+        "date": "2026-06-08",
+        "count": 7
+      },
+      {
+        "date": "2026-06-09",
+        "count": 7
+      },
+      {
+        "date": "2026-06-10",
+        "count": 7
+      },
+      {
+        "date": "2026-06-11",
+        "count": 7
+      },
+      {
+        "date": "2026-06-12",
+        "count": 7
+      },
+      {
+        "date": "2026-06-13",
+        "count": 7
+      },
+      {
+        "date": "2026-06-14",
+        "count": 7
+      },
+      {
+        "date": "2026-06-15",
+        "count": 7
+      },
+      {
+        "date": "2026-06-16",
+        "count": 7
+      },
+      {
+        "date": "2026-06-17",
+        "count": 7
+      },
+      {
+        "date": "2026-06-18",
+        "count": 7
+      },
+      {
+        "date": "2026-06-19",
+        "count": 7
+      },
+      {
+        "date": "2026-06-20",
+        "count": 7
+      },
+      {
+        "date": "2026-06-21",
+        "count": 7
+      },
+      {
+        "date": "2026-06-22",
+        "count": 7
+      },
+      {
+        "date": "2026-06-23",
+        "count": 7
+      },
+      {
+        "date": "2026-06-24",
+        "count": 7
+      },
+      {
+        "date": "2026-06-25",
+        "count": 7
+      },
+      {
+        "date": "2026-06-26",
+        "count": 7
+      },
+      {
+        "date": "2026-06-27",
+        "count": 7
+      },
+      {
+        "date": "2026-06-28",
+        "count": 7
+      },
+      {
+        "date": "2026-06-29",
+        "count": 7
+      },
+      {
+        "date": "2026-06-30",
+        "count": 7
+      },
+      {
+        "date": "2026-07-01",
+        "count": 7
+      },
+      {
+        "date": "2026-07-02",
+        "count": 7
+      },
+      {
+        "date": "2026-07-03",
+        "count": 7
+      },
+      {
+        "date": "2026-07-04",
+        "count": 7
+      },
+      {
+        "date": "2026-07-05",
+        "count": 7
       }
     ]
   },
@@ -6596,6 +6680,10 @@
       {
         "date": "2026-07-04",
         "count": 5
+      },
+      {
+        "date": "2026-07-05",
+        "count": 6
       }
     ]
   },
@@ -6895,6 +6983,314 @@
       },
       {
         "date": "2026-07-04",
+        "count": 5
+      },
+      {
+        "date": "2026-07-05",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "id": "sK0B_08AAAAJ:dhFuZR0502QC",
+    "title": "EurekaRebus-Verbalized Rebus Solving with LLMs: A CALAMITA Challenge",
+    "authors": "G Sarti, T Caselli, A Bisazza, M Nissim",
+    "venue": "CLiC-it 2024: Italian Conference on Computational Linguistics, 2024",
+    "year": 2024,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:dhFuZR0502QC",
+    "cites_id": "4765284597311200181",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 4
+      },
+      {
+        "date": "2026-04-24",
+        "count": 4
+      },
+      {
+        "date": "2026-04-25",
+        "count": 4
+      },
+      {
+        "date": "2026-04-27",
+        "count": 4
+      },
+      {
+        "date": "2026-04-28",
+        "count": 4
+      },
+      {
+        "date": "2026-04-29",
+        "count": 4
+      },
+      {
+        "date": "2026-04-30",
+        "count": 4
+      },
+      {
+        "date": "2026-05-01",
+        "count": 4
+      },
+      {
+        "date": "2026-05-02",
+        "count": 4
+      },
+      {
+        "date": "2026-05-03",
+        "count": 4
+      },
+      {
+        "date": "2026-05-04",
+        "count": 4
+      },
+      {
+        "date": "2026-05-05",
+        "count": 4
+      },
+      {
+        "date": "2026-05-06",
+        "count": 4
+      },
+      {
+        "date": "2026-05-07",
+        "count": 4
+      },
+      {
+        "date": "2026-05-08",
+        "count": 4
+      },
+      {
+        "date": "2026-05-09",
+        "count": 4
+      },
+      {
+        "date": "2026-05-10",
+        "count": 4
+      },
+      {
+        "date": "2026-05-11",
+        "count": 4
+      },
+      {
+        "date": "2026-05-12",
+        "count": 4
+      },
+      {
+        "date": "2026-05-13",
+        "count": 4
+      },
+      {
+        "date": "2026-05-14",
+        "count": 4
+      },
+      {
+        "date": "2026-05-15",
+        "count": 4
+      },
+      {
+        "date": "2026-05-16",
+        "count": 4
+      },
+      {
+        "date": "2026-05-17",
+        "count": 4
+      },
+      {
+        "date": "2026-05-18",
+        "count": 4
+      },
+      {
+        "date": "2026-05-19",
+        "count": 4
+      },
+      {
+        "date": "2026-05-20",
+        "count": 4
+      },
+      {
+        "date": "2026-05-21",
+        "count": 4
+      },
+      {
+        "date": "2026-05-22",
+        "count": 4
+      },
+      {
+        "date": "2026-05-23",
+        "count": 4
+      },
+      {
+        "date": "2026-05-24",
+        "count": 4
+      },
+      {
+        "date": "2026-05-25",
+        "count": 4
+      },
+      {
+        "date": "2026-05-26",
+        "count": 4
+      },
+      {
+        "date": "2026-05-27",
+        "count": 4
+      },
+      {
+        "date": "2026-05-28",
+        "count": 4
+      },
+      {
+        "date": "2026-05-29",
+        "count": 4
+      },
+      {
+        "date": "2026-05-30",
+        "count": 4
+      },
+      {
+        "date": "2026-05-31",
+        "count": 4
+      },
+      {
+        "date": "2026-06-01",
+        "count": 4
+      },
+      {
+        "date": "2026-06-02",
+        "count": 4
+      },
+      {
+        "date": "2026-06-03",
+        "count": 4
+      },
+      {
+        "date": "2026-06-04",
+        "count": 4
+      },
+      {
+        "date": "2026-06-05",
+        "count": 4
+      },
+      {
+        "date": "2026-06-06",
+        "count": 4
+      },
+      {
+        "date": "2026-06-07",
+        "count": 4
+      },
+      {
+        "date": "2026-06-08",
+        "count": 4
+      },
+      {
+        "date": "2026-06-09",
+        "count": 4
+      },
+      {
+        "date": "2026-06-10",
+        "count": 4
+      },
+      {
+        "date": "2026-06-11",
+        "count": 4
+      },
+      {
+        "date": "2026-06-12",
+        "count": 4
+      },
+      {
+        "date": "2026-06-13",
+        "count": 4
+      },
+      {
+        "date": "2026-06-14",
+        "count": 4
+      },
+      {
+        "date": "2026-06-15",
+        "count": 4
+      },
+      {
+        "date": "2026-06-16",
+        "count": 4
+      },
+      {
+        "date": "2026-06-17",
+        "count": 4
+      },
+      {
+        "date": "2026-06-18",
+        "count": 4
+      },
+      {
+        "date": "2026-06-19",
+        "count": 4
+      },
+      {
+        "date": "2026-06-20",
+        "count": 4
+      },
+      {
+        "date": "2026-06-21",
+        "count": 4
+      },
+      {
+        "date": "2026-06-22",
+        "count": 4
+      },
+      {
+        "date": "2026-06-23",
+        "count": 4
+      },
+      {
+        "date": "2026-06-24",
+        "count": 4
+      },
+      {
+        "date": "2026-06-25",
+        "count": 4
+      },
+      {
+        "date": "2026-06-26",
+        "count": 4
+      },
+      {
+        "date": "2026-06-27",
+        "count": 4
+      },
+      {
+        "date": "2026-06-28",
+        "count": 4
+      },
+      {
+        "date": "2026-06-29",
+        "count": 4
+      },
+      {
+        "date": "2026-06-30",
+        "count": 4
+      },
+      {
+        "date": "2026-07-01",
+        "count": 4
+      },
+      {
+        "date": "2026-07-02",
+        "count": 4
+      },
+      {
+        "date": "2026-07-03",
+        "count": 4
+      },
+      {
+        "date": "2026-07-04",
+        "count": 4
+      },
+      {
+        "date": "2026-07-05",
         "count": 5
       }
     ]
@@ -7196,6 +7592,10 @@
       {
         "date": "2026-07-04",
         "count": 5
+      },
+      {
+        "date": "2026-07-05",
+        "count": 5
       }
     ]
   },
@@ -7496,305 +7896,9 @@
       {
         "date": "2026-07-04",
         "count": 4
-      }
-    ]
-  },
-  {
-    "id": "sK0B_08AAAAJ:dhFuZR0502QC",
-    "title": "EurekaRebus-Verbalized Rebus Solving with LLMs: A CALAMITA Challenge",
-    "authors": "G Sarti, T Caselli, A Bisazza, M Nissim",
-    "venue": "CLiC-it 2024: Italian Conference on Computational Linguistics, 2024",
-    "year": 2024,
-    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:dhFuZR0502QC",
-    "cites_id": "4765284597311200181",
-    "first_seen": "2026-04-23",
-    "citation_count_history": [
-      {
-        "date": "2026-04-23",
-        "count": 4
-      },
-      {
-        "date": "2026-04-24",
-        "count": 4
-      },
-      {
-        "date": "2026-04-25",
-        "count": 4
-      },
-      {
-        "date": "2026-04-27",
-        "count": 4
-      },
-      {
-        "date": "2026-04-28",
-        "count": 4
-      },
-      {
-        "date": "2026-04-29",
-        "count": 4
-      },
-      {
-        "date": "2026-04-30",
-        "count": 4
-      },
-      {
-        "date": "2026-05-01",
-        "count": 4
-      },
-      {
-        "date": "2026-05-02",
-        "count": 4
-      },
-      {
-        "date": "2026-05-03",
-        "count": 4
-      },
-      {
-        "date": "2026-05-04",
-        "count": 4
-      },
-      {
-        "date": "2026-05-05",
-        "count": 4
-      },
-      {
-        "date": "2026-05-06",
-        "count": 4
-      },
-      {
-        "date": "2026-05-07",
-        "count": 4
-      },
-      {
-        "date": "2026-05-08",
-        "count": 4
-      },
-      {
-        "date": "2026-05-09",
-        "count": 4
-      },
-      {
-        "date": "2026-05-10",
-        "count": 4
-      },
-      {
-        "date": "2026-05-11",
-        "count": 4
-      },
-      {
-        "date": "2026-05-12",
-        "count": 4
-      },
-      {
-        "date": "2026-05-13",
-        "count": 4
-      },
-      {
-        "date": "2026-05-14",
-        "count": 4
-      },
-      {
-        "date": "2026-05-15",
-        "count": 4
-      },
-      {
-        "date": "2026-05-16",
-        "count": 4
-      },
-      {
-        "date": "2026-05-17",
-        "count": 4
-      },
-      {
-        "date": "2026-05-18",
-        "count": 4
-      },
-      {
-        "date": "2026-05-19",
-        "count": 4
-      },
-      {
-        "date": "2026-05-20",
-        "count": 4
-      },
-      {
-        "date": "2026-05-21",
-        "count": 4
-      },
-      {
-        "date": "2026-05-22",
-        "count": 4
-      },
-      {
-        "date": "2026-05-23",
-        "count": 4
-      },
-      {
-        "date": "2026-05-24",
-        "count": 4
-      },
-      {
-        "date": "2026-05-25",
-        "count": 4
-      },
-      {
-        "date": "2026-05-26",
-        "count": 4
-      },
-      {
-        "date": "2026-05-27",
-        "count": 4
-      },
-      {
-        "date": "2026-05-28",
-        "count": 4
-      },
-      {
-        "date": "2026-05-29",
-        "count": 4
-      },
-      {
-        "date": "2026-05-30",
-        "count": 4
-      },
-      {
-        "date": "2026-05-31",
-        "count": 4
-      },
-      {
-        "date": "2026-06-01",
-        "count": 4
-      },
-      {
-        "date": "2026-06-02",
-        "count": 4
-      },
-      {
-        "date": "2026-06-03",
-        "count": 4
-      },
-      {
-        "date": "2026-06-04",
-        "count": 4
-      },
-      {
-        "date": "2026-06-05",
-        "count": 4
-      },
-      {
-        "date": "2026-06-06",
-        "count": 4
-      },
-      {
-        "date": "2026-06-07",
-        "count": 4
-      },
-      {
-        "date": "2026-06-08",
-        "count": 4
-      },
-      {
-        "date": "2026-06-09",
-        "count": 4
-      },
-      {
-        "date": "2026-06-10",
-        "count": 4
-      },
-      {
-        "date": "2026-06-11",
-        "count": 4
-      },
-      {
-        "date": "2026-06-12",
-        "count": 4
-      },
-      {
-        "date": "2026-06-13",
-        "count": 4
-      },
-      {
-        "date": "2026-06-14",
-        "count": 4
-      },
-      {
-        "date": "2026-06-15",
-        "count": 4
-      },
-      {
-        "date": "2026-06-16",
-        "count": 4
-      },
-      {
-        "date": "2026-06-17",
-        "count": 4
-      },
-      {
-        "date": "2026-06-18",
-        "count": 4
-      },
-      {
-        "date": "2026-06-19",
-        "count": 4
-      },
-      {
-        "date": "2026-06-20",
-        "count": 4
-      },
-      {
-        "date": "2026-06-21",
-        "count": 4
-      },
-      {
-        "date": "2026-06-22",
-        "count": 4
-      },
-      {
-        "date": "2026-06-23",
-        "count": 4
-      },
-      {
-        "date": "2026-06-24",
-        "count": 4
-      },
-      {
-        "date": "2026-06-25",
-        "count": 4
-      },
-      {
-        "date": "2026-06-26",
-        "count": 4
-      },
-      {
-        "date": "2026-06-27",
-        "count": 4
-      },
-      {
-        "date": "2026-06-28",
-        "count": 4
-      },
-      {
-        "date": "2026-06-29",
-        "count": 4
-      },
-      {
-        "date": "2026-06-30",
-        "count": 4
-      },
-      {
-        "date": "2026-07-01",
-        "count": 4
-      },
-      {
-        "date": "2026-07-02",
-        "count": 4
-      },
-      {
-        "date": "2026-07-03",
-        "count": 4
       },
       {
-        "date": "2026-07-04",
+        "date": "2026-07-05",
         "count": 4
       }
     ]
@@ -8096,6 +8200,10 @@
       {
         "date": "2026-07-04",
         "count": 4
+      },
+      {
+        "date": "2026-07-05",
+        "count": 4
       }
     ]
   },
@@ -8395,6 +8503,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 3
+      },
+      {
+        "date": "2026-07-05",
         "count": 3
       }
     ]
@@ -8696,6 +8808,10 @@
       {
         "date": "2026-07-04",
         "count": 2
+      },
+      {
+        "date": "2026-07-05",
+        "count": 2
       }
     ]
   },
@@ -8995,6 +9111,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 2
+      },
+      {
+        "date": "2026-07-05",
         "count": 2
       }
     ]
@@ -9296,6 +9416,10 @@
       {
         "date": "2026-07-04",
         "count": 2
+      },
+      {
+        "date": "2026-07-05",
+        "count": 2
       }
     ]
   },
@@ -9595,6 +9719,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 1
+      },
+      {
+        "date": "2026-07-05",
         "count": 1
       }
     ]
@@ -9896,6 +10024,10 @@
       {
         "date": "2026-07-04",
         "count": 1
+      },
+      {
+        "date": "2026-07-05",
+        "count": 1
       }
     ]
   },
@@ -10195,6 +10327,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 1
+      },
+      {
+        "date": "2026-07-05",
         "count": 1
       }
     ]
@@ -10496,6 +10632,10 @@
       {
         "date": "2026-07-04",
         "count": 1
+      },
+      {
+        "date": "2026-07-05",
+        "count": 1
       }
     ]
   },
@@ -10796,6 +10936,10 @@
       {
         "date": "2026-07-04",
         "count": 1
+      },
+      {
+        "date": "2026-07-05",
+        "count": 1
       }
     ]
   },
@@ -10883,6 +11027,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 0
+      },
+      {
+        "date": "2026-07-05",
         "count": 0
       }
     ]
@@ -11184,6 +11332,10 @@
       {
         "date": "2026-07-04",
         "count": 0
+      },
+      {
+        "date": "2026-07-05",
+        "count": 0
       }
     ]
   },
@@ -11283,6 +11435,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 0
+      },
+      {
+        "date": "2026-07-05",
         "count": 0
       }
     ]
@@ -11407,6 +11563,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 0
+      },
+      {
+        "date": "2026-07-05",
         "count": 0
       }
     ]
@@ -11708,6 +11868,10 @@
       {
         "date": "2026-07-04",
         "count": 0
+      },
+      {
+        "date": "2026-07-05",
+        "count": 0
       }
     ]
   },
@@ -12007,6 +12171,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 0
+      },
+      {
+        "date": "2026-07-05",
         "count": 0
       }
     ]
@@ -12308,6 +12476,10 @@
       {
         "date": "2026-07-04",
         "count": 0
+      },
+      {
+        "date": "2026-07-05",
+        "count": 0
       }
     ]
   },
@@ -12607,6 +12779,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 0
+      },
+      {
+        "date": "2026-07-05",
         "count": 0
       }
     ]
@@ -12908,6 +13084,10 @@
       {
         "date": "2026-07-04",
         "count": 0
+      },
+      {
+        "date": "2026-07-05",
+        "count": 0
       }
     ]
   },
@@ -13207,6 +13387,10 @@
       },
       {
         "date": "2026-07-04",
+        "count": 0
+      },
+      {
+        "date": "2026-07-05",
         "count": 0
       }
     ]
