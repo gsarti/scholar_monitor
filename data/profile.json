@@ -803,15 +803,24 @@
       "h_index_recent": 14,
       "i10_index": 19,
       "i10_index_recent": 18
+    },
+    {
+      "date": "2026-07-21",
+      "citations": 1739,
+      "citations_recent": 1729,
+      "h_index": 14,
+      "h_index_recent": 14,
+      "i10_index": 19,
+      "i10_index_recent": 18
     }
   ],
   "citations_per_year": {
     "2020": 7,
     "2021": 12,
     "2022": 37,
-    "2023": 95,
+    "2023": 96,
     "2024": 190,
-    "2025": 646,
-    "2026": 743
+    "2025": 645,
+    "2026": 745
   }
 }
