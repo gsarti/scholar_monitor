@@ -3,7 +3,7 @@
 
 Reads config.json for the scholar_id. Writes:
   data/profile.json   - profile header + daily totals time series
-  data/papers.json    - one entry per paper, with citation-count history
+  data/papers.json    - one entry per paper, with citation-count history and annual counts
   data/citations.jsonl - append-only log of citing papers (first-seen dated)
 
 To stay under SerpAPI's free tier, cited-by lists are only re-fetched for
@@ -166,6 +166,61 @@ def fetch_cited_by(
         if len(organic) < CITED_BY_PAGE_SIZE:
             break
     return results
+
+
+def fetch_paper_years(api_key: str, citation_id: str) -> dict[str, int]:
+    """Fetch the paper's annual totals (cited-by search results can be incomplete)."""
+    response = GoogleSearch({
+        "engine": "google_scholar_author",
+        "view_op": "view_citation",
+        "citation_id": citation_id,
+        "hl": "en",
+        "api_key": api_key,
+    }).get_dict()
+    if "error" in response:
+        raise RuntimeError(f"SerpAPI error: {response['error']}")
+    totals = (response.get("citation") or {}).get("total_citations") or {}
+    rows = totals.get("table")
+    if not isinstance(rows, list) or not rows:
+        raise ValueError("citation response has no annual totals")
+    graph = {}
+    for row in rows:
+        year = str(row.get("year", ""))
+        if not re.fullmatch(r"\d{4}", year):
+            raise ValueError("invalid year in annual totals")
+        count = int(str(row.get("citations", "")).replace(",", ""))
+        if count < 0:
+            raise ValueError("negative annual citation count")
+        graph[year] = count
+    return graph
+
+
+def refresh_paper_years(api_key: str, papers: list[dict], current_ids: set[str]) -> None:
+    """Backfill once, then refresh when counts change, including decreases.
+
+    Keep the count associated with each successful fetch so a failed refresh is
+    retried next run even if the profile count has since stopped changing.
+    """
+    for paper in papers:
+        if paper["id"] not in current_ids:
+            continue
+        history = paper.get("citation_count_history") or []
+        count = history[-1]["count"] if history else 0
+        if count == 0:
+            paper["citations_per_year"] = {}
+            paper["citations_per_year_count"] = 0
+            paper["citations_per_year_updated"] = TODAY
+            continue
+        if "citations_per_year" in paper and paper.get("citations_per_year_count") == count:
+            continue
+        try:
+            graph = fetch_paper_years(api_key, paper["id"])
+        except Exception as exc:
+            log.warning("annual totals fetch failed for %s: %s", paper["id"], exc)
+            continue
+        paper["citations_per_year"] = graph
+        paper["citations_per_year_count"] = count
+        paper["citations_per_year_updated"] = TODAY
 
 
 def build_profile(response: dict, scholar_id: str, previous: dict | None) -> dict:
@@ -356,6 +411,8 @@ def main() -> int:
 
     profile = build_profile(author_response, scholar_id, existing_profile)
     papers, queue = update_papers(author_response, existing_papers)
+    current_ids = {a["citation_id"] for a in author_response.get("articles", []) if a.get("citation_id")}
+    refresh_paper_years(api_key, papers, current_ids)
 
     log.info("profile updated: %d papers, %d queued for cited-by fetch", len(papers), len(queue))
 

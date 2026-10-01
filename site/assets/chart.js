@@ -1,137 +1,116 @@
-// Minimal inline-SVG bar chart for citations-per-year.
+// Inline SVG charts, with one shared model for compact and detailed views.
+import { yearToDateProjection } from "./citation-data.js";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 
-function yearToDateProjection(actual) {
-  const now = new Date();
-  const year = now.getUTCFullYear();
-  const start = Date.UTC(year, 0, 1);
-  const next = Date.UTC(year + 1, 0, 1);
-  const msPerDay = 86400000;
-  const elapsedDays = Math.max(1, Math.floor((now.getTime() - start) / msPerDay) + 1);
-  const totalDays = Math.round((next - start) / msPerDay);
-  return { year, projected: Math.round((actual / elapsedDays) * totalDays), elapsedDays, totalDays };
-}
-
-export function renderCitationsChart(container, citationsPerYear) {
-  container.innerHTML = "";
-  const years = Object.keys(citationsPerYear || {})
-    .map(Number)
-    .filter((y) => !Number.isNaN(y))
-    .sort((a, b) => a - b);
-  if (!years.length) return;
-
-  const values = years.map((y) => citationsPerYear[String(y)] || 0);
-
-  // Projection for the current year, if present in the data.
+export function renderCitationsChart(container, citationsPerYear, { series = [], detailed = false, unavailable = false, onInspect = () => {} } = {}) {
+  container.replaceChildren();
+  if (unavailable) {
+    const message = document.createElement("span");
+    message.className = "chart-unavailable";
+    message.textContent = "Annual totals for this selection are unavailable until per-paper data is refreshed.";
+    container.appendChild(message);
+    return;
+  }
+  const years = Object.keys(citationsPerYear || {}).map(Number).filter(Number.isFinite).sort((a, b) => a - b);
+  if (!years.length) {
+    container.textContent = "No annual citation data yet.";
+    return;
+  }
+  const values = years.map(year => citationsPerYear[year] || 0);
   const currentYear = new Date().getUTCFullYear();
-  const currentIdx = years.indexOf(currentYear);
-  let projection = null;
-  if (currentIdx !== -1 && values[currentIdx] > 0) {
-    const p = yearToDateProjection(values[currentIdx]);
-    if (p.projected > values[currentIdx]) projection = { idx: currentIdx, ...p };
-  }
-
-  // Scale the y-axis to ACTUAL counts only — past-year bars keep their natural
-  // heights. The projection overhang extends above the chart area; the SVG grows
-  // taller to accommodate it.
-  const maxVal = Math.max(1, ...values);
-
-  const width = 320;
-  const baseInnerH = 112;
-  const pad = { top: 20, right: 8, bottom: 22, left: 8 };
+  const currentValue = citationsPerYear[currentYear] || 0;
+  const projection = yearToDateProjection(currentValue);
+  const projected = Math.max(currentValue, projection.projected);
+  const maxVal = Math.max(1, ...values, projected);
+  const width = detailed ? Math.max(320, container.clientWidth, years.length * 38 + 64) : Math.max(320, years.length * 22);
+  const height = detailed ? (width < 600 ? 280 : 360) : 160;
+  const pad = { top: 24, right: 12, bottom: 28, left: detailed ? 48 : 8 };
   const innerW = width - pad.left - pad.right;
-  let projExtraH = 0;
-  if (projection) {
-    const projH = (projection.projected / maxVal) * baseInnerH;
-    projExtraH = Math.max(0, projH - baseInnerH);
-  }
-  const height = pad.top + projExtraH + baseInnerH + pad.bottom;
-  const baselineY = pad.top + projExtraH + baseInnerH;
-  const barGap = 3;
-  const barW = Math.max(4, (innerW - (years.length - 1) * barGap) / years.length);
+  const innerH = height - pad.top - pad.bottom;
+  const baselineY = height - pad.bottom;
+  const slotW = innerW / years.length;
+  const barW = slotW * (detailed ? 0.7 : 0.86);
+  const y = value => baselineY - value / maxVal * innerH;
 
-  const svg = document.createElementNS(SVG_NS, "svg");
-  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-  svg.setAttribute("class", "chart-svg");
-  svg.setAttribute("role", "img");
-  svg.setAttribute("aria-label", "Citations per year");
+  function element(tag, attributes, text) {
+    const el = document.createElementNS(SVG_NS, tag);
+    for (const [name, value] of Object.entries(attributes)) el.setAttribute(name, value);
+    if (text != null) el.textContent = text;
+    return el;
+  }
+  const svg = element("svg", { viewBox: `0 0 ${width} ${height}`, class: "chart-svg", role: detailed ? "group" : "img", "aria-label": detailed ? "Annual citations stacked by paper, with year-end projections" : "Citations per year for selected papers" });
+  if (detailed) svg.style.minWidth = `${years.length * 38 + 64}px`;
+  if (detailed) {
+    for (let i = 0; i <= 4; i++) {
+      const value = maxVal * i / 4;
+      svg.appendChild(element("line", { x1: pad.left, x2: width - pad.right, y1: y(value), y2: y(value), class: "chart-grid" }));
+      svg.appendChild(element("text", { x: pad.left - 8, y: y(value) + 4, "text-anchor": "end", class: "chart-axis-label" }, Math.round(value)));
+    }
+  }
+
+  function rectangle(x, bottom, value, title, paper, projectedSegment = false) {
+    if (value <= 0) return;
+    const rect = element("rect", {
+      x, y: y(bottom + value), width: barW, height: value / maxVal * innerH,
+      class: `${projectedSegment ? "chart-bar-proj" : "chart-bar"}${paper ? " chart-segment" : ""}`,
+    });
+    if (paper) {
+      rect.style.setProperty("--paper-colour", paper.colour);
+      rect.dataset.paperId = paper.id;
+      rect.setAttribute("tabindex", "0");
+      rect.setAttribute("role", "button");
+      rect.setAttribute("aria-label", title);
+      rect.addEventListener("pointerenter", () => onInspect(title));
+      rect.addEventListener("focus", () => onInspect(title));
+      rect.addEventListener("click", () => onInspect(title));
+      rect.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") { event.preventDefault(); onInspect(title); }
+      });
+    }
+    rect.appendChild(element("title", {}, title));
+    svg.appendChild(rect);
+  }
 
   years.forEach((year, i) => {
-    const val = values[i];
-    const h = (val / maxVal) * baseInnerH;
-    const x = pad.left + i * (barW + barGap);
-    const y = baselineY - h;
-
-    // Projection overhang for the current year: a lighter rect above the actual bar
-    // extending up to the projected total.
-    if (projection && i === projection.idx) {
-      const projH = (projection.projected / maxVal) * baseInnerH;
-      const projY = baselineY - projH;
-      const projRect = document.createElementNS(SVG_NS, "rect");
-      projRect.setAttribute("class", "chart-bar-proj");
-      projRect.setAttribute("x", x);
-      projRect.setAttribute("y", projY);
-      projRect.setAttribute("width", barW);
-      projRect.setAttribute("height", projH - h);
-      const projTitle = document.createElementNS(SVG_NS, "title");
-      projTitle.textContent = `${year} projected: ${projection.projected} (based on ${val} citations in ${projection.elapsedDays} days)`;
-      projRect.appendChild(projTitle);
-      svg.appendChild(projRect);
-
-      // Projected-value label above the projection overhang, if room.
-      if (projH - h > 10) {
-        const projLabel = document.createElementNS(SVG_NS, "text");
-        projLabel.setAttribute("class", "chart-tooltip chart-proj-label");
-        projLabel.setAttribute("x", x + barW / 2);
-        projLabel.setAttribute("y", projY - 2);
-        projLabel.setAttribute("text-anchor", "middle");
-        projLabel.textContent = `~${projection.projected}`;
-        svg.appendChild(projLabel);
+    const value = values[i];
+    const x = pad.left + i * slotW + (slotW - barW) / 2;
+    const extra = year === currentYear ? projected - value : 0;
+    if (detailed) {
+      let bottom = 0, cumulative = 0, allocated = 0;
+      for (const paper of series) {
+        const count = paper.values[year] || 0;
+        rectangle(x, bottom, count, `${year} · ${paper.title}: ${count} citation${count === 1 ? "" : "s"}`, paper);
+        bottom += count;
+        // Allocate rounding across segments so the projected stack matches the compact total exactly.
+        cumulative += count;
+        const next = value ? Math.round(extra * cumulative / value) : 0;
+        rectangle(x, value + allocated, next - allocated, `${year} · ${paper.title}: ~${next - allocated} additional citations projected (~${count + next - allocated} total)`, paper, true);
+        allocated = next;
       }
+    } else {
+      rectangle(x, 0, value, `${year}: ${value}`);
+      rectangle(x, value, extra, `${year} projected: ${projected} (based on ${value} citations in ${projection.elapsedDays} days)`, null, true);
     }
-
-    const bar = document.createElementNS(SVG_NS, "rect");
-    bar.setAttribute("class", "chart-bar");
-    bar.setAttribute("x", x);
-    bar.setAttribute("y", y);
-    bar.setAttribute("width", barW);
-    bar.setAttribute("height", h);
-    const title = document.createElementNS(SVG_NS, "title");
-    title.textContent = `${year}: ${val}`;
-    bar.appendChild(title);
-    svg.appendChild(bar);
-
-    // Year label under every other bar when there are many years, else under all.
-    if (years.length <= 12 || i % 2 === 0 || i === years.length - 1) {
-      const label = document.createElementNS(SVG_NS, "text");
-      label.setAttribute("class", "chart-axis-label");
-      label.setAttribute("x", x + barW / 2);
-      label.setAttribute("y", height - 8);
-      label.setAttribute("text-anchor", "middle");
-      label.textContent = String(year).slice(-2);
-      svg.appendChild(label);
+    if (extra > 0) {
+      svg.appendChild(element("text", { x: x + barW / 2, y: y(value + extra) - 6, "text-anchor": "middle", class: "chart-tooltip chart-proj-label" }, `~${projected}`));
     }
-
-    // Actual-value label above every non-zero bar, including the projection year
-    // (where it sits above the solid portion, below the overhang's "~proj" label).
-    if (val > 0) {
-      const valLabel = document.createElementNS(SVG_NS, "text");
-      valLabel.setAttribute("class", "chart-tooltip");
-      valLabel.setAttribute("x", x + barW / 2);
-      valLabel.setAttribute("y", y - 2);
-      valLabel.setAttribute("text-anchor", "middle");
-      valLabel.textContent = String(val);
-      svg.appendChild(valLabel);
+    if (value > 0 && (extra === 0 || extra / maxVal * innerH > 16)) {
+      svg.appendChild(element("text", { x: x + barW / 2, y: y(value) - 4, "text-anchor": "middle", class: "chart-tooltip" }, value));
+    }
+    if (detailed || years.length <= 12 || i % 2 === 0 || i === years.length - 1) {
+      svg.appendChild(element("text", { x: x + barW / 2, y: height - 8, "text-anchor": "middle", class: "chart-axis-label" }, detailed ? year : String(year).slice(-2)));
     }
   });
-
+  if (!values.some(value => value > 0)) {
+    svg.appendChild(element("text", { x: width / 2, y: height / 2, "text-anchor": "middle", class: "chart-tooltip" }, "No citations for the selected papers"));
+  }
   container.appendChild(svg);
 }
 
 export function renderSparkline(container, history, { width = 80, height = 20 } = {}) {
   container.innerHTML = "";
-  const pts = (history || []).filter((p) => typeof p.count === "number");
+  const pts = (history || []).filter((p) => Number.isFinite(p.count) && Number.isFinite(Date.parse(p.date)));
   if (pts.length < 2) return;
 
   const values = pts.map((p) => p.count);
@@ -143,7 +122,9 @@ export function renderSparkline(container, history, { width = 80, height = 20 } 
   const innerW = width - pad * 2;
   const innerH = height - pad * 2;
 
-  const x = (i) => pad + (pts.length === 1 ? innerW / 2 : (i / (pts.length - 1)) * innerW);
+  const from = Date.parse(pts[0].date);
+  const to = Date.parse(pts[pts.length - 1].date);
+  const x = (i) => pad + (to === from ? innerW / 2 : (Date.parse(pts[i].date) - from) / (to - from) * innerW);
   const y = (v) => pad + innerH - ((v - minV) / range) * innerH;
 
   const path = pts.map((p, i) => `${i === 0 ? "M" : "L"}${x(i).toFixed(1)},${y(p.count).toFixed(1)}`).join(" ");
@@ -152,6 +133,8 @@ export function renderSparkline(container, history, { width = 80, height = 20 } 
   const svg = document.createElementNS(SVG_NS, "svg");
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
   svg.setAttribute("class", "chart-svg");
+  svg.setAttribute("role", "img");
+  svg.setAttribute("aria-label", `Citations: ${pts[0].count} to ${pts[pts.length - 1].count}; scaled to this paper's history`);
   svg.setAttribute("width", width);
   svg.setAttribute("height", height);
 
@@ -175,101 +158,6 @@ export function renderSparkline(container, history, { width = 80, height = 20 } 
   title.textContent = `${pts[0].date}: ${pts[0].count} → ${last.date}: ${last.count}`;
   svg.appendChild(title);
   svg.appendChild(dot);
-
-  container.appendChild(svg);
-}
-
-export function renderTotalLineChart(container, totalsHistory, opts) {
-  container.innerHTML = "";
-  const allKey = opts.allKey;
-  const recentKey = opts.recentKey;
-  const label = opts.label;
-  const height = opts.height ?? 110;
-  const showDates = opts.showDates !== false;
-
-  const history = (totalsHistory || []).filter((p) => typeof p[allKey] === "number");
-  if (history.length < 2) return;
-
-  const width = 320;
-  const pad = { top: 12, right: 64, bottom: showDates ? 18 : 4, left: 8 };
-  const innerW = width - pad.left - pad.right;
-  const innerH = height - pad.top - pad.bottom;
-
-  const allVals = history.map((p) => p[allKey]);
-  const recentRaw = history.map((p) => p[recentKey]);
-  const hasRecent = recentRaw.every((v) => typeof v === "number");
-  const recentVals = hasRecent ? recentRaw : [];
-  const seriesIdentical = hasRecent && allVals.every((v, i) => v === recentVals[i]);
-
-  // Pad the y-range so flat or near-flat lines are not crushed against the top
-  // edge of the plot area. When the series is constant, this centers it.
-  const pool = hasRecent && !seriesIdentical ? allVals.concat(recentVals) : allVals;
-  const maxV = Math.max(...pool);
-  const minV = Math.min(...pool);
-  const span = Math.max(1, maxV - minV);
-  const yMax = maxV + span * 0.3;
-  const yMin = Math.max(0, minV - span * 0.3);
-  const range = Math.max(1, yMax - yMin);
-
-  const x = (i) => pad.left + (history.length === 1 ? innerW / 2 : (i / (history.length - 1)) * innerW);
-  const y = (v) => pad.top + innerH - ((v - yMin) / range) * innerH;
-
-  const svg = document.createElementNS(SVG_NS, "svg");
-  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-  svg.setAttribute("class", "chart-svg");
-  svg.setAttribute("role", "img");
-  svg.setAttribute("aria-label", `${label} over time`);
-
-  function drawLine(values, className, endLabel, labelDy = 0) {
-    const d = values.map((v, i) => `${i === 0 ? "M" : "L"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
-    const line = document.createElementNS(SVG_NS, "path");
-    line.setAttribute("class", className);
-    line.setAttribute("d", d);
-    svg.appendChild(line);
-
-    const lastI = values.length - 1;
-    const dot = document.createElementNS(SVG_NS, "circle");
-    dot.setAttribute("class", "hindex-dot");
-    dot.setAttribute("cx", x(lastI));
-    dot.setAttribute("cy", y(values[lastI]));
-    dot.setAttribute("r", 2);
-    svg.appendChild(dot);
-
-    const label = document.createElementNS(SVG_NS, "text");
-    label.setAttribute("class", "hindex-label");
-    label.setAttribute("x", x(lastI) + 5);
-    label.setAttribute("y", y(values[lastI]) + 3 + labelDy);
-    label.textContent = `${endLabel}: ${values[lastI]}`;
-    svg.appendChild(label);
-  }
-
-  if (seriesIdentical || !hasRecent) {
-    drawLine(allVals, "hindex-line", label);
-  } else {
-    // Stack labels vertically so they never collide, even when the two series
-    // share the same endpoint value.
-    drawLine(allVals, "hindex-line", "all", -4);
-    drawLine(recentVals, "hindex-line recent", "rec", 8);
-  }
-
-  if (showDates) {
-    const dateLabels = document.createElementNS(SVG_NS, "g");
-    const first = document.createElementNS(SVG_NS, "text");
-    first.setAttribute("class", "chart-axis-label");
-    first.setAttribute("x", pad.left);
-    first.setAttribute("y", height - 4);
-    first.textContent = history[0].date;
-    dateLabels.appendChild(first);
-
-    const last = document.createElementNS(SVG_NS, "text");
-    last.setAttribute("class", "chart-axis-label");
-    last.setAttribute("x", pad.left + innerW);
-    last.setAttribute("y", height - 4);
-    last.setAttribute("text-anchor", "end");
-    last.textContent = history[history.length - 1].date;
-    dateLabels.appendChild(last);
-    svg.appendChild(dateLabels);
-  }
 
   container.appendChild(svg);
 }

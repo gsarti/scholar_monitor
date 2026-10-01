@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Assemble the static site into dist/.
 
-Reads config.json, substitutes {{BASE_PATH}} and {{CONFIG_JSON}} tokens in
-site/index.html, and copies site/ + data/ into dist/.
+Reads config.json, substitutes template tokens in site/index.html, and copies
+site/ + data/ into dist/ with content-versioned frontend assets.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import shutil
@@ -29,12 +30,23 @@ def main() -> int:
 
     if DIST_DIR.exists():
         shutil.rmtree(DIST_DIR)
-    shutil.copytree(SITE_DIR, DIST_DIR)
+    shutil.copytree(SITE_DIR, DIST_DIR, ignore=lambda directory, names: ["assets"] if Path(directory) == SITE_DIR else [])
+    # Version the whole directory so relative module imports also get fresh URLs
+    # when a dependency changes, even if app.js itself is unchanged.
+    assets_dir = SITE_DIR / "assets"
+    asset_hash = hashlib.sha256()
+    for path in sorted(assets_dir.rglob("*")):
+        if path.is_file():
+            asset_hash.update(path.relative_to(assets_dir).as_posix().encode() + b"\0")
+            asset_hash.update(path.read_bytes() + b"\0")
+    asset_version = asset_hash.hexdigest()[:16]
+    shutil.copytree(assets_dir, DIST_DIR / "assets" / asset_version)
     if DATA_DIR.exists():
         shutil.copytree(DATA_DIR, DIST_DIR / "data")
 
     index_path = DIST_DIR / "index.html"
     html = index_path.read_text()
+    html = html.replace("{{ASSET_PATH}}", f"{base_path}/assets/{asset_version}")
     html = html.replace("{{BASE_PATH}}", base_path)
     html = html.replace("{{CONFIG_JSON}}", json.dumps(config))
     index_path.write_text(html)

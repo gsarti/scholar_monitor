@@ -115,7 +115,7 @@ a:visited { color: var(--link-visited); }
 
 .profile-block {
   display: grid;
-  grid-template-columns: 128px minmax(0, 1fr) minmax(0, 560px);
+  grid-template-columns: 128px minmax(0, 1fr) minmax(0, 460px);
   gap: 24px;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--border);
@@ -194,8 +194,8 @@ a:visited { color: var(--link-visited); }
 }
 .stats-table tbody tr:last-child td { border-bottom: none; }
 
-.citations-chart,
-.hindex-chart {
+.citations-chart {
+  display: block;
   width: 100%;
   overflow-x: auto;
 }
@@ -216,6 +216,47 @@ a:visited { color: var(--link-visited); }
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+.chart-expand {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 4px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  cursor: zoom-in;
+}
+.chart-expand:hover { background: var(--bg-soft); }
+.chart-expand-hint { display: block; font-size: 11px; text-align: right; }
+.chart-note { margin: 8px 0 0; color: var(--muted); font-size: 12px; }
+.chart-unavailable { display: block; padding: 40px 16px; color: var(--muted); font-size: 13px; text-align: center; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+body:has(.citations-dialog[open]) { overflow: hidden; }
+.citations-dialog {
+  width: min(1000px, calc(100% - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 48px);
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 20px 80px #0005;
+  overflow: auto;
+}
+.citations-dialog::backdrop { background: #0008; }
+.dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.dialog-heading h2 { margin: 0; font-size: 20px; font-weight: 500; }
+.dialog-close { flex: 0 0 36px; height: 36px; border: 1px solid var(--border); border-radius: 50%; background: var(--bg-soft); color: var(--text); font-size: 24px; cursor: pointer; }
+.chart-detail-scroll { overflow-x: auto; margin-top: 20px; }
+#citations-chart-detail { width: 100%; }
+.chart-detail-status { min-height: 40px; margin: 8px 0 16px; font-size: 13px; color: var(--muted); }
+.chart-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; padding: 16px 0 0; margin: 0; border-top: 1px solid var(--border); list-style: none; }
+.chart-legend li { display: flex; align-items: baseline; gap: 8px; font-size: 12px; }
+.chart-swatch { flex: 0 0 10px; height: 10px; border-radius: 2px; }
 
 /* ---------- Controls ---------- */
 
@@ -292,11 +333,21 @@ a:visited { color: var(--link-visited); }
 }
 .publications-table .col-citations,
 .publications-table .col-new,
+.publications-table .col-new-percent,
 .publications-table .col-year { text-align: right; }
 .publications-table .col-citations { width: 120px; }
-.publications-table .col-new { width: 110px; }
+.publications-table .col-new { width: 85px; white-space: nowrap; }
+.publications-table .col-new-percent { width: 100px; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .publications-table .col-year { width: 70px; }
 .publications-table .col-title { width: auto; }
+.publications-table .col-select { width: 36px; padding-left: 6px; padding-right: 6px; text-align: center; }
+.col-select input { width: 16px; height: 16px; margin: 3px 0; accent-color: var(--accent); cursor: pointer; }
+.paper-excluded { background: var(--bg-soft); }
+.paper-excluded td:not(.col-select),
+.paper-excluded td:not(.col-select) a,
+.paper-excluded .new-badge { color: var(--muted); }
+.paper-excluded .new-badge { background: var(--bg-soft); }
+.paper-excluded .sparkline-wrap { filter: grayscale(1); opacity: 0.5; }
 
 .sortable { cursor: pointer; user-select: none; }
 .sortable:hover { background: var(--bg-soft); }
@@ -325,6 +376,9 @@ a:visited { color: var(--link-visited); }
 .col-year { color: var(--muted); }
 
 .new-badge {
+  border: 0;
+  font-family: inherit;
+  white-space: nowrap;
   display: inline-block;
   padding: 1px 8px;
   border-radius: 10px;
@@ -380,6 +434,10 @@ a:visited { color: var(--link-visited); }
 .chart-axis-label { font-size: 10px; fill: var(--muted); }
 .chart-tooltip { font-size: 11px; fill: var(--text); }
 .chart-proj-label { fill: var(--accent); font-weight: 600; }
+.chart-grid { stroke: var(--border); stroke-width: 0.5; }
+.chart-segment { fill: var(--paper-colour); stroke: var(--bg); stroke-width: 0.5; cursor: pointer; }
+.chart-segment.chart-bar-proj { stroke: var(--paper-colour); }
+.chart-segment:hover, .chart-segment:focus { fill: var(--paper-colour); filter: brightness(1.18); stroke: var(--text); stroke-width: 1; }
 
 .sparkline-line {
   fill: none;
@@ -390,19 +448,6 @@ a:visited { color: var(--link-visited); }
 }
 .sparkline-area { fill: var(--accent); fill-opacity: 0.12; }
 .sparkline-dot { fill: var(--accent); }
-
-.hindex-line {
-  fill: none;
-  stroke: var(--accent);
-  stroke-width: 1.6;
-}
-.hindex-line.recent {
-  stroke: var(--accent);
-  stroke-dasharray: 3 3;
-  opacity: 0.7;
-}
-.hindex-dot { fill: var(--accent); }
-.hindex-label { font-size: 10px; fill: var(--muted); }
 
 /* ---------- Aggregates ---------- */
 
@@ -471,15 +516,17 @@ a:visited { color: var(--link-visited); }
   .aggregates { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 560px) {
-  .stats-charts { flex-direction: column; }
-}
-
 @media (max-width: 600px) {
+  .container { padding: 16px; }
+  .publications { overflow-x: auto; }
+  .publications-table { min-width: 560px; }
+  .citations-dialog { padding: 16px; }
+  .chart-legend { grid-template-columns: 1fr; }
   .profile-block { grid-template-columns: 1fr; }
   .profile-photo { width: 96px; height: 96px; }
   .publications-table .col-citations,
   .publications-table .col-new,
+  .publications-table .col-new-percent,
   .publications-table .col-year { padding: 10px 6px; }
   .publications-table .col-citations { width: 90px; }
 }

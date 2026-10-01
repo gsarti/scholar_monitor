@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scholar Monitor</title>
-  <link rel="stylesheet" href="{{BASE_PATH}}/assets/styles.css" />
+  <link rel="stylesheet" href="{{ASSET_PATH}}/styles.css" />
   <script>
     window.__SCHOLAR_MONITOR_CONFIG__ = {{CONFIG_JSON}};
     window.__SCHOLAR_MONITOR_BASE__ = "{{BASE_PATH}}";
@@ -55,15 +55,15 @@
             <tr><td>i10-index</td><td id="stat-i10-all">—</td><td id="stat-i10-recent">—</td></tr>
           </tbody>
         </table>
+        <p class="chart-note" id="stats-updated"></p>
         <div class="stats-charts">
           <div class="chart-group">
             <div class="chart-heading">Citations per year</div>
-            <div class="citations-chart" id="citations-chart"></div>
-          </div>
-          <div class="chart-group" id="hindex-group" hidden>
-            <div class="chart-heading">Totals over time</div>
-            <div class="hindex-chart" id="hindex-chart"></div>
-            <div class="hindex-chart" id="totals-chart"></div>
+            <button type="button" class="chart-expand" id="chart-expand" aria-haspopup="dialog" aria-controls="citations-dialog" aria-label="Expand citations per year by paper">
+              <span class="citations-chart" id="citations-chart"></span>
+              <span class="chart-expand-hint">View breakdown by paper ↗</span>
+            </button>
+            <p class="chart-note" id="chart-selection" aria-live="polite"></p>
           </div>
         </div>
       </aside>
@@ -89,14 +89,16 @@
       <table class="publications-table" id="publications-table">
         <thead>
           <tr>
+            <th class="col-select"><input type="checkbox" id="select-all-papers" checked aria-label="Include all papers in histogram" title="Include all papers in histogram" /></th>
             <th class="col-title sortable" data-sort="title">Title</th>
             <th class="col-citations sortable sort-desc" data-sort="citations">Cited by</th>
-            <th class="col-new sortable" data-sort="new">New in range</th>
+            <th class="col-new sortable" data-sort="new">New Cit.</th>
+            <th class="col-new-percent sortable" data-sort="newPercent">New Cit. %</th>
             <th class="col-year sortable" data-sort="year">Year</th>
           </tr>
         </thead>
         <tbody id="publications-body">
-          <tr class="loading"><td colspan="4">Loading…</td></tr>
+          <tr class="loading"><td colspan="6">Loading…</td></tr>
         </tbody>
       </table>
       <button type="button" id="publications-toggle" class="btn-more" hidden></button>
@@ -122,14 +124,25 @@
     </footer>
   </main>
 
+  <dialog id="citations-dialog" class="citations-dialog" aria-labelledby="citations-dialog-title" aria-describedby="citations-dialog-note">
+    <div class="dialog-heading">
+      <h2 id="citations-dialog-title">Citations per year, by paper</h2>
+      <button type="button" id="citations-dialog-close" class="dialog-close" aria-label="Close citation breakdown" autofocus>×</button>
+    </div>
+    <p class="chart-note" id="citations-dialog-note"></p>
+    <div class="chart-detail-scroll"><div id="citations-chart-detail"></div></div>
+    <p class="chart-detail-status" id="chart-detail-status" aria-live="polite">Hover, focus or tap a segment to see its paper and citation count.</p>
+    <ul class="chart-legend" id="citations-chart-legend" aria-label="Paper colours"></ul>
+  </dialog>
+
   <template id="citations-list-template">
     <tr class="citations-row">
-      <td colspan="4">
+      <td colspan="6">
         <ol class="citing-papers"></ol>
       </td>
     </tr>
   </template>
 
-  <script type="module" src="{{BASE_PATH}}/assets/app.js"></script>
+  <script type="module" src="{{ASSET_PATH}}/app.js"></script>
 </body>
 </html>

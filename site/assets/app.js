@@ -1,4 +1,6 @@
-import { renderCitationsChart, renderSparkline, renderTotalLineChart } from "./chart.js";
+import { renderCitationsChart, renderSparkline } from "./chart.js";
+
+import { latestCount, citationPercentage, buildAnnualSeries, selectedAnnualData } from "./citation-data.js";
 
 const BASE = window.__SCHOLAR_MONITOR_BASE__ || "";
 const CONFIG = window.__SCHOLAR_MONITOR_CONFIG__ || {};
@@ -18,11 +20,13 @@ const state = {
   excludeSelfCites: false,
   profileSurname: "",
   papersExpanded: false,
+  excludedPapers: new Set(),
+  annualSeries: [],
 };
 
 async function fetchJSON(path, fallback) {
   try {
-    const res = await fetch(`${BASE}${path}`);
+    const res = await fetch(`${BASE}${path}`, { cache: "no-store" });
     if (!res.ok) return fallback;
     return await res.json();
   } catch {
@@ -32,18 +36,13 @@ async function fetchJSON(path, fallback) {
 
 async function fetchJSONL(path) {
   try {
-    const res = await fetch(`${BASE}${path}`);
+    const res = await fetch(`${BASE}${path}`, { cache: "no-store" });
     if (!res.ok) return [];
     const text = await res.text();
     return text.split("\n").filter(Boolean).map((line) => JSON.parse(line));
   } catch {
     return [];
   }
-}
-
-function latestCount(paper) {
-  const h = paper.citation_count_history || [];
-  return h.length ? h[h.length - 1].count : 0;
 }
 
 function formatDate(d) {
@@ -177,32 +176,40 @@ function renderStats() {
   byId("stat-h-recent", latest.h_index_recent);
   byId("stat-i10-all", latest.i10_index);
   byId("stat-i10-recent", latest.i10_index_recent);
+  byId("stats-updated", latest.date ? `Snapshot: ${latest.date}` : "No snapshot yet");
 }
 
 function renderChart() {
-  const graph = (state.profile && state.profile.citations_per_year) || {};
-  renderCitationsChart(document.getElementById("citations-chart"), graph);
-}
+  const model = selectedAnnualData(state.annualSeries, state.excludedPapers, state.profile?.citations_per_year);
+  renderCitationsChart(document.getElementById("citations-chart"), model.totals, { unavailable: model.unavailable });
+  const selection = `${model.selectedCount} of ${state.papers.length} papers selected`;
+  const coverage = model.partial || model.stale
+    ? `Paper breakdown pending for ${model.partial + model.stale} selected papers. Full profile annual totals are preserved while all papers are selected.`
+    : "";
+  document.getElementById("chart-selection").textContent = [selection, coverage].filter(Boolean).join(" · ");
+  if (!document.getElementById("citations-dialog").open) return;
 
-function renderTotals() {
-  const history = (state.profile && state.profile.totals_history) || [];
-  const group = document.getElementById("hindex-group");
-  const hindexEl = document.getElementById("hindex-chart");
-  const totalsEl = document.getElementById("totals-chart");
-  if (history.length >= 2) {
-    group.hidden = false;
-    renderTotalLineChart(hindexEl, history, {
-      allKey: "h_index", recentKey: "h_index_recent",
-      label: "h-index", height: 50, showDates: false,
-    });
-    renderTotalLineChart(totalsEl, history, {
-      allKey: "citations", recentKey: "citations_recent",
-      label: "cites", height: 60, showDates: true,
-    });
-  } else {
-    group.hidden = true;
-    hindexEl.innerHTML = "";
-    totalsEl.innerHTML = "";
+  document.getElementById("citations-dialog-note").textContent = [selection + ".", coverage, "Faded segments show additional citations projected by year end at the current annual rate."].filter(Boolean).join(" ");
+  const status = document.getElementById("chart-detail-status");
+  status.textContent = model.unavailable ? "Select all papers to see the complete profile histogram." : model.selectedCount ? "Hover, focus or tap a segment to see its paper and citation count." : "No papers selected. Select papers in the table to include their citations.";
+  renderCitationsChart(document.getElementById("citations-chart-detail"), model.totals, {
+    series: model.series, detailed: true, unavailable: model.unavailable,
+    onInspect: text => { status.textContent = text; },
+  });
+  const legend = document.getElementById("citations-chart-legend");
+  legend.replaceChildren();
+  if (model.unavailable) return;
+  for (const paper of model.series) {
+    if (!Object.values(paper.values).some(value => value > 0)) continue;
+    const item = document.createElement("li");
+    const swatch = document.createElement("span");
+    swatch.className = "chart-swatch";
+    swatch.style.backgroundColor = paper.colour;
+    swatch.setAttribute("aria-hidden", "true");
+    const title = document.createElement("span");
+    title.textContent = paper.title;
+    item.append(swatch, title);
+    legend.appendChild(item);
   }
 }
 
@@ -215,6 +222,16 @@ function comparePapers(a, b) {
   else if (key === "new") {
     av = (state.citationsByPaperWindowed.get(a.id) || []).length;
     bv = (state.citationsByPaperWindowed.get(b.id) || []).length;
+  } else if (key === "newPercent") {
+    const aTotal = latestCount(a), bTotal = latestCount(b);
+    // Undefined percentages sort last in either direction. Compare the raw
+    // fractions so rounding in the displayed percentages cannot change order.
+    if (aTotal <= 0 || bTotal <= 0) {
+      if (aTotal <= 0 && bTotal <= 0) return 0;
+      return aTotal <= 0 ? 1 : -1;
+    }
+    av = (state.citationsByPaperWindowed.get(a.id) || []).length / aTotal;
+    bv = (state.citationsByPaperWindowed.get(b.id) || []).length / bTotal;
   } else { av = latestCount(a); bv = latestCount(b); }
   if (av < bv) return -1 * mult;
   if (av > bv) return 1 * mult;
@@ -230,6 +247,25 @@ function renderPublications() {
   for (const paper of visible) {
     const tr = document.createElement("tr");
     tr.dataset.paperId = paper.id;
+    tr.classList.toggle("paper-excluded", state.excludedPapers.has(paper.id));
+    const selectTd = document.createElement("td");
+    selectTd.className = "col-select";
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = !state.excludedPapers.has(paper.id);
+    checkbox.setAttribute("aria-label", `Include ${paper.title || "untitled paper"} in histogram`);
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) state.excludedPapers.delete(paper.id);
+      else state.excludedPapers.add(paper.id);
+      tr.classList.toggle("paper-excluded", !checkbox.checked);
+      if (tr.nextElementSibling?.classList.contains("citations-row")) {
+        tr.nextElementSibling.classList.toggle("paper-excluded", !checkbox.checked);
+      }
+      updateSelectionControl();
+      renderChart();
+    });
+    selectTd.appendChild(checkbox);
+    tr.appendChild(selectTd);
 
     const titleTd = document.createElement("td");
     titleTd.className = "col-title";
@@ -281,15 +317,22 @@ function renderPublications() {
     const newTd = document.createElement("td");
     newTd.className = "col-new";
     const windowed = state.citationsByPaperWindowed.get(paper.id) || [];
-    const badge = document.createElement("span");
+    const badge = document.createElement(windowed.length ? "button" : "span");
     badge.className = windowed.length ? "new-badge" : "new-badge empty";
-    badge.textContent = windowed.length ? `+${windowed.length}` : "—";
+    badge.textContent = `+${windowed.length}`;
     if (windowed.length) {
+      badge.type = "button";
+      badge.setAttribute("aria-expanded", String(state.expanded.has(paper.id)));
       badge.title = "Click to show new citing papers in this range";
       badge.addEventListener("click", () => toggleExpansion(paper.id));
     }
     newTd.appendChild(badge);
     tr.appendChild(newTd);
+
+    const percentTd = document.createElement("td");
+    percentTd.className = "col-new-percent";
+    percentTd.textContent = citationPercentage(windowed.length, count);
+    tr.appendChild(percentTd);
 
     const yearTd = document.createElement("td");
     yearTd.className = "col-year";
@@ -300,13 +343,15 @@ function renderPublications() {
     body.appendChild(tr);
 
     if (state.expanded.has(paper.id) && windowed.length) {
-      body.appendChild(renderCitingRow(windowed));
+      const citingRow = renderCitingRow(windowed);
+      citingRow.classList.toggle("paper-excluded", state.excludedPapers.has(paper.id));
+      body.appendChild(citingRow);
     }
   }
 
   if (!sorted.length) {
     const empty = document.createElement("tr");
-    empty.innerHTML = '<td colspan="4" style="padding:20px;color:var(--muted);text-align:center;">No publications yet. Run the scrape workflow to fetch data.</td>';
+    empty.innerHTML = '<td colspan="6" style="padding:20px;color:var(--muted);text-align:center;">No publications yet. Run the scrape workflow to fetch data.</td>';
     body.appendChild(empty);
   }
 
@@ -324,6 +369,14 @@ function renderPublications() {
   }
 
   updateSortHeaders();
+  updateSelectionControl();
+}
+
+function updateSelectionControl() {
+  const checkbox = document.getElementById("select-all-papers");
+  checkbox.checked = state.papers.length > 0 && state.excludedPapers.size === 0;
+  checkbox.indeterminate = state.excludedPapers.size > 0 && state.excludedPapers.size < state.papers.length;
+  checkbox.disabled = state.papers.length === 0;
 }
 
 function renderCitingRow(citing) {
@@ -505,6 +558,23 @@ function applyRange(from, to, { pushURL = true } = {}) {
 // ---------- Init ----------
 
 function wireControls() {
+  document.getElementById("select-all-papers").addEventListener("change", (event) => {
+    state.excludedPapers = event.target.checked ? new Set() : new Set(state.papers.map(p => p.id));
+    renderPublications();
+    renderChart();
+  });
+
+  const dialog = document.getElementById("citations-dialog");
+  document.getElementById("chart-expand").addEventListener("click", () => {
+    dialog.showModal();
+    renderChart();
+  });
+  document.getElementById("citations-dialog-close").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", event => {
+    const bounds = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) dialog.close();
+  });
+
   document.getElementById("date-from").addEventListener("change", (e) => {
     applyRange(e.target.value, state.to);
   });
@@ -578,6 +648,7 @@ async function main() {
   state.papers = papers || [];
   state.citations = citations || [];
   indexCitations();
+  state.annualSeries = buildAnnualSeries(state.papers);
 
   const urlParams = new URLSearchParams(window.location.search);
   state.excludeSelfCites = urlParams.get("exclude_self") === "1";
@@ -586,7 +657,6 @@ async function main() {
   renderProfile();
   renderStats();
   renderChart();
-  renderTotals();
   renderFooter();
   wireControls();
 
@@ -598,5 +668,5 @@ async function main() {
 main().catch((err) => {
   console.error(err);
   document.getElementById("publications-body").innerHTML =
-    '<tr><td colspan="4" style="padding:20px;color:#c62828;">Failed to load data. Check the browser console.</td></tr>';
+    '<tr><td colspan="6" style="padding:20px;color:#c62828;">Failed to load data. Check the browser console.</td></tr>';
 });

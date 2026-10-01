@@ -3,8 +3,9 @@
 A static website that mirrors your Google Scholar profile and adds features Scholar doesn't give you:
 
 - **Date-range diff** — pick any two dates; see how many new citations each of your papers got and which specific papers cited them in that window.
-- **Per-paper sparklines** — inline citation-count trajectory next to each paper.
-- **h-index over time** — small line chart of your h-index climb.
+- **Per-paper sparklines** — inline citation-count trajectories scaled to each paper’s own history.
+- **Paper selection** — check or uncheck papers to recompute annual citation totals and projections.
+- **Citation breakdown** — click the annual histogram for a larger chart stacked by paper, with a colour legend and segment details.
 - **Current-year projection** — translucent overhang on the current-year bar showing the year-end projection.
 - **Top citing authors & venues** — aggregated from all tracked citations.
 - **Self-citation toggle** — exclude citations from you and your co-authors with one click.
@@ -76,20 +77,27 @@ To opt out: set `"weekly_digest": false` in `config.json` and push. The workflow
 Three files in `data/` power the frontend:
 
 - **`data/profile.json`** — profile header, daily totals (citations, h-index, i10), citations per year.
-- **`data/papers.json`** — one entry per paper, with a `citation_count_history` time series (feeds the sparklines).
+- **`data/papers.json`** — one entry per paper, with a `citation_count_history` time series (feeds the sparklines) and `citations_per_year` annual totals (feeds both histograms).
 - **`data/citations.jsonl`** — one line per citing paper, with a `first_seen_date` timestamp (the day the scraper first saw it) and a `bootstrap` flag (true for pre-existing inventory).
 
-The frontend filters `citations.jsonl` by `first_seen_date` against the range you pick, skipping `bootstrap: true` rows. Range is encoded in the URL (`?from=2026-01-01&to=2026-04-23&exclude_self=1`) so views are shareable.
+The frontend filters `citations.jsonl` by `first_seen_date` against the range you pick, skipping `bootstrap: true` rows. Range is encoded in the URL (`?from=2026-01-01&to=2026-04-23&exclude_self=1`) so views are shareable. The **New Cit.** column shows clickable new counts; the separate **New Cit. %** column shows each count as a percentage of the paper’s latest total (200 / 800 is 25%). Both columns are sortable. Percentage sorting uses the unrounded fraction, with undefined percentages for uncited papers placed last.
+
+Paper checkboxes affect both annual histograms and their projections; all papers are selected when the page loads. The date range and self-citation filter apply to tracked citation records as before. Profile statistics retain the complete Scholar totals. The expanded histogram supports hover, focus, or tap for segment details, and closes with its close button, Escape, or a click outside.
+
+Annual paper totals are fetched from the [SerpAPI author citation endpoint](https://serpapi.com/google-scholar-author-citation). Existing snapshots are backfilled on the next scrape. Until annual paper totals are available, the histograms preserve the saved profile’s complete annual totals and label missing attribution as “Paper breakdown pending”. Incomplete cited-by inventories are never substituted for annual counts. Excluding a paper whose annual totals are missing or stale shows an unavailable message, rather than silently displaying an undercount. Once annual totals are refreshed, filtering and the per-paper colour breakdown work fully. A failed refresh keeps the previous annual counts, marks them as awaiting refresh when the paper total differs, and retries on the next scrape.
+
+For a local backfill without an API key, run `python scripts/backfill_annual.py`. This reads the annual graphs from public Scholar paper pages, waits between requests, saves successful results, and stops if Scholar blocks access or returns unexpected content. Subsequent regular scraper runs maintain the annual counts. After rebuilding the site, checkbox changes sum the loaded per-paper counts immediately in the browser, without new requests. Scholar citations without an assigned year remain part of lifetime totals but do not appear in annual bars.
 
 ## SerpAPI query budget
 
 The scraper is delta-aware: only papers whose citation count changed since yesterday trigger a new cited-by fetch. Typical usage:
 
 - **Daily profile fetch**: 1–2 queries.
-- **Cited-by fetches**: only for papers with count changes (often zero per day).
+- **Annual paper totals**: one additional query per cited paper on the first run after upgrading, then one per paper whose total changes (including decreases). Failed fetches are retried; unchanged and uncited papers need no additional annual-total queries.
+- **Cited-by fetches**: only for papers with count increases (often zero per day).
 - **First run** (one-time): one cited-by query per paper with citations, plus pagination for highly-cited ones.
 
-A researcher with ~30 papers and modest citation velocity typically stays under 100 queries/month after bootstrap, fitting comfortably in SerpAPI's free tier.
+The initial annual-count backfill and subsequent refreshes add to the existing query budget; total usage depends on how many papers change each day.
 
 ## Running locally
 
@@ -103,6 +111,16 @@ python scripts/build.py      # assemble dist/
 cd dist && python -m http.server 8000
 # open http://localhost:8000
 ```
+
+## Validation
+
+```bash
+node --test tests/citation-data.test.mjs
+python -m unittest discover -s tests -p 'test_*.py'
+BASE_PATH="" python scripts/build.py
+```
+
+The Python tests use the dependencies in `scripts/requirements.txt` and mock API responses; no API key or paid requests are needed.
 
 ## Project layout
 
