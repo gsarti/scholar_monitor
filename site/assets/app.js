@@ -1,6 +1,7 @@
 import { renderCitationsChart, renderSparkline } from "./chart.js";
 
-import { latestCount, citationPercentage, buildAnnualSeries, selectedAnnualData } from "./citation-data.js";
+import { latestCount, citationPercentage, buildAnnualSeries, selectedAnnualData, selectedProfileStats, projectProfileStats } from "./citation-data.js";
+import { citationVenue } from "./venue-data.js";
 
 const BASE = window.__SCHOLAR_MONITOR_BASE__ || "";
 const CONFIG = window.__SCHOLAR_MONITOR_CONFIG__ || {};
@@ -22,6 +23,7 @@ const state = {
   papersExpanded: false,
   excludedPapers: new Set(),
   annualSeries: [],
+  venueMetadata: {},
 };
 
 async function fetchJSON(path, fallback) {
@@ -169,13 +171,30 @@ function renderProfile() {
 function renderStats() {
   const history = (state.profile && state.profile.totals_history) || [];
   const latest = history[history.length - 1] || {};
+  const current = selectedProfileStats(state.papers, state.profile, state.excludedPapers);
   const byId = (id, val) => { document.getElementById(id).textContent = val ?? "—"; };
-  byId("stat-citations-all", latest.citations);
+  byId("stat-citations-all", current.citations);
   byId("stat-citations-recent", latest.citations_recent);
-  byId("stat-h-all", latest.h_index);
+  byId("stat-h-all", current.h_index);
   byId("stat-h-recent", latest.h_index_recent);
-  byId("stat-i10-all", latest.i10_index);
+  byId("stat-i10-all", current.i10_index);
   byId("stat-i10-recent", latest.i10_index_recent);
+  const projection = projectProfileStats(state.papers, state.profile, new Date(), state.excludedPapers);
+  for (const [id, key, label] of [
+    ["stat-citations-all", "citations", "citations"],
+    ["stat-h-all", "h_index", "h-index"],
+    ["stat-i10-all", "i10_index", "i10-index"],
+  ]) {
+    const estimate = document.createElement("span");
+    estimate.className = "stat-projection";
+    const value = projection[key];
+    estimate.textContent = value == null ? " → —" : ` → ~${value}`;
+    estimate.title = value == null ? "Projection awaiting complete current-year citation data" : `Projected ${label} for selected papers by the end of ${projection.year}, using each paper's current annual citation rate`;
+    estimate.setAttribute("aria-label", value == null ? estimate.title : `Projected year-end ${projection.year} ${label}: approximately ${value}`);
+    document.getElementById(id).appendChild(estimate);
+  }
+  const scope = state.excludedPapers.size ? `${state.papers.length - state.excludedPapers.size} selected papers` : "all papers";
+  byId("stats-projection-note", `→ Year-end ${projection.year} estimates · ${scope}`);
   byId("stats-updated", latest.date ? `Snapshot: ${latest.date}` : "No snapshot yet");
 }
 
@@ -262,6 +281,7 @@ function renderPublications() {
         tr.nextElementSibling.classList.toggle("paper-excluded", !checkbox.checked);
       }
       updateSelectionControl();
+      renderStats();
       renderChart();
     });
     selectTd.appendChild(checkbox);
@@ -470,13 +490,14 @@ function aggregateTopAuthors(limit = 10) {
 function aggregateTopVenues(limit = 10) {
   const surnameRe = state.excludeSelfCites ? makeSurnameRegex(state.profileSurname) : null;
   const counts = new Map();
+  let incomplete = 0;
   for (const row of state.citations) {
     if (surnameRe && isSelfCitation(row.citing_authors, surnameRe)) continue;
-    const v = (row.citing_venue || "").trim();
-    if (!v) continue;
+    const v = citationVenue(row, state.venueMetadata);
+    if (!v) { incomplete++; continue; }
     counts.set(v, (counts.get(v) || 0) + 1);
   }
-  return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, limit);
+  return { venues: [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, limit), incomplete };
 }
 
 function renderAggregates() {
@@ -486,18 +507,20 @@ function renderAggregates() {
   venuesList.innerHTML = "";
 
   const authors = aggregateTopAuthors();
-  const venues = aggregateTopVenues();
+  const { venues, incomplete } = aggregateTopVenues();
   const emptyMsg = (msg) => `<li style="color:var(--muted);border:none;font-style:italic;">${msg}</li>`;
 
   if (!authors.length) authorsList.innerHTML = emptyMsg("No citations yet.");
   else authors.forEach(([name, count]) => authorsList.appendChild(aggregateLi(name, count)));
 
-  if (!venues.length) venuesList.innerHTML = emptyMsg("No citations yet.");
+  if (!venues.length) venuesList.innerHTML = emptyMsg(incomplete ? "No complete venue names available yet." : "No citations yet.");
   else venues.forEach(([name, count]) => venuesList.appendChild(aggregateLi(name, count)));
 
   const hint = state.excludeSelfCites ? "All-time, self-citations excluded" : "All-time, across all tracked papers";
   document.getElementById("top-authors-hint").textContent = hint;
-  document.getElementById("top-venues-hint").textContent = hint;
+  document.getElementById("top-venues-hint").textContent = incomplete
+    ? `${hint} · ${incomplete} citations with unavailable venue names omitted`
+    : hint;
 }
 
 function aggregateLi(name, count) {
@@ -561,6 +584,7 @@ function wireControls() {
   document.getElementById("select-all-papers").addEventListener("change", (event) => {
     state.excludedPapers = event.target.checked ? new Set() : new Set(state.papers.map(p => p.id));
     renderPublications();
+    renderStats();
     renderChart();
   });
 
@@ -639,14 +663,16 @@ function renderFooter() {
 }
 
 async function main() {
-  const [profile, papers, citations] = await Promise.all([
+  const [profile, papers, citations, venueMetadata] = await Promise.all([
     fetchJSON("/data/profile.json", null),
     fetchJSON("/data/papers.json", []),
     fetchJSONL("/data/citations.jsonl"),
+    fetchJSON("/data/venues.json", {}),
   ]);
   state.profile = profile;
   state.papers = papers || [];
   state.citations = citations || [];
+  state.venueMetadata = venueMetadata || {};
   indexCitations();
   state.annualSeries = buildAnnualSeries(state.papers);
 

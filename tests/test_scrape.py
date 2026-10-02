@@ -5,6 +5,11 @@ from scripts import scrape
 
 
 class AnnualTotalsTests(unittest.TestCase):
+    def test_publication_year_does_not_truncate_a_conference_title(self):
+        self.assertEqual(scrape.parse_publication_info("A Author - Proceedings of the 2026 CHI Conference, 2026 - ACM"), ("A Author", "Proceedings of the 2026 CHI Conference", 2026))
+        self.assertEqual(scrape.parse_publication_info("A Author - Nature, 2025 - Springer"), ("A Author", "Nature", 2025))
+        self.assertEqual(scrape.parse_publication_info("A Author - 2025 - Publisher"), ("A Author", "", 2025))
+
     def test_fetch_parses_the_author_citation_table(self):
         response = {"citation": {"total_citations": {"table": [
             {"year": 2025, "citations": "1,200"}, {"year": 2026, "citations": "50"},

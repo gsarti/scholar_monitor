@@ -82,11 +82,15 @@ Three files in `data/` power the frontend:
 
 The frontend filters `citations.jsonl` by `first_seen_date` against the range you pick, skipping `bootstrap: true` rows. Range is encoded in the URL (`?from=2026-01-01&to=2026-04-23&exclude_self=1`) so views are shareable. The **New Cit.** column shows clickable new counts; the separate **New Cit. %** column shows each count as a percentage of the paper’s latest total (200 / 800 is 25%). Both columns are sortable. Percentage sorting uses the unrounded fraction, with undefined percentages for uncited papers placed last.
 
-Paper checkboxes affect both annual histograms and their projections; all papers are selected when the page loads. The date range and self-citation filter apply to tracked citation records as before. Profile statistics retain the complete Scholar totals. The expanded histogram supports hover, focus, or tap for segment details, and closes with its close button, Escape, or a click outside.
+Paper checkboxes affect both annual histograms and their projections, plus the current and projected statistics in the **All** column; all papers are selected when the page loads. The date range and self-citation filter apply to tracked citation records as before. The **Since 2021** column retains the reported Scholar profile statistics. The expanded histogram supports hover, focus, or tap for segment details, and closes with its close button, Escape, or a click outside.
+
+The **All** column shows current values and year-end estimates for total citations, h-index and i10-index. Each paper's projected additional citations use the same annual rate and rounding as its histogram segment; these additions are added to its lifetime total before recomputing h-index and counting papers with at least 10 citations. Checking or unchecking papers immediately recalculates both current and projected values for the selection, subtracting excluded papers' lifetime citations and omitting them from both sets of indices. Selecting none shows zeros; selecting all restores the reported profile values and full profile estimates. Missing or stale per-paper annual data leaves the projected indices unavailable until refreshed, while current statistics can still be calculated from lifetime counts.
 
 Annual paper totals are fetched from the [SerpAPI author citation endpoint](https://serpapi.com/google-scholar-author-citation). Existing snapshots are backfilled on the next scrape. Until annual paper totals are available, the histograms preserve the saved profile’s complete annual totals and label missing attribution as “Paper breakdown pending”. Incomplete cited-by inventories are never substituted for annual counts. Excluding a paper whose annual totals are missing or stale shows an unavailable message, rather than silently displaying an undercount. Once annual totals are refreshed, filtering and the per-paper colour breakdown work fully. A failed refresh keeps the previous annual counts, marks them as awaiting refresh when the paper total differs, and retries on the next scrape.
 
 For a local backfill without an API key, run `python scripts/backfill_annual.py`. This reads the annual graphs from public Scholar paper pages, waits between requests, saves successful results, and stops if Scholar blocks access or returns unexpected content. Subsequent regular scraper runs maintain the annual counts. After rebuilding the site, checkbox changes sum the loaded per-paper counts immediately in the browser, without new requests. Scholar citations without an assigned year remain part of lifetime totals but do not appear in annual bars.
+
+Venue names in Scholar snippets are often shortened before scraping. `python scripts/enrich_venues.py` recovers full names from ACL Anthology citation metadata, exact Crossref DOI records, and publisher citation metadata, storing names and source URLs in `data/venues.json` without changing the original citation records. The daily workflow also runs this step; successful lookups are cached and unavailable metadata is retried after seven days. This uses public metadata and no SerpAPI credits. The venue panel groups arXiv preprints under **arXiv**, uses recovered full names, wraps long names, and reports how many citations were omitted because their venue name is still incomplete. It never combines unrelated venues merely because Scholar gave them the same shortened snippet.
 
 ## SerpAPI query budget
 
@@ -115,7 +119,7 @@ cd dist && python -m http.server 8000
 ## Validation
 
 ```bash
-node --test tests/citation-data.test.mjs
+node --test tests/*.test.mjs
 python -m unittest discover -s tests -p 'test_*.py'
 BASE_PATH="" python scripts/build.py
 ```

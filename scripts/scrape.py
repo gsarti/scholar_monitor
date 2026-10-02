@@ -96,13 +96,17 @@ def parse_publication_info(summary: str) -> tuple[str, str, int | None]:
     # Split off trailing " - Publisher" if present.
     parts = rest.rsplit(" - ", 1)
     venue_chunk = parts[0].strip()
-    year_match = YEAR_RE.search(venue_chunk)
-    year = int(year_match.group(0)) if year_match else None
+    # The year can also occur inside a conference title. Only remove the final
+    # publication year so "Proceedings of the 2026 CHI Conference" stays intact.
+    year_match = re.search(r"(?:,\s*|^)((?:19|20)\d{2})\s*$", venue_chunk)
+    year = int(year_match.group(1)) if year_match else None
     # Strip trailing ", YYYY" from venue if present.
     if year:
-        venue = re.sub(r",?\s*" + str(year) + r"\b.*$", "", venue_chunk).strip(" ,")
+        venue = venue_chunk[:year_match.start()].strip(" ,")
     else:
         venue = venue_chunk
+        fallback_year = YEAR_RE.search(venue_chunk)
+        year = int(fallback_year.group(0)) if fallback_year else None
     return authors, venue, year
 
 

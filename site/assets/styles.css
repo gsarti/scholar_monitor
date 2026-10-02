@@ -193,6 +193,7 @@ a:visited { color: var(--link-visited); }
   background: var(--bg-soft);
 }
 .stats-table tbody tr:last-child td { border-bottom: none; }
+.stat-projection { color: var(--accent); font-size: 12px; white-space: nowrap; }
 
 .citations-chart {
   display: block;
@@ -454,10 +455,11 @@ body:has(.citations-dialog[open]) { overflow: hidden; }
 .aggregates {
   margin-top: 32px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 2.4fr);
   gap: 24px;
 }
 .aggregate-panel {
+  min-width: 0;
   border: 1px solid var(--border);
   border-radius: 2px;
   padding: 12px 16px;

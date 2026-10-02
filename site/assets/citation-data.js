@@ -4,6 +4,33 @@ export function latestCount(paper) {
   return history.length ? history[history.length - 1].count : 0;
 }
 
+function citationIndices(counts) {
+  const ordered = [...counts].sort((a, b) => b - a);
+  return {
+    h_index: ordered.filter((count, index) => count >= index + 1).length,
+    i10_index: ordered.filter(count => count >= 10).length,
+  };
+}
+
+export function selectedProfileStats(papers, profile, excluded = new Set()) {
+  const latest = profile?.totals_history?.at(-1) || {};
+  const selected = papers.filter(paper => !excluded.has(paper.id));
+  if (!selected.length && papers.length) return { citations: 0, h_index: 0, i10_index: 0 };
+  if (!papers.length) return { citations: latest.citations ?? null, h_index: latest.h_index ?? null, i10_index: latest.i10_index ?? null };
+  const counts = selected.map(latestCount);
+  const result = { citations: counts.reduce((sum, count) => sum + count, 0), ...citationIndices(counts) };
+  // Preserve profile-only lifetime citations while removing each excluded paper.
+  if (Number.isFinite(latest.citations)) {
+    const removed = papers.filter(paper => excluded.has(paper.id)).reduce((sum, paper) => sum + latestCount(paper), 0);
+    result.citations = Math.max(0, latest.citations - removed);
+  }
+  if (selected.length === papers.length) {
+    result.h_index = latest.h_index ?? result.h_index;
+    result.i10_index = latest.i10_index ?? result.i10_index;
+  }
+  return result;
+}
+
 export function citationPercentage(count, total) {
   if (total <= 0) return "—";
   const percentage = count / total * 100;
@@ -18,6 +45,43 @@ export function yearToDateProjection(actual, now = new Date()) {
   const elapsedDays = Math.max(1, Math.floor((now.getTime() - start) / 86400000) + 1);
   const totalDays = Math.round((next - start) / 86400000);
   return { year, projected: Math.round(actual / elapsedDays * totalDays), elapsedDays, totalDays };
+}
+
+export function projectAnnualSeries(totals, series, now = new Date()) {
+  const year = now.getUTCFullYear();
+  const actual = totals[year] || 0;
+  const projection = yearToDateProjection(actual, now);
+  const extra = Math.max(0, projection.projected - actual);
+  const extraByPaper = new Map();
+  let cumulative = 0, allocated = 0;
+  for (const paper of series) {
+    cumulative += paper.values[year] || 0;
+    // Share rounding across papers so their additions match the annual bar.
+    const next = actual ? Math.round(extra * cumulative / actual) : 0;
+    extraByPaper.set(paper.id, next - allocated);
+    allocated = next;
+  }
+  return { ...projection, actual, extra, extraByPaper };
+}
+
+export function projectProfileStats(papers, profile, now = new Date(), excluded = new Set()) {
+  const year = now.getUTCFullYear();
+  const result = { year, citations: null, h_index: null, i10_index: null };
+  const selected = papers.filter(paper => !excluded.has(paper.id));
+  if (papers.length && !selected.length) return { year, citations: 0, h_index: 0, i10_index: 0 };
+  if (!Object.hasOwn(profile?.citations_per_year || {}, year)) return result;
+  const current = selectedProfileStats(papers, profile, excluded);
+  const model = selectedAnnualData(buildAnnualSeries(papers), excluded, profile.citations_per_year);
+  if (model.unavailable) return result;
+  const projection = projectAnnualSeries(model.totals, model.series, now);
+  if (Number.isFinite(current.citations)) result.citations = current.citations + projection.extra;
+  // An unattributed current-year count cannot be assigned to a paper for the
+  // h/i10 thresholds. The profile total can still be projected independently.
+  if (model.partial || model.stale || model.unavailable || model.series.some(p => p.id === "unattributed" && p.values[year] > 0)) return result;
+  const indices = citationIndices(selected.map(paper => latestCount(paper) + (projection.extraByPaper.get(paper.id) || 0)));
+  result.h_index = Math.max(current.h_index || 0, indices.h_index);
+  result.i10_index = Math.max(current.i10_index || 0, indices.i10_index);
+  return result;
 }
 
 export function buildAnnualSeries(papers) {

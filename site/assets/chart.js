@@ -1,5 +1,5 @@
 // Inline SVG charts, with one shared model for compact and detailed views.
-import { yearToDateProjection } from "./citation-data.js";
+import { projectAnnualSeries } from "./citation-data.js";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 
@@ -18,10 +18,10 @@ export function renderCitationsChart(container, citationsPerYear, { series = [],
     return;
   }
   const values = years.map(year => citationsPerYear[year] || 0);
-  const currentYear = new Date().getUTCFullYear();
-  const currentValue = citationsPerYear[currentYear] || 0;
-  const projection = yearToDateProjection(currentValue);
-  const projected = Math.max(currentValue, projection.projected);
+  const projection = projectAnnualSeries(citationsPerYear, series);
+  const currentYear = projection.year;
+  const currentValue = projection.actual;
+  const projected = currentValue + projection.extra;
   const maxVal = Math.max(1, ...values, projected);
   const width = detailed ? Math.max(320, container.clientWidth, years.length * 38 + 64) : Math.max(320, years.length * 22);
   const height = detailed ? (width < 600 ? 280 : 360) : 160;
@@ -77,16 +77,14 @@ export function renderCitationsChart(container, citationsPerYear, { series = [],
     const x = pad.left + i * slotW + (slotW - barW) / 2;
     const extra = year === currentYear ? projected - value : 0;
     if (detailed) {
-      let bottom = 0, cumulative = 0, allocated = 0;
+      let bottom = 0, allocated = 0;
       for (const paper of series) {
         const count = paper.values[year] || 0;
         rectangle(x, bottom, count, `${year} · ${paper.title}: ${count} citation${count === 1 ? "" : "s"}`, paper);
         bottom += count;
-        // Allocate rounding across segments so the projected stack matches the compact total exactly.
-        cumulative += count;
-        const next = value ? Math.round(extra * cumulative / value) : 0;
-        rectangle(x, value + allocated, next - allocated, `${year} · ${paper.title}: ~${next - allocated} additional citations projected (~${count + next - allocated} total)`, paper, true);
-        allocated = next;
+        const addition = year === currentYear ? projection.extraByPaper.get(paper.id) || 0 : 0;
+        rectangle(x, value + allocated, addition, `${year} · ${paper.title}: ~${addition} additional citations projected (~${count + addition} total)`, paper, true);
+        allocated += addition;
       }
     } else {
       rectangle(x, 0, value, `${year}: ${value}`);

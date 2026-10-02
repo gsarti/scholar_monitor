@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { buildAnnualSeries, selectedAnnualData, citationPercentage, yearToDateProjection } from "../site/assets/citation-data.js";
+import { buildAnnualSeries, selectedAnnualData, citationPercentage, yearToDateProjection, projectAnnualSeries, selectedProfileStats, projectProfileStats } from "../site/assets/citation-data.js";
 
 const paper = (id, counts, annual) => ({
   id, title: id, citation_count_history: counts.map((count, i) => ({ date: `2026-04-${23 + i}`, count })),
@@ -97,4 +97,82 @@ test("year-end and leap-year projections do not create invalid overhangs", () =>
   assert.equal(yearToDateProjection(25, new Date("2024-12-31T23:59:00Z")).projected, 25);
   assert.equal(yearToDateProjection(0, new Date("2026-01-01T00:00:00Z")).projected, 0);
   assert.equal(yearToDateProjection(1, new Date("2024-01-01T00:00:00Z")).projected, 366);
+});
+
+test("profile projections add only future citations and recalculate h/i10 thresholds", () => {
+  const papers = [paper("a", [10], { 2026: 2 }), paper("b", [9], { 2026: 2 }), paper("c", [3], { 2026: 1 }), paper("d", [3], { 2026: 1 })];
+  const profile = { citations_per_year: { 2026: 6 }, totals_history: [{ citations: 30, h_index: 3, i10_index: 1 }] };
+  // Preserve the five lifetime citations absent from per-paper totals.
+  assert.deepEqual(projectProfileStats(papers, profile, new Date("2026-07-01T12:00:00Z")), { year: 2026, citations: 36, h_index: 4, i10_index: 2 });
+  assert.deepEqual(projectProfileStats(papers, profile, new Date("2026-12-31T12:00:00Z")), { year: 2026, citations: 30, h_index: 3, i10_index: 1 });
+});
+
+test("base profile statistics follow selection even without annual citation data", () => {
+  const papers = [paper("a", [100]), paper("b", [10]), paper("c", [3]), paper("d", [3])];
+  const profile = { totals_history: [{ citations: 118, h_index: 3, i10_index: 2 }] };
+  const excluded = new Set();
+  const all = selectedProfileStats(papers, profile, excluded);
+  assert.deepEqual(all, { citations: 118, h_index: 3, i10_index: 2 });
+  excluded.add("a");
+  assert.deepEqual(selectedProfileStats(papers, profile, excluded), { citations: 18, h_index: 3, i10_index: 1 });
+  excluded.add("b");
+  assert.deepEqual(selectedProfileStats(papers, profile, excluded), { citations: 8, h_index: 2, i10_index: 0 });
+  excluded.add("c");
+  excluded.add("d");
+  assert.deepEqual(selectedProfileStats(papers, profile, excluded), { citations: 0, h_index: 0, i10_index: 0 });
+  excluded.clear();
+  assert.deepEqual(selectedProfileStats(papers, profile, excluded), all);
+  assert.deepEqual(selectedProfileStats([], null), { citations: null, h_index: null, i10_index: null });
+});
+
+test("profile indices use the histogram's exact allocation of rounded additions", () => {
+  const papers = [paper("a", [8], { 2026: 1 }), paper("b", [9], { 2026: 1 }), paper("c", [1], { 2026: 1 })];
+  const profile = { citations_per_year: { 2026: 3 }, totals_history: [{ citations: 18, h_index: 2, i10_index: 0 }] };
+  const date = new Date("2026-10-01T12:00:00Z");
+  const model = selectedAnnualData(buildAnnualSeries(papers), new Set(), profile.citations_per_year);
+  const projection = projectAnnualSeries(model.totals, model.series, date);
+  assert.equal(projection.extra, 1);
+  assert.deepEqual([...projection.extraByPaper.values()], [0, 1, 0]);
+  assert.equal([...projection.extraByPaper.values()].reduce((a, b) => a + b, 0), projection.extra);
+  assert.deepEqual(projectProfileStats(papers, profile, date), { year: 2026, citations: 19, h_index: 2, i10_index: 1 });
+});
+
+test("unchecking papers recalculates all estimates and selecting all restores them", () => {
+  const papers = [paper("a", [10], { 2026: 2 }), paper("b", [9], { 2026: 2 }), paper("c", [3], { 2026: 1 }), paper("d", [3], { 2026: 1 })];
+  const profile = { citations_per_year: { 2026: 6 }, totals_history: [{ citations: 25, h_index: 3, i10_index: 1 }] };
+  const date = new Date("2026-07-01T12:00:00Z");
+  const excluded = new Set();
+  const all = projectProfileStats(papers, profile, date, excluded);
+  assert.deepEqual(all, { year: 2026, citations: 31, h_index: 4, i10_index: 2 });
+  excluded.add("a");
+  assert.deepEqual(projectProfileStats(papers, profile, date, excluded), { year: 2026, citations: 19, h_index: 3, i10_index: 1 });
+  excluded.add("b");
+  assert.deepEqual(projectProfileStats(papers, profile, date, excluded), { year: 2026, citations: 8, h_index: 2, i10_index: 0 });
+  excluded.add("c");
+  excluded.add("d");
+  assert.deepEqual(projectProfileStats(papers, profile, date, excluded), { year: 2026, citations: 0, h_index: 0, i10_index: 0 });
+  excluded.clear();
+  assert.deepEqual(projectProfileStats(papers, profile, date, excluded), all);
+});
+
+test("selection projections preserve residual citations and reject unknown exclusions", () => {
+  const papers = [paper("a", [10], { 2026: 2 }), paper("b", [9], { 2026: 2 })];
+  const profile = { citations_per_year: { 2026: 4 }, totals_history: [{ citations: 20, h_index: 2, i10_index: 1 }] };
+  const date = new Date("2026-07-01T12:00:00Z");
+  assert.deepEqual(projectProfileStats(papers, profile, date, new Set(["a"])), { year: 2026, citations: 12, h_index: 1, i10_index: 1 });
+  assert.deepEqual(projectProfileStats(papers, profile, date, new Set(["a", "b"])), { year: 2026, citations: 0, h_index: 0, i10_index: 0 });
+  delete papers[0].citations_per_year;
+  assert.deepEqual(projectProfileStats(papers, profile, date, new Set(["a"])), { year: 2026, citations: null, h_index: null, i10_index: null });
+});
+
+test("missing, stale or unattributed annual data cannot produce projected indices", () => {
+  const profile = { citations_per_year: { 2026: 5 }, totals_history: [{ citations: 10, h_index: 1, i10_index: 1 }] };
+  const date = new Date("2026-07-01T12:00:00Z");
+  const stale = paper("a", [10], { 2026: 5 });
+  stale.citations_per_year_count = 9;
+  for (const papers of [[paper("a", [10])], [stale], [paper("a", [10], { 2026: 4 })]]) {
+    assert.deepEqual(projectProfileStats(papers, profile, date), { year: 2026, citations: 15, h_index: null, i10_index: null });
+  }
+  assert.deepEqual(projectProfileStats([], null, date), { year: 2026, citations: null, h_index: null, i10_index: null });
+  assert.equal(projectProfileStats([paper("a", [10], { 2026: 5 })], profile, new Date("2027-01-01T12:00:00Z")).citations, null);
 });

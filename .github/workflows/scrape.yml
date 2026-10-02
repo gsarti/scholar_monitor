@@ -37,6 +37,9 @@ jobs:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
         run: python scripts/scrape.py
 
+      - name: Recover full venue names
+        run: python scripts/enrich_venues.py
+
       - name: Commit data
         id: commit
         run: |
