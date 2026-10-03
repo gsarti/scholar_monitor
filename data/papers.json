@@ -656,15 +656,19 @@
       {
         "date": "2026-10-02",
         "count": 932
+      },
+      {
+        "date": "2026-10-03",
+        "count": 943
       }
     ],
     "citations_per_year": {
       "2024": 5,
       "2025": 323,
-      "2026": 600
+      "2026": 611
     },
-    "citations_per_year_count": 932,
-    "citations_per_year_updated": "2026-10-01"
+    "citations_per_year_count": 943,
+    "citations_per_year_updated": "2026-10-03"
   },
   {
     "id": "sK0B_08AAAAJ:M3ejUd6NZC8C",
@@ -1322,6 +1326,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 204
+      },
+      {
+        "date": "2026-10-03",
         "count": 204
       }
     ],
@@ -1990,6 +1998,10 @@
       {
         "date": "2026-10-02",
         "count": 127
+      },
+      {
+        "date": "2026-10-03",
+        "count": 127
       }
     ],
     "citations_per_year": {
@@ -2657,6 +2669,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 124
+      },
+      {
+        "date": "2026-10-03",
         "count": 124
       }
     ],
@@ -3327,14 +3343,18 @@
       {
         "date": "2026-10-02",
         "count": 110
+      },
+      {
+        "date": "2026-10-03",
+        "count": 112
       }
     ],
     "citations_per_year": {
       "2025": 2,
-      "2026": 107
+      "2026": 109
     },
-    "citations_per_year_count": 110,
-    "citations_per_year_updated": "2026-10-01"
+    "citations_per_year_count": 112,
+    "citations_per_year_updated": "2026-10-03"
   },
   {
     "id": "sK0B_08AAAAJ:4DMP91E08xMC",
@@ -3993,15 +4013,19 @@
       {
         "date": "2026-10-02",
         "count": 82
+      },
+      {
+        "date": "2026-10-03",
+        "count": 83
       }
     ],
     "citations_per_year": {
       "2024": 3,
       "2025": 32,
-      "2026": 47
+      "2026": 48
     },
-    "citations_per_year_count": 82,
-    "citations_per_year_updated": "2026-10-01"
+    "citations_per_year_count": 83,
+    "citations_per_year_updated": "2026-10-03"
   },
   {
     "id": "sK0B_08AAAAJ:WF5omc3nYNoC",
@@ -4659,6 +4683,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 63
+      },
+      {
+        "date": "2026-10-03",
         "count": 63
       }
     ],
@@ -5329,15 +5357,19 @@
       {
         "date": "2026-10-02",
         "count": 49
+      },
+      {
+        "date": "2026-10-03",
+        "count": 51
       }
     ],
     "citations_per_year": {
       "2024": 1,
       "2025": 23,
-      "2026": 25
+      "2026": 27
     },
-    "citations_per_year_count": 49,
-    "citations_per_year_updated": "2026-10-01"
+    "citations_per_year_count": 51,
+    "citations_per_year_updated": "2026-10-03"
   },
   {
     "id": "sK0B_08AAAAJ:_kc_bZDykSQC",
@@ -5995,6 +6027,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 40
+      },
+      {
+        "date": "2026-10-03",
         "count": 40
       }
     ],
@@ -6663,6 +6699,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 33
+      },
+      {
+        "date": "2026-10-03",
         "count": 33
       }
     ],
@@ -7333,6 +7373,10 @@
       {
         "date": "2026-10-02",
         "count": 32
+      },
+      {
+        "date": "2026-10-03",
+        "count": 32
       }
     ],
     "citations_per_year": {
@@ -8000,6 +8044,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 31
+      },
+      {
+        "date": "2026-10-03",
         "count": 31
       }
     ],
@@ -8669,6 +8717,10 @@
       {
         "date": "2026-10-02",
         "count": 22
+      },
+      {
+        "date": "2026-10-03",
+        "count": 22
       }
     ],
     "citations_per_year": {
@@ -9336,6 +9388,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 22
+      },
+      {
+        "date": "2026-10-03",
         "count": 22
       }
     ],
@@ -10005,6 +10061,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 13
+      },
+      {
+        "date": "2026-10-03",
         "count": 13
       }
     ],
@@ -10676,6 +10736,10 @@
       {
         "date": "2026-10-02",
         "count": 13
+      },
+      {
+        "date": "2026-10-03",
+        "count": 13
       }
     ],
     "citations_per_year": {
@@ -11346,6 +11410,10 @@
       {
         "date": "2026-10-02",
         "count": 12
+      },
+      {
+        "date": "2026-10-03",
+        "count": 12
       }
     ],
     "citations_per_year": {
@@ -12011,6 +12079,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 11
+      },
+      {
+        "date": "2026-10-03",
         "count": 11
       }
     ],
@@ -12678,6 +12750,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 10
+      },
+      {
+        "date": "2026-10-03",
         "count": 10
       }
     ],
@@ -13348,6 +13424,10 @@
       {
         "date": "2026-10-02",
         "count": 9
+      },
+      {
+        "date": "2026-10-03",
+        "count": 9
       }
     ],
     "citations_per_year": {
@@ -14015,6 +14095,10 @@
       {
         "date": "2026-10-02",
         "count": 7
+      },
+      {
+        "date": "2026-10-03",
+        "count": 7
       }
     ],
     "citations_per_year": {
@@ -14679,6 +14763,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 7
+      },
+      {
+        "date": "2026-10-03",
         "count": 7
       }
     ],
@@ -15345,6 +15433,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 7
+      },
+      {
+        "date": "2026-10-03",
         "count": 7
       }
     ],
@@ -16014,6 +16106,10 @@
       {
         "date": "2026-10-02",
         "count": 6
+      },
+      {
+        "date": "2026-10-03",
+        "count": 6
       }
     ],
     "citations_per_year": {
@@ -16678,6 +16774,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 6
+      },
+      {
+        "date": "2026-10-03",
         "count": 6
       }
     ],
@@ -17344,6 +17444,10 @@
       {
         "date": "2026-10-02",
         "count": 6
+      },
+      {
+        "date": "2026-10-03",
+        "count": 6
       }
     ],
     "citations_per_year": {
@@ -17796,6 +17900,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 5
+      },
+      {
+        "date": "2026-10-03",
         "count": 5
       }
     ],
@@ -18462,6 +18570,10 @@
       {
         "date": "2026-10-02",
         "count": 5
+      },
+      {
+        "date": "2026-10-03",
+        "count": 5
       }
     ],
     "citations_per_year": {
@@ -19127,6 +19239,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 5
+      },
+      {
+        "date": "2026-10-03",
         "count": 5
       }
     ],
@@ -19795,6 +19911,10 @@
       {
         "date": "2026-10-02",
         "count": 4
+      },
+      {
+        "date": "2026-10-03",
+        "count": 4
       }
     ],
     "citations_per_year": {
@@ -20459,6 +20579,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 4
+      },
+      {
+        "date": "2026-10-03",
         "count": 4
       }
     ],
@@ -21127,6 +21251,10 @@
       {
         "date": "2026-10-02",
         "count": 3
+      },
+      {
+        "date": "2026-10-03",
+        "count": 3
       }
     ],
     "citations_per_year": {
@@ -21134,6 +21262,675 @@
     },
     "citations_per_year_count": 3,
     "citations_per_year_updated": "2026-10-01"
+  },
+  {
+    "id": "sK0B_08AAAAJ:HDshCWvjkbEC",
+    "title": "Noiser: Bounded Input Perturbations for Attributing Large Language Models",
+    "authors": "MR Ghasemi Madani, A Pradipta Gema, G Sarti, Y Zhao, P Minervini, ...",
+    "venue": "COLM 2025: Conference on Language Modeling, 2025",
+    "year": 2025,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:HDshCWvjkbEC",
+    "cites_id": "13885749889672146306,703033032288785625",
+    "first_seen": "2026-04-23",
+    "citation_count_history": [
+      {
+        "date": "2026-04-23",
+        "count": 1
+      },
+      {
+        "date": "2026-04-24",
+        "count": 1
+      },
+      {
+        "date": "2026-04-25",
+        "count": 1
+      },
+      {
+        "date": "2026-04-27",
+        "count": 1
+      },
+      {
+        "date": "2026-04-28",
+        "count": 1
+      },
+      {
+        "date": "2026-04-29",
+        "count": 1
+      },
+      {
+        "date": "2026-04-30",
+        "count": 1
+      },
+      {
+        "date": "2026-05-01",
+        "count": 1
+      },
+      {
+        "date": "2026-05-02",
+        "count": 1
+      },
+      {
+        "date": "2026-05-03",
+        "count": 1
+      },
+      {
+        "date": "2026-05-04",
+        "count": 1
+      },
+      {
+        "date": "2026-05-05",
+        "count": 1
+      },
+      {
+        "date": "2026-05-06",
+        "count": 1
+      },
+      {
+        "date": "2026-05-07",
+        "count": 1
+      },
+      {
+        "date": "2026-05-08",
+        "count": 1
+      },
+      {
+        "date": "2026-05-09",
+        "count": 1
+      },
+      {
+        "date": "2026-05-10",
+        "count": 1
+      },
+      {
+        "date": "2026-05-11",
+        "count": 1
+      },
+      {
+        "date": "2026-05-12",
+        "count": 1
+      },
+      {
+        "date": "2026-05-13",
+        "count": 1
+      },
+      {
+        "date": "2026-05-14",
+        "count": 1
+      },
+      {
+        "date": "2026-05-15",
+        "count": 1
+      },
+      {
+        "date": "2026-05-16",
+        "count": 1
+      },
+      {
+        "date": "2026-05-17",
+        "count": 1
+      },
+      {
+        "date": "2026-05-18",
+        "count": 1
+      },
+      {
+        "date": "2026-05-19",
+        "count": 1
+      },
+      {
+        "date": "2026-05-20",
+        "count": 1
+      },
+      {
+        "date": "2026-05-21",
+        "count": 1
+      },
+      {
+        "date": "2026-05-22",
+        "count": 1
+      },
+      {
+        "date": "2026-05-23",
+        "count": 1
+      },
+      {
+        "date": "2026-05-24",
+        "count": 1
+      },
+      {
+        "date": "2026-05-25",
+        "count": 1
+      },
+      {
+        "date": "2026-05-26",
+        "count": 1
+      },
+      {
+        "date": "2026-05-27",
+        "count": 1
+      },
+      {
+        "date": "2026-05-28",
+        "count": 1
+      },
+      {
+        "date": "2026-05-29",
+        "count": 1
+      },
+      {
+        "date": "2026-05-30",
+        "count": 1
+      },
+      {
+        "date": "2026-05-31",
+        "count": 1
+      },
+      {
+        "date": "2026-06-01",
+        "count": 1
+      },
+      {
+        "date": "2026-06-02",
+        "count": 1
+      },
+      {
+        "date": "2026-06-03",
+        "count": 1
+      },
+      {
+        "date": "2026-06-04",
+        "count": 1
+      },
+      {
+        "date": "2026-06-05",
+        "count": 1
+      },
+      {
+        "date": "2026-06-06",
+        "count": 1
+      },
+      {
+        "date": "2026-06-07",
+        "count": 1
+      },
+      {
+        "date": "2026-06-08",
+        "count": 1
+      },
+      {
+        "date": "2026-06-09",
+        "count": 1
+      },
+      {
+        "date": "2026-06-10",
+        "count": 1
+      },
+      {
+        "date": "2026-06-11",
+        "count": 1
+      },
+      {
+        "date": "2026-06-12",
+        "count": 1
+      },
+      {
+        "date": "2026-06-13",
+        "count": 1
+      },
+      {
+        "date": "2026-06-14",
+        "count": 1
+      },
+      {
+        "date": "2026-06-15",
+        "count": 1
+      },
+      {
+        "date": "2026-06-16",
+        "count": 1
+      },
+      {
+        "date": "2026-06-17",
+        "count": 1
+      },
+      {
+        "date": "2026-06-18",
+        "count": 1
+      },
+      {
+        "date": "2026-06-19",
+        "count": 1
+      },
+      {
+        "date": "2026-06-20",
+        "count": 1
+      },
+      {
+        "date": "2026-06-21",
+        "count": 1
+      },
+      {
+        "date": "2026-06-22",
+        "count": 1
+      },
+      {
+        "date": "2026-06-23",
+        "count": 1
+      },
+      {
+        "date": "2026-06-24",
+        "count": 1
+      },
+      {
+        "date": "2026-06-25",
+        "count": 1
+      },
+      {
+        "date": "2026-06-26",
+        "count": 1
+      },
+      {
+        "date": "2026-06-27",
+        "count": 1
+      },
+      {
+        "date": "2026-06-28",
+        "count": 1
+      },
+      {
+        "date": "2026-06-29",
+        "count": 1
+      },
+      {
+        "date": "2026-06-30",
+        "count": 1
+      },
+      {
+        "date": "2026-07-01",
+        "count": 1
+      },
+      {
+        "date": "2026-07-02",
+        "count": 1
+      },
+      {
+        "date": "2026-07-03",
+        "count": 1
+      },
+      {
+        "date": "2026-07-04",
+        "count": 1
+      },
+      {
+        "date": "2026-07-05",
+        "count": 1
+      },
+      {
+        "date": "2026-07-06",
+        "count": 1
+      },
+      {
+        "date": "2026-07-07",
+        "count": 1
+      },
+      {
+        "date": "2026-07-08",
+        "count": 1
+      },
+      {
+        "date": "2026-07-09",
+        "count": 1
+      },
+      {
+        "date": "2026-07-10",
+        "count": 1
+      },
+      {
+        "date": "2026-07-11",
+        "count": 1
+      },
+      {
+        "date": "2026-07-12",
+        "count": 1
+      },
+      {
+        "date": "2026-07-13",
+        "count": 1
+      },
+      {
+        "date": "2026-07-14",
+        "count": 1
+      },
+      {
+        "date": "2026-07-15",
+        "count": 1
+      },
+      {
+        "date": "2026-07-16",
+        "count": 1
+      },
+      {
+        "date": "2026-07-17",
+        "count": 1
+      },
+      {
+        "date": "2026-07-18",
+        "count": 1
+      },
+      {
+        "date": "2026-07-19",
+        "count": 1
+      },
+      {
+        "date": "2026-07-20",
+        "count": 1
+      },
+      {
+        "date": "2026-07-21",
+        "count": 1
+      },
+      {
+        "date": "2026-07-22",
+        "count": 1
+      },
+      {
+        "date": "2026-07-23",
+        "count": 1
+      },
+      {
+        "date": "2026-07-24",
+        "count": 1
+      },
+      {
+        "date": "2026-07-25",
+        "count": 1
+      },
+      {
+        "date": "2026-07-26",
+        "count": 1
+      },
+      {
+        "date": "2026-07-27",
+        "count": 1
+      },
+      {
+        "date": "2026-07-28",
+        "count": 1
+      },
+      {
+        "date": "2026-07-29",
+        "count": 1
+      },
+      {
+        "date": "2026-07-30",
+        "count": 1
+      },
+      {
+        "date": "2026-07-31",
+        "count": 1
+      },
+      {
+        "date": "2026-08-01",
+        "count": 1
+      },
+      {
+        "date": "2026-08-02",
+        "count": 1
+      },
+      {
+        "date": "2026-08-03",
+        "count": 1
+      },
+      {
+        "date": "2026-08-04",
+        "count": 1
+      },
+      {
+        "date": "2026-08-05",
+        "count": 1
+      },
+      {
+        "date": "2026-08-06",
+        "count": 1
+      },
+      {
+        "date": "2026-08-07",
+        "count": 1
+      },
+      {
+        "date": "2026-08-08",
+        "count": 1
+      },
+      {
+        "date": "2026-08-09",
+        "count": 1
+      },
+      {
+        "date": "2026-08-10",
+        "count": 1
+      },
+      {
+        "date": "2026-08-11",
+        "count": 1
+      },
+      {
+        "date": "2026-08-12",
+        "count": 1
+      },
+      {
+        "date": "2026-08-13",
+        "count": 1
+      },
+      {
+        "date": "2026-08-14",
+        "count": 1
+      },
+      {
+        "date": "2026-08-15",
+        "count": 1
+      },
+      {
+        "date": "2026-08-16",
+        "count": 1
+      },
+      {
+        "date": "2026-08-17",
+        "count": 1
+      },
+      {
+        "date": "2026-08-18",
+        "count": 1
+      },
+      {
+        "date": "2026-08-19",
+        "count": 1
+      },
+      {
+        "date": "2026-08-20",
+        "count": 1
+      },
+      {
+        "date": "2026-08-21",
+        "count": 1
+      },
+      {
+        "date": "2026-08-22",
+        "count": 1
+      },
+      {
+        "date": "2026-08-23",
+        "count": 1
+      },
+      {
+        "date": "2026-08-24",
+        "count": 1
+      },
+      {
+        "date": "2026-08-25",
+        "count": 1
+      },
+      {
+        "date": "2026-08-26",
+        "count": 1
+      },
+      {
+        "date": "2026-08-27",
+        "count": 1
+      },
+      {
+        "date": "2026-08-28",
+        "count": 1
+      },
+      {
+        "date": "2026-08-29",
+        "count": 1
+      },
+      {
+        "date": "2026-08-30",
+        "count": 1
+      },
+      {
+        "date": "2026-08-31",
+        "count": 1
+      },
+      {
+        "date": "2026-09-01",
+        "count": 1
+      },
+      {
+        "date": "2026-09-02",
+        "count": 1
+      },
+      {
+        "date": "2026-09-03",
+        "count": 1
+      },
+      {
+        "date": "2026-09-04",
+        "count": 1
+      },
+      {
+        "date": "2026-09-05",
+        "count": 1
+      },
+      {
+        "date": "2026-09-06",
+        "count": 1
+      },
+      {
+        "date": "2026-09-07",
+        "count": 1
+      },
+      {
+        "date": "2026-09-08",
+        "count": 1
+      },
+      {
+        "date": "2026-09-09",
+        "count": 1
+      },
+      {
+        "date": "2026-09-10",
+        "count": 1
+      },
+      {
+        "date": "2026-09-11",
+        "count": 1
+      },
+      {
+        "date": "2026-09-12",
+        "count": 1
+      },
+      {
+        "date": "2026-09-13",
+        "count": 1
+      },
+      {
+        "date": "2026-09-14",
+        "count": 1
+      },
+      {
+        "date": "2026-09-15",
+        "count": 1
+      },
+      {
+        "date": "2026-09-16",
+        "count": 1
+      },
+      {
+        "date": "2026-09-17",
+        "count": 1
+      },
+      {
+        "date": "2026-09-18",
+        "count": 1
+      },
+      {
+        "date": "2026-09-19",
+        "count": 1
+      },
+      {
+        "date": "2026-09-20",
+        "count": 1
+      },
+      {
+        "date": "2026-09-21",
+        "count": 1
+      },
+      {
+        "date": "2026-09-22",
+        "count": 1
+      },
+      {
+        "date": "2026-09-23",
+        "count": 1
+      },
+      {
+        "date": "2026-09-24",
+        "count": 1
+      },
+      {
+        "date": "2026-09-25",
+        "count": 1
+      },
+      {
+        "date": "2026-09-26",
+        "count": 1
+      },
+      {
+        "date": "2026-09-27",
+        "count": 1
+      },
+      {
+        "date": "2026-09-28",
+        "count": 1
+      },
+      {
+        "date": "2026-09-29",
+        "count": 2
+      },
+      {
+        "date": "2026-09-30",
+        "count": 2
+      },
+      {
+        "date": "2026-10-01",
+        "count": 2
+      },
+      {
+        "date": "2026-10-02",
+        "count": 2
+      },
+      {
+        "date": "2026-10-03",
+        "count": 3
+      }
+    ],
+    "citations_per_year": {
+      "2026": 3
+    },
+    "citations_per_year_count": 3,
+    "citations_per_year_updated": "2026-10-03"
   },
   {
     "id": "sK0B_08AAAAJ:QIV2ME_5wuYC",
@@ -21791,6 +22588,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 3
+      },
+      {
+        "date": "2026-10-03",
         "count": 3
       }
     ],
@@ -22458,670 +23259,9 @@
       {
         "date": "2026-10-02",
         "count": 2
-      }
-    ],
-    "citations_per_year": {
-      "2026": 2
-    },
-    "citations_per_year_count": 2,
-    "citations_per_year_updated": "2026-10-01"
-  },
-  {
-    "id": "sK0B_08AAAAJ:HDshCWvjkbEC",
-    "title": "Noiser: Bounded Input Perturbations for Attributing Large Language Models",
-    "authors": "MR Ghasemi Madani, A Pradipta Gema, G Sarti, Y Zhao, P Minervini, ...",
-    "venue": "COLM 2025: Conference on Language Modeling, 2025",
-    "year": 2025,
-    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sK0B_08AAAAJ&pagesize=100&citation_for_view=sK0B_08AAAAJ:HDshCWvjkbEC",
-    "cites_id": "13885749889672146306,703033032288785625",
-    "first_seen": "2026-04-23",
-    "citation_count_history": [
-      {
-        "date": "2026-04-23",
-        "count": 1
-      },
-      {
-        "date": "2026-04-24",
-        "count": 1
-      },
-      {
-        "date": "2026-04-25",
-        "count": 1
-      },
-      {
-        "date": "2026-04-27",
-        "count": 1
-      },
-      {
-        "date": "2026-04-28",
-        "count": 1
-      },
-      {
-        "date": "2026-04-29",
-        "count": 1
-      },
-      {
-        "date": "2026-04-30",
-        "count": 1
-      },
-      {
-        "date": "2026-05-01",
-        "count": 1
-      },
-      {
-        "date": "2026-05-02",
-        "count": 1
-      },
-      {
-        "date": "2026-05-03",
-        "count": 1
-      },
-      {
-        "date": "2026-05-04",
-        "count": 1
-      },
-      {
-        "date": "2026-05-05",
-        "count": 1
-      },
-      {
-        "date": "2026-05-06",
-        "count": 1
-      },
-      {
-        "date": "2026-05-07",
-        "count": 1
-      },
-      {
-        "date": "2026-05-08",
-        "count": 1
-      },
-      {
-        "date": "2026-05-09",
-        "count": 1
-      },
-      {
-        "date": "2026-05-10",
-        "count": 1
-      },
-      {
-        "date": "2026-05-11",
-        "count": 1
-      },
-      {
-        "date": "2026-05-12",
-        "count": 1
-      },
-      {
-        "date": "2026-05-13",
-        "count": 1
-      },
-      {
-        "date": "2026-05-14",
-        "count": 1
-      },
-      {
-        "date": "2026-05-15",
-        "count": 1
-      },
-      {
-        "date": "2026-05-16",
-        "count": 1
-      },
-      {
-        "date": "2026-05-17",
-        "count": 1
-      },
-      {
-        "date": "2026-05-18",
-        "count": 1
-      },
-      {
-        "date": "2026-05-19",
-        "count": 1
-      },
-      {
-        "date": "2026-05-20",
-        "count": 1
-      },
-      {
-        "date": "2026-05-21",
-        "count": 1
-      },
-      {
-        "date": "2026-05-22",
-        "count": 1
-      },
-      {
-        "date": "2026-05-23",
-        "count": 1
-      },
-      {
-        "date": "2026-05-24",
-        "count": 1
-      },
-      {
-        "date": "2026-05-25",
-        "count": 1
-      },
-      {
-        "date": "2026-05-26",
-        "count": 1
-      },
-      {
-        "date": "2026-05-27",
-        "count": 1
-      },
-      {
-        "date": "2026-05-28",
-        "count": 1
-      },
-      {
-        "date": "2026-05-29",
-        "count": 1
-      },
-      {
-        "date": "2026-05-30",
-        "count": 1
-      },
-      {
-        "date": "2026-05-31",
-        "count": 1
-      },
-      {
-        "date": "2026-06-01",
-        "count": 1
-      },
-      {
-        "date": "2026-06-02",
-        "count": 1
-      },
-      {
-        "date": "2026-06-03",
-        "count": 1
-      },
-      {
-        "date": "2026-06-04",
-        "count": 1
-      },
-      {
-        "date": "2026-06-05",
-        "count": 1
-      },
-      {
-        "date": "2026-06-06",
-        "count": 1
-      },
-      {
-        "date": "2026-06-07",
-        "count": 1
-      },
-      {
-        "date": "2026-06-08",
-        "count": 1
-      },
-      {
-        "date": "2026-06-09",
-        "count": 1
-      },
-      {
-        "date": "2026-06-10",
-        "count": 1
-      },
-      {
-        "date": "2026-06-11",
-        "count": 1
-      },
-      {
-        "date": "2026-06-12",
-        "count": 1
-      },
-      {
-        "date": "2026-06-13",
-        "count": 1
-      },
-      {
-        "date": "2026-06-14",
-        "count": 1
-      },
-      {
-        "date": "2026-06-15",
-        "count": 1
-      },
-      {
-        "date": "2026-06-16",
-        "count": 1
-      },
-      {
-        "date": "2026-06-17",
-        "count": 1
-      },
-      {
-        "date": "2026-06-18",
-        "count": 1
-      },
-      {
-        "date": "2026-06-19",
-        "count": 1
-      },
-      {
-        "date": "2026-06-20",
-        "count": 1
-      },
-      {
-        "date": "2026-06-21",
-        "count": 1
-      },
-      {
-        "date": "2026-06-22",
-        "count": 1
-      },
-      {
-        "date": "2026-06-23",
-        "count": 1
-      },
-      {
-        "date": "2026-06-24",
-        "count": 1
-      },
-      {
-        "date": "2026-06-25",
-        "count": 1
-      },
-      {
-        "date": "2026-06-26",
-        "count": 1
-      },
-      {
-        "date": "2026-06-27",
-        "count": 1
-      },
-      {
-        "date": "2026-06-28",
-        "count": 1
-      },
-      {
-        "date": "2026-06-29",
-        "count": 1
-      },
-      {
-        "date": "2026-06-30",
-        "count": 1
-      },
-      {
-        "date": "2026-07-01",
-        "count": 1
-      },
-      {
-        "date": "2026-07-02",
-        "count": 1
-      },
-      {
-        "date": "2026-07-03",
-        "count": 1
-      },
-      {
-        "date": "2026-07-04",
-        "count": 1
-      },
-      {
-        "date": "2026-07-05",
-        "count": 1
-      },
-      {
-        "date": "2026-07-06",
-        "count": 1
-      },
-      {
-        "date": "2026-07-07",
-        "count": 1
-      },
-      {
-        "date": "2026-07-08",
-        "count": 1
-      },
-      {
-        "date": "2026-07-09",
-        "count": 1
-      },
-      {
-        "date": "2026-07-10",
-        "count": 1
-      },
-      {
-        "date": "2026-07-11",
-        "count": 1
-      },
-      {
-        "date": "2026-07-12",
-        "count": 1
-      },
-      {
-        "date": "2026-07-13",
-        "count": 1
-      },
-      {
-        "date": "2026-07-14",
-        "count": 1
-      },
-      {
-        "date": "2026-07-15",
-        "count": 1
-      },
-      {
-        "date": "2026-07-16",
-        "count": 1
-      },
-      {
-        "date": "2026-07-17",
-        "count": 1
-      },
-      {
-        "date": "2026-07-18",
-        "count": 1
-      },
-      {
-        "date": "2026-07-19",
-        "count": 1
-      },
-      {
-        "date": "2026-07-20",
-        "count": 1
-      },
-      {
-        "date": "2026-07-21",
-        "count": 1
-      },
-      {
-        "date": "2026-07-22",
-        "count": 1
-      },
-      {
-        "date": "2026-07-23",
-        "count": 1
-      },
-      {
-        "date": "2026-07-24",
-        "count": 1
-      },
-      {
-        "date": "2026-07-25",
-        "count": 1
-      },
-      {
-        "date": "2026-07-26",
-        "count": 1
-      },
-      {
-        "date": "2026-07-27",
-        "count": 1
-      },
-      {
-        "date": "2026-07-28",
-        "count": 1
-      },
-      {
-        "date": "2026-07-29",
-        "count": 1
-      },
-      {
-        "date": "2026-07-30",
-        "count": 1
-      },
-      {
-        "date": "2026-07-31",
-        "count": 1
-      },
-      {
-        "date": "2026-08-01",
-        "count": 1
-      },
-      {
-        "date": "2026-08-02",
-        "count": 1
-      },
-      {
-        "date": "2026-08-03",
-        "count": 1
-      },
-      {
-        "date": "2026-08-04",
-        "count": 1
-      },
-      {
-        "date": "2026-08-05",
-        "count": 1
-      },
-      {
-        "date": "2026-08-06",
-        "count": 1
-      },
-      {
-        "date": "2026-08-07",
-        "count": 1
-      },
-      {
-        "date": "2026-08-08",
-        "count": 1
-      },
-      {
-        "date": "2026-08-09",
-        "count": 1
-      },
-      {
-        "date": "2026-08-10",
-        "count": 1
-      },
-      {
-        "date": "2026-08-11",
-        "count": 1
-      },
-      {
-        "date": "2026-08-12",
-        "count": 1
-      },
-      {
-        "date": "2026-08-13",
-        "count": 1
-      },
-      {
-        "date": "2026-08-14",
-        "count": 1
-      },
-      {
-        "date": "2026-08-15",
-        "count": 1
-      },
-      {
-        "date": "2026-08-16",
-        "count": 1
-      },
-      {
-        "date": "2026-08-17",
-        "count": 1
-      },
-      {
-        "date": "2026-08-18",
-        "count": 1
-      },
-      {
-        "date": "2026-08-19",
-        "count": 1
-      },
-      {
-        "date": "2026-08-20",
-        "count": 1
-      },
-      {
-        "date": "2026-08-21",
-        "count": 1
-      },
-      {
-        "date": "2026-08-22",
-        "count": 1
-      },
-      {
-        "date": "2026-08-23",
-        "count": 1
-      },
-      {
-        "date": "2026-08-24",
-        "count": 1
-      },
-      {
-        "date": "2026-08-25",
-        "count": 1
-      },
-      {
-        "date": "2026-08-26",
-        "count": 1
-      },
-      {
-        "date": "2026-08-27",
-        "count": 1
-      },
-      {
-        "date": "2026-08-28",
-        "count": 1
-      },
-      {
-        "date": "2026-08-29",
-        "count": 1
-      },
-      {
-        "date": "2026-08-30",
-        "count": 1
-      },
-      {
-        "date": "2026-08-31",
-        "count": 1
-      },
-      {
-        "date": "2026-09-01",
-        "count": 1
-      },
-      {
-        "date": "2026-09-02",
-        "count": 1
-      },
-      {
-        "date": "2026-09-03",
-        "count": 1
-      },
-      {
-        "date": "2026-09-04",
-        "count": 1
-      },
-      {
-        "date": "2026-09-05",
-        "count": 1
-      },
-      {
-        "date": "2026-09-06",
-        "count": 1
-      },
-      {
-        "date": "2026-09-07",
-        "count": 1
-      },
-      {
-        "date": "2026-09-08",
-        "count": 1
-      },
-      {
-        "date": "2026-09-09",
-        "count": 1
-      },
-      {
-        "date": "2026-09-10",
-        "count": 1
-      },
-      {
-        "date": "2026-09-11",
-        "count": 1
-      },
-      {
-        "date": "2026-09-12",
-        "count": 1
-      },
-      {
-        "date": "2026-09-13",
-        "count": 1
-      },
-      {
-        "date": "2026-09-14",
-        "count": 1
-      },
-      {
-        "date": "2026-09-15",
-        "count": 1
-      },
-      {
-        "date": "2026-09-16",
-        "count": 1
-      },
-      {
-        "date": "2026-09-17",
-        "count": 1
-      },
-      {
-        "date": "2026-09-18",
-        "count": 1
-      },
-      {
-        "date": "2026-09-19",
-        "count": 1
-      },
-      {
-        "date": "2026-09-20",
-        "count": 1
-      },
-      {
-        "date": "2026-09-21",
-        "count": 1
-      },
-      {
-        "date": "2026-09-22",
-        "count": 1
-      },
-      {
-        "date": "2026-09-23",
-        "count": 1
-      },
-      {
-        "date": "2026-09-24",
-        "count": 1
-      },
-      {
-        "date": "2026-09-25",
-        "count": 1
-      },
-      {
-        "date": "2026-09-26",
-        "count": 1
-      },
-      {
-        "date": "2026-09-27",
-        "count": 1
-      },
-      {
-        "date": "2026-09-28",
-        "count": 1
-      },
-      {
-        "date": "2026-09-29",
-        "count": 2
-      },
-      {
-        "date": "2026-09-30",
-        "count": 2
-      },
-      {
-        "date": "2026-10-01",
-        "count": 2
       },
       {
-        "date": "2026-10-02",
+        "date": "2026-10-03",
         "count": 2
       }
     ],
@@ -23788,6 +23928,10 @@
       {
         "date": "2026-10-02",
         "count": 2
+      },
+      {
+        "date": "2026-10-03",
+        "count": 2
       }
     ],
     "citations_per_year": {
@@ -24024,6 +24168,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 1
+      },
+      {
+        "date": "2026-10-03",
         "count": 1
       }
     ],
@@ -24489,6 +24637,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 1
+      },
+      {
+        "date": "2026-10-03",
         "count": 1
       }
     ],
@@ -25155,6 +25307,10 @@
       {
         "date": "2026-10-02",
         "count": 1
+      },
+      {
+        "date": "2026-10-03",
+        "count": 1
       }
     ],
     "citations_per_year": {
@@ -25819,6 +25975,10 @@
       },
       {
         "date": "2026-10-02",
+        "count": 1
+      },
+      {
+        "date": "2026-10-03",
         "count": 1
       }
     ],
@@ -26485,6 +26645,10 @@
       {
         "date": "2026-10-02",
         "count": 1
+      },
+      {
+        "date": "2026-10-03",
+        "count": 1
       }
     ],
     "citations_per_year": {
@@ -27150,11 +27314,15 @@
       {
         "date": "2026-10-02",
         "count": 0
+      },
+      {
+        "date": "2026-10-03",
+        "count": 0
       }
     ],
     "citations_per_year": {},
     "citations_per_year_count": 0,
-    "citations_per_year_updated": "2026-10-02"
+    "citations_per_year_updated": "2026-10-03"
   },
   {
     "id": "sK0B_08AAAAJ:bFI3QPDXJZMC",
@@ -27265,11 +27433,15 @@
       {
         "date": "2026-10-02",
         "count": 0
+      },
+      {
+        "date": "2026-10-03",
+        "count": 0
       }
     ],
     "citations_per_year": {},
     "citations_per_year_count": 0,
-    "citations_per_year_updated": "2026-10-02"
+    "citations_per_year_updated": "2026-10-03"
   },
   {
     "id": "sK0B_08AAAAJ:u_35RYKgDlwC",
@@ -27752,11 +27924,15 @@
       {
         "date": "2026-10-02",
         "count": 0
+      },
+      {
+        "date": "2026-10-03",
+        "count": 0
       }
     ],
     "citations_per_year": {},
     "citations_per_year_count": 0,
-    "citations_per_year_updated": "2026-10-02"
+    "citations_per_year_updated": "2026-10-03"
   },
   {
     "id": "sK0B_08AAAAJ:k_IJM867U9cC",
@@ -28415,11 +28591,15 @@
       {
         "date": "2026-10-02",
         "count": 0
+      },
+      {
+        "date": "2026-10-03",
+        "count": 0
       }
     ],
     "citations_per_year": {},
     "citations_per_year_count": 0,
-    "citations_per_year_updated": "2026-10-02"
+    "citations_per_year_updated": "2026-10-03"
   },
   {
     "id": "sK0B_08AAAAJ:RHpTSmoSYBkC",
@@ -29078,11 +29258,15 @@
       {
         "date": "2026-10-02",
         "count": 0
+      },
+      {
+        "date": "2026-10-03",
+        "count": 0
       }
     ],
     "citations_per_year": {},
     "citations_per_year_count": 0,
-    "citations_per_year_updated": "2026-10-02"
+    "citations_per_year_updated": "2026-10-03"
   },
   {
     "id": "sK0B_08AAAAJ:Zph67rFs4hoC",
@@ -29741,11 +29925,15 @@
       {
         "date": "2026-10-02",
         "count": 0
+      },
+      {
+        "date": "2026-10-03",
+        "count": 0
       }
     ],
     "citations_per_year": {},
     "citations_per_year_count": 0,
-    "citations_per_year_updated": "2026-10-02"
+    "citations_per_year_updated": "2026-10-03"
   },
   {
     "id": "sK0B_08AAAAJ:roLk4NBRz8UC",
@@ -30404,10 +30592,14 @@
       {
         "date": "2026-10-02",
         "count": 0
+      },
+      {
+        "date": "2026-10-03",
+        "count": 0
       }
     ],
     "citations_per_year": {},
     "citations_per_year_count": 0,
-    "citations_per_year_updated": "2026-10-02"
+    "citations_per_year_updated": "2026-10-03"
   }
 ]

@@ -827,6 +827,12 @@
     "name": null,
     "source": "https://ieeexplore.ieee.org/abstract/document/11691368/"
   },
+  "https://ieeexplore.ieee.org/abstract/document/11699070/": {
+    "checked_at": "2026-10-03",
+    "error": "HTTPError",
+    "name": null,
+    "source": "https://ieeexplore.ieee.org/abstract/document/11699070/"
+  },
   "https://inria.hal.science/hal-05650807/": {
     "checked_at": "2026-10-02",
     "name": null,
