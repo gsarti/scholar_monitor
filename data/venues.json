@@ -494,6 +494,11 @@
     "name": "arXiv",
     "source": "https://arxiv.org/abs/2609.24932"
   },
+  "https://arxiv.org/abs/2610.02116": {
+    "checked_at": "2026-10-05",
+    "name": "arXiv",
+    "source": "https://arxiv.org/abs/2610.02116"
+  },
   "https://basaltlabs.org/Monolith-1.0-2606.pdf": {
     "checked_at": "2026-10-02",
     "name": null
