@@ -833,8 +833,7 @@
     "source": "https://ieeexplore.ieee.org/abstract/document/11691368/"
   },
   "https://ieeexplore.ieee.org/abstract/document/11699070/": {
-    "checked_at": "2026-10-03",
-    "error": "HTTPError",
+    "checked_at": "2026-10-10",
     "name": null,
     "source": "https://ieeexplore.ieee.org/abstract/document/11699070/"
   },
@@ -942,6 +941,11 @@
     "checked_at": "2026-10-09",
     "name": null,
     "source": "https://api.crossref.org/works/10.1007/978-981-95-4929-0"
+  },
+  "https://link.springer.com/chapter/10.1007/978-3-032-37682-4_19": {
+    "checked_at": "2026-10-10",
+    "name": "Lecture Notes in Computer Science",
+    "source": "https://api.crossref.org/works/10.1007/978-3-032-37682-4_19"
   },
   "https://link.springer.com/chapter/10.1007/978-981-92-0378-9_29": {
     "checked_at": "2026-10-02",
