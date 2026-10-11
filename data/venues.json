@@ -887,6 +887,11 @@
     "name": "Studies in Health Technology and Informatics",
     "source": "https://api.crossref.org/works/10.3233/SHTI260314"
   },
+  "https://journals.starscholarspress.org/index.php/staropen/article/view/220": {
+    "checked_at": "2026-10-11",
+    "name": "STAR Open: An International Multidisciplinary Journal",
+    "source": "https://journals.starscholarspress.org/index.php/staropen/article/view/220"
+  },
   "https://jtie.stekom.ac.id/index.php/jtie/article/view/446": {
     "checked_at": "2026-10-02",
     "name": "Journal of Technology Informatics and Engineering",
@@ -1106,7 +1111,7 @@
     "name": null
   },
   "https://openreview.net/forum?id=nDHs6Q4a9b": {
-    "checked_at": "2026-10-04",
+    "checked_at": "2026-10-11",
     "name": null
   },
   "https://openreview.net/forum?id=qKQlfKER2P": {
@@ -1115,6 +1120,10 @@
   },
   "https://openreview.net/forum?id=rJweptQVw6": {
     "checked_at": "2026-10-09",
+    "name": null
+  },
+  "https://openreview.net/forum?id=rUGOJeJp6N": {
+    "checked_at": "2026-10-11",
     "name": null
   },
   "https://openreview.net/forum?id=u6JLh0BO5h": {
@@ -1303,6 +1312,10 @@
     "name": null,
     "source": "https://rave.ohiolink.edu/etdc/view?acc_num=ucin1787577302724685"
   },
+  "https://raw.githubusercontent.com/mlresearch/v350/main/assets/yesmin26a/yesmin26a.pdf": {
+    "checked_at": "2026-10-11",
+    "name": null
+  },
   "https://repo.uni-hannover.de/items/0c488a0f-ca4f-4aeb-aaf9-46d00510cbd2": {
     "checked_at": "2026-10-09",
     "name": null,
@@ -1483,6 +1496,10 @@
     "name": null,
     "source": "https://api.crossref.org/works/10.3389/frai.2025.1730614/full"
   },
+  "https://www.gw.uni-jena.de/phifakmedia/200046/book-of-abstracts.pdf#page=15": {
+    "checked_at": "2026-10-11",
+    "name": null
+  },
   "https://www.igi-global.com/chapter/explainable-ai-xai-for-classical-ml-and-llms/409349": {
     "checked_at": "2026-10-09",
     "error": "HTTPError",
@@ -1587,6 +1604,12 @@
     "error": "HTTPError",
     "name": null,
     "source": "https://www.preprints.org/manuscript/202609.0757"
+  },
+  "https://www.preprints.org/manuscript/202610.0435": {
+    "checked_at": "2026-10-11",
+    "error": "HTTPError",
+    "name": null,
+    "source": "https://www.preprints.org/manuscript/202610.0435"
   },
   "https://www.raco.cat/index.php/TSC/article/view/980000009409": {
     "checked_at": "2026-10-02",
