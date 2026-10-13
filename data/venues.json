@@ -747,6 +747,11 @@
     "name": "13th European Congress of Embedded Real Time Systems (ERTS)",
     "source": "https://hal.science/hal-05513839/"
   },
+  "https://heisenpub.com/index.php/ACSBSS/article/view/2026-08-04": {
+    "checked_at": "2026-10-13",
+    "name": null,
+    "source": "https://heisenpub.com/index.php/ACSBSS/article/view/2026-08-04"
+  },
   "https://ieeexplore.ieee.org/abstract/document/11084299/": {
     "checked_at": "2026-10-09",
     "name": null,
@@ -1042,6 +1047,10 @@
     "name": null,
     "source": "https://openresearch-repository.anu.edu.au/entities/publication/994a9e4c-e3ae-43f7-aab0-b7ceca3e2113"
   },
+  "https://openreview.net/forum?id=20lTANRDAz": {
+    "checked_at": "2026-10-13",
+    "name": null
+  },
   "https://openreview.net/forum?id=3x89U8nvoE": {
     "checked_at": "2026-10-09",
     "name": null
@@ -1302,6 +1311,10 @@
     "name": "Journal of Chemical Information and Modeling",
     "source": "https://api.crossref.org/works/10.1021/acs.jcim.6c00677"
   },
+  "https://pys8vc40ox3z7qxp.public.blob.vercel-storage.com/files/3903839bf1aa4674-95ee-4054-87da-14f41117bd52-Sisyphus-in-the-loop_-What-Makes-an-LLM-Persist_.pdf": {
+    "checked_at": "2026-10-13",
+    "name": null
+  },
   "https://rave.ohiolink.edu/etdc/view?acc_num=osu1773715796512155": {
     "checked_at": "2026-10-09",
     "name": null,
@@ -1345,6 +1358,11 @@
     "checked_at": "2026-10-09",
     "name": null,
     "source": "https://search.proquest.com/openview/1609e728e6a8c2e860a486855b778a2e/1?pq-origsite=gscholar&cbl=18750&diss=y"
+  },
+  "https://search.proquest.com/openview/2e140c550a7e91b600709bafc9cb37a1/1?pq-origsite=gscholar&cbl=18750&diss=y": {
+    "checked_at": "2026-10-13",
+    "name": null,
+    "source": "https://search.proquest.com/openview/2e140c550a7e91b600709bafc9cb37a1/1?pq-origsite=gscholar&cbl=18750&diss=y"
   },
   "https://search.proquest.com/openview/363730769e0c3eca1446d865db4a5755/1?pq-origsite=gscholar&cbl=18750&diss=y": {
     "checked_at": "2026-10-09",
@@ -1610,6 +1628,18 @@
     "error": "HTTPError",
     "name": null,
     "source": "https://www.preprints.org/manuscript/202610.0435"
+  },
+  "https://www.preprints.org/manuscript/202610.0519": {
+    "checked_at": "2026-10-13",
+    "error": "HTTPError",
+    "name": null,
+    "source": "https://www.preprints.org/manuscript/202610.0519"
+  },
+  "https://www.preprints.org/manuscript/202610.0808": {
+    "checked_at": "2026-10-13",
+    "error": "HTTPError",
+    "name": null,
+    "source": "https://www.preprints.org/manuscript/202610.0808"
   },
   "https://www.raco.cat/index.php/TSC/article/view/980000009409": {
     "checked_at": "2026-10-02",
