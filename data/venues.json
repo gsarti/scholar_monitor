@@ -676,6 +676,11 @@
     "name": "Proceedings of the 8th ACM Conference on Conversational User Interfaces",
     "source": "https://api.crossref.org/works/10.1145/3816046.3816316"
   },
+  "https://dl.acm.org/doi/abs/10.1145/3843782.3844659": {
+    "checked_at": "2026-10-14",
+    "name": "Proceedings of the 1st International Workshop on Trustworthy and Responsible aUtonomous SysTems",
+    "source": "https://api.crossref.org/works/10.1145/3843782.3844659"
+  },
   "https://dl.acm.org/doi/abs/10.1145/3846173": {
     "checked_at": "2026-10-02",
     "name": "ACM Computing Surveys",
