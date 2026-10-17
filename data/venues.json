@@ -865,7 +865,7 @@
     "source": "https://ieeexplore.ieee.org/abstract/document/11691368/"
   },
   "https://ieeexplore.ieee.org/abstract/document/11699070/": {
-    "checked_at": "2026-10-10",
+    "checked_at": "2026-10-17",
     "name": null,
     "source": "https://ieeexplore.ieee.org/abstract/document/11699070/"
   },
@@ -1516,6 +1516,12 @@
     "name": null,
     "source": "https://ualberta.scholaris.ca/items/1005844f-ab41-479b-aec7-620fcc847426"
   },
+  "https://upcommons.upc.edu/entities/publication/431fb2a6-10be-4be5-b879-192a8e2a5673": {
+    "checked_at": "2026-10-17",
+    "error": "HTTPError",
+    "name": null,
+    "source": "https://upcommons.upc.edu/entities/publication/431fb2a6-10be-4be5-b879-192a8e2a5673"
+  },
   "https://upcommons.upc.edu/entities/publication/878e8cbb-3a6b-4ff7-84af-8825d9a90cdb": {
     "checked_at": "2026-10-16",
     "error": "HTTPError",
@@ -1691,6 +1697,12 @@
     "checked_at": "2026-10-02",
     "name": "Treballs de sociolingüística catalana",
     "source": "https://www.raco.cat/index.php/TSC/article/view/980000009409"
+  },
+  "https://www.repository.cam.ac.uk/items/272cac85-673b-41df-ae02-18c6e8d4f3a5": {
+    "checked_at": "2026-10-17",
+    "error": "TimeoutError",
+    "name": null,
+    "source": "https://www.repository.cam.ac.uk/items/272cac85-673b-41df-ae02-18c6e8d4f3a5"
   },
   "https://www.research-collection.ethz.ch/bitstreams/f4073b47-2050-4194-8540-a8a43eaf8ecb/download": {
     "checked_at": "2026-10-16",
