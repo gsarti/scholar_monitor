@@ -853,7 +853,7 @@
     "source": "https://ieeexplore.ieee.org/abstract/document/11691368/"
   },
   "https://ieeexplore.ieee.org/abstract/document/11699070/": {
-    "checked_at": "2026-10-17",
+    "checked_at": "2026-10-24",
     "name": null,
     "source": "https://ieeexplore.ieee.org/abstract/document/11699070/"
   },
@@ -1498,6 +1498,11 @@
     "name": null,
     "source": "https://tesidottorato.depositolegale.it/handle/20.500.14242/364917"
   },
+  "https://tesidottorato.depositolegale.it/handle/20.500.14242/381666": {
+    "checked_at": "2026-10-24",
+    "name": null,
+    "source": "https://tesidottorato.depositolegale.it/handle/20.500.14242/381666"
+  },
   "https://trec.nist.gov/pubs/trec34/papers/UvA.ragtime.pdf": {
     "checked_at": "2026-10-23",
     "name": null
@@ -1508,7 +1513,7 @@
     "source": "https://ualberta.scholaris.ca/items/1005844f-ab41-479b-aec7-620fcc847426"
   },
   "https://upcommons.upc.edu/entities/publication/431fb2a6-10be-4be5-b879-192a8e2a5673": {
-    "checked_at": "2026-10-17",
+    "checked_at": "2026-10-24",
     "error": "HTTPError",
     "name": null,
     "source": "https://upcommons.upc.edu/entities/publication/431fb2a6-10be-4be5-b879-192a8e2a5673"
@@ -1684,14 +1689,19 @@
     "name": null,
     "source": "https://www.preprints.org/manuscript/202610.0808"
   },
+  "https://www.preprints.org/manuscript/202610.1867": {
+    "checked_at": "2026-10-24",
+    "error": "HTTPError",
+    "name": null,
+    "source": "https://www.preprints.org/manuscript/202610.1867"
+  },
   "https://www.raco.cat/index.php/TSC/article/view/980000009409": {
     "checked_at": "2026-10-02",
     "name": "Treballs de sociolingüística catalana",
     "source": "https://www.raco.cat/index.php/TSC/article/view/980000009409"
   },
   "https://www.repository.cam.ac.uk/items/272cac85-673b-41df-ae02-18c6e8d4f3a5": {
-    "checked_at": "2026-10-17",
-    "error": "TimeoutError",
+    "checked_at": "2026-10-24",
     "name": null,
     "source": "https://www.repository.cam.ac.uk/items/272cac85-673b-41df-ae02-18c6e8d4f3a5"
   },
