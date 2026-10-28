@@ -271,6 +271,41 @@
     "name": "Proceedings of the 26th Annual Conference of the European Association for Machine Translation (Volume 1)",
     "source": "https://aclanthology.org/2026.eamt-1.1/"
   },
+  "https://aclanthology.org/2026.emnlp-main.1086/": {
+    "checked_at": "2026-10-28",
+    "name": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    "source": "https://aclanthology.org/2026.emnlp-main.1086/"
+  },
+  "https://aclanthology.org/2026.emnlp-main.1895/": {
+    "checked_at": "2026-10-28",
+    "name": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    "source": "https://aclanthology.org/2026.emnlp-main.1895/"
+  },
+  "https://aclanthology.org/2026.emnlp-main.1929/": {
+    "checked_at": "2026-10-28",
+    "name": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    "source": "https://aclanthology.org/2026.emnlp-main.1929/"
+  },
+  "https://aclanthology.org/2026.emnlp-main.2406/": {
+    "checked_at": "2026-10-28",
+    "name": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    "source": "https://aclanthology.org/2026.emnlp-main.2406/"
+  },
+  "https://aclanthology.org/2026.emnlp-main.2637/": {
+    "checked_at": "2026-10-28",
+    "name": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    "source": "https://aclanthology.org/2026.emnlp-main.2637/"
+  },
+  "https://aclanthology.org/2026.emnlp-main.530/": {
+    "checked_at": "2026-10-28",
+    "name": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    "source": "https://aclanthology.org/2026.emnlp-main.530/"
+  },
+  "https://aclanthology.org/2026.emnlp-main.570/": {
+    "checked_at": "2026-10-28",
+    "name": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    "source": "https://aclanthology.org/2026.emnlp-main.570/"
+  },
   "https://aclanthology.org/2026.findings-acl.1117/": {
     "checked_at": "2026-10-02",
     "name": "Findings of the Association for Computational Linguistics: ACL 2026",
@@ -315,6 +350,56 @@
     "checked_at": "2026-10-02",
     "name": "Findings of the Association for Computational Linguistics: EACL 2026",
     "source": "https://aclanthology.org/2026.findings-eacl.322/"
+  },
+  "https://aclanthology.org/2026.findings-emnlp.1024/": {
+    "checked_at": "2026-10-28",
+    "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    "source": "https://aclanthology.org/2026.findings-emnlp.1024/"
+  },
+  "https://aclanthology.org/2026.findings-emnlp.1292/": {
+    "checked_at": "2026-10-28",
+    "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    "source": "https://aclanthology.org/2026.findings-emnlp.1292/"
+  },
+  "https://aclanthology.org/2026.findings-emnlp.1333/": {
+    "checked_at": "2026-10-28",
+    "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    "source": "https://aclanthology.org/2026.findings-emnlp.1333/"
+  },
+  "https://aclanthology.org/2026.findings-emnlp.1587/": {
+    "checked_at": "2026-10-28",
+    "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    "source": "https://aclanthology.org/2026.findings-emnlp.1587/"
+  },
+  "https://aclanthology.org/2026.findings-emnlp.1699/": {
+    "checked_at": "2026-10-28",
+    "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    "source": "https://aclanthology.org/2026.findings-emnlp.1699/"
+  },
+  "https://aclanthology.org/2026.findings-emnlp.2433/": {
+    "checked_at": "2026-10-28",
+    "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    "source": "https://aclanthology.org/2026.findings-emnlp.2433/"
+  },
+  "https://aclanthology.org/2026.findings-emnlp.286/": {
+    "checked_at": "2026-10-28",
+    "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    "source": "https://aclanthology.org/2026.findings-emnlp.286/"
+  },
+  "https://aclanthology.org/2026.findings-emnlp.656/": {
+    "checked_at": "2026-10-28",
+    "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    "source": "https://aclanthology.org/2026.findings-emnlp.656/"
+  },
+  "https://aclanthology.org/2026.findings-emnlp.875/": {
+    "checked_at": "2026-10-28",
+    "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    "source": "https://aclanthology.org/2026.findings-emnlp.875/"
+  },
+  "https://aclanthology.org/2026.mrl-1.11/": {
+    "checked_at": "2026-10-28",
+    "name": "Proceedings of the 6th Workshop on Multilingual Representation Learning (MRL 2026)",
+    "source": "https://aclanthology.org/2026.mrl-1.11/"
   },
   "https://aclanthology.org/anthology-files/anthology-files/pdf/eamt/2026.eamt-1.39.pdf": {
     "checked_at": "2026-10-02",
@@ -1422,7 +1507,7 @@
     "source": "https://search.proquest.com/openview/704a1b44c93e718238f1ec313753c26f/1?pq-origsite=gscholar&cbl=18750&diss=y"
   },
   "https://search.proquest.com/openview/75f9e8a0769ce3c55f06949deece9a0f/1.pdf?pq-origsite=gscholar&cbl=18750&diss=y": {
-    "checked_at": "2026-10-21",
+    "checked_at": "2026-10-28",
     "name": null
   },
   "https://search.proquest.com/openview/8c8d25231cc1c6ceffbd6df6539a67b3/1?pq-origsite=gscholar&cbl=18750&diss=y": {
