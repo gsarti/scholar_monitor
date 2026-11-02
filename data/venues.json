@@ -381,6 +381,11 @@
     "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
     "source": "https://aclanthology.org/2026.findings-emnlp.1699/"
   },
+  "https://aclanthology.org/2026.findings-emnlp.1759/": {
+    "checked_at": "2026-11-02",
+    "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    "source": "https://aclanthology.org/2026.findings-emnlp.1759/"
+  },
   "https://aclanthology.org/2026.findings-emnlp.2433/": {
     "checked_at": "2026-10-28",
     "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
@@ -405,6 +410,11 @@
     "checked_at": "2026-10-28",
     "name": "Proceedings of the 6th Workshop on Multilingual Representation Learning (MRL 2026)",
     "source": "https://aclanthology.org/2026.mrl-1.11/"
+  },
+  "https://aclanthology.org/2026.mrl-1.50/": {
+    "checked_at": "2026-11-02",
+    "name": "Proceedings of the 6th Workshop on Multilingual Representation Learning (MRL 2026)",
+    "source": "https://aclanthology.org/2026.mrl-1.50/"
   },
   "https://aclanthology.org/anthology-files/anthology-files/pdf/eamt/2026.eamt-1.39.pdf": {
     "checked_at": "2026-10-02",
@@ -648,7 +658,7 @@
     "name": null
   },
   "https://clic2026.unipa.it/wp-content/uploads/2026/09/24_main_long.pdf": {
-    "checked_at": "2026-10-26",
+    "checked_at": "2026-11-02",
     "name": null
   },
   "https://cruxevals.com/open-world-evaluations.pdf": {
@@ -1851,6 +1861,12 @@
     "name": null,
     "source": "https://www.preprints.org/manuscript/202610.1867"
   },
+  "https://www.preprints.org/manuscript/202610.2861": {
+    "checked_at": "2026-11-02",
+    "error": "HTTPError",
+    "name": null,
+    "source": "https://www.preprints.org/manuscript/202610.2861"
+  },
   "https://www.raco.cat/index.php/TSC/article/view/980000009409": {
     "checked_at": "2026-10-02",
     "name": "Treballs de sociolingüística catalana",
@@ -1867,6 +1883,12 @@
     "error": "HTTPError",
     "name": null,
     "source": "https://www.research-collection.ethz.ch/bitstreams/f4073b47-2050-4194-8540-a8a43eaf8ecb/download"
+  },
+  "https://www.research-collection.ethz.ch/items/45e07812-8083-4cfe-9161-0afc2da1948b": {
+    "checked_at": "2026-11-02",
+    "error": "HTTPError",
+    "name": null,
+    "source": "https://www.research-collection.ethz.ch/items/45e07812-8083-4cfe-9161-0afc2da1948b"
   },
   "https://www.research-collection.ethz.ch/items/69a4185c-0abb-4be8-ac69-a71dbebe2736": {
     "checked_at": "2026-10-30",
@@ -1962,6 +1984,11 @@
     "checked_at": "2026-10-02",
     "name": "IEEE/CAA Journal of Automatica Sinica",
     "source": "https://api.crossref.org/works/10.1109/JAS.2026.126209"
+  },
+  "https://www.tandfonline.com/doi/full/10.1080/27660400.2026.2745582": {
+    "checked_at": "2026-11-02",
+    "name": "Science and Technology of Advanced Materials: Methods",
+    "source": "https://api.crossref.org/works/10.1080/27660400.2026.2745582"
   },
   "https://www.taylorfrancis.com/chapters/edit/10.4324/9781003271314-25/post-editing-quality-automation-translation-market-david-orrego-carmona-samuel-l%C3%A4ubli": {
     "checked_at": "2026-10-30",
