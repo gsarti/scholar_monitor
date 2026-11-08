@@ -1793,6 +1793,15 @@
       "h_index_recent": 14,
       "i10_index": 20,
       "i10_index_recent": 19
+    },
+    {
+      "date": "2026-11-08",
+      "citations": 2254,
+      "citations_recent": 2236,
+      "h_index": 14,
+      "h_index_recent": 14,
+      "i10_index": 20,
+      "i10_index_recent": 19
     }
   ],
   "citations_per_year": {
@@ -1802,6 +1811,6 @@
     "2023": 100,
     "2024": 184,
     "2025": 624,
-    "2026": 1265
+    "2026": 1275
   }
 }

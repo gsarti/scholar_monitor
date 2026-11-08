@@ -180,6 +180,11 @@
     "name": "Proceedings of the 4th Table Representation Learning Workshop",
     "source": "https://aclanthology.org/2025.trl-1.10/"
   },
+  "https://aclanthology.org/2026.aacl-long.200/": {
+    "checked_at": "2026-11-08",
+    "name": "Proceedings of the 15th International Joint Conference on Natural Language Processing and the 5th Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "source": "https://aclanthology.org/2026.aacl-long.200/"
+  },
   "https://aclanthology.org/2026.acl-demo.1/": {
     "checked_at": "2026-10-02",
     "name": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)",
@@ -315,6 +320,16 @@
     "name": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
     "source": "https://aclanthology.org/2026.emnlp-main.570/"
   },
+  "https://aclanthology.org/2026.findings-aacl.108/": {
+    "checked_at": "2026-11-08",
+    "name": "Findings of the Association for Computational Linguistics: IJCNLP-AACL 2026",
+    "source": "https://aclanthology.org/2026.findings-aacl.108/"
+  },
+  "https://aclanthology.org/2026.findings-aacl.140/": {
+    "checked_at": "2026-11-08",
+    "name": "Findings of the Association for Computational Linguistics: IJCNLP-AACL 2026",
+    "source": "https://aclanthology.org/2026.findings-aacl.140/"
+  },
   "https://aclanthology.org/2026.findings-acl.1117/": {
     "checked_at": "2026-10-02",
     "name": "Findings of the Association for Computational Linguistics: ACL 2026",
@@ -395,6 +410,11 @@
     "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
     "source": "https://aclanthology.org/2026.findings-emnlp.1759/"
   },
+  "https://aclanthology.org/2026.findings-emnlp.1980/": {
+    "checked_at": "2026-11-08",
+    "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    "source": "https://aclanthology.org/2026.findings-emnlp.1980/"
+  },
   "https://aclanthology.org/2026.findings-emnlp.2433/": {
     "checked_at": "2026-10-28",
     "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
@@ -424,6 +444,11 @@
     "checked_at": "2026-11-02",
     "name": "Proceedings of the 6th Workshop on Multilingual Representation Learning (MRL 2026)",
     "source": "https://aclanthology.org/2026.mrl-1.50/"
+  },
+  "https://aclanthology.org/2026.nllp-1.31/": {
+    "checked_at": "2026-11-08",
+    "name": "Proceedings of the Natural Legal Language Processing Workshop 2026",
+    "source": "https://aclanthology.org/2026.nllp-1.31/"
   },
   "https://aclanthology.org/2026.realm-1.34/": {
     "checked_at": "2026-11-06",
@@ -793,6 +818,16 @@
     "checked_at": "2026-10-02",
     "name": "ACM Transactions on Information Systems",
     "source": "https://api.crossref.org/works/10.1145/3788865"
+  },
+  "https://dl.acm.org/doi/abs/10.1145/3799682.3840012": {
+    "checked_at": "2026-11-08",
+    "name": "Proceedings of the 35th ACM International Conference on Information and Knowledge Management",
+    "source": "https://api.crossref.org/works/10.1145/3799682.3840012"
+  },
+  "https://dl.acm.org/doi/abs/10.1145/3799682.3840791": {
+    "checked_at": "2026-11-08",
+    "name": "Proceedings of the 35th ACM International Conference on Information and Knowledge Management",
+    "source": "https://api.crossref.org/works/10.1145/3799682.3840791"
   },
   "https://dl.acm.org/doi/abs/10.1145/3805713.3820409": {
     "checked_at": "2026-10-02",
@@ -1318,7 +1353,7 @@
     "name": null
   },
   "https://openreview.net/forum?id=nDHs6Q4a9b": {
-    "checked_at": "2026-11-01",
+    "checked_at": "2026-11-08",
     "name": null
   },
   "https://openreview.net/forum?id=qKQlfKER2P": {
@@ -1330,7 +1365,7 @@
     "name": null
   },
   "https://openreview.net/forum?id=rUGOJeJp6N": {
-    "checked_at": "2026-11-01",
+    "checked_at": "2026-11-08",
     "name": null
   },
   "https://openreview.net/forum?id=u6JLh0BO5h": {
@@ -1538,7 +1573,7 @@
     "source": "https://rave.ohiolink.edu/etdc/view?acc_num=ucin1787577302724685"
   },
   "https://raw.githubusercontent.com/mlresearch/v350/main/assets/yesmin26a/yesmin26a.pdf": {
-    "checked_at": "2026-11-01",
+    "checked_at": "2026-11-08",
     "name": null
   },
   "https://repo.uni-hannover.de/items/0c488a0f-ca4f-4aeb-aaf9-46d00510cbd2": {
@@ -1725,6 +1760,11 @@
     "name": null,
     "source": "https://upcommons.upc.edu/entities/publication/878e8cbb-3a6b-4ff7-84af-8825d9a90cdb"
   },
+  "https://uwspace.uwaterloo.ca/items/03e646e7-1f37-4ae1-b77b-efe51e308057": {
+    "checked_at": "2026-11-08",
+    "name": null,
+    "source": "https://uwspace.uwaterloo.ca/items/03e646e7-1f37-4ae1-b77b-efe51e308057"
+  },
   "https://vllm-semantic-router.com/zh-Hans/vision-paper.pdf": {
     "checked_at": "2026-11-06",
     "name": null
@@ -1780,7 +1820,7 @@
     "source": "https://api.crossref.org/works/10.3389/fpsyg.2026.1900073/full"
   },
   "https://www.gw.uni-jena.de/phifakmedia/200046/book-of-abstracts.pdf#page=15": {
-    "checked_at": "2026-11-01",
+    "checked_at": "2026-11-08",
     "name": null
   },
   "https://www.igi-global.com/chapter/explainable-ai-xai-for-classical-ml-and-llms/409349": {
@@ -1806,7 +1846,7 @@
     "source": "https://api.crossref.org/works/10.1075/dt.25018.rod"
   },
   "https://www.jmir.org/2026/1/e96886/": {
-    "checked_at": "2026-11-01",
+    "checked_at": "2026-11-08",
     "name": null,
     "source": "https://www.jmir.org/2026/1/e96886/"
   },
@@ -1914,7 +1954,7 @@
     "source": "https://www.preprints.org/manuscript/202609.0757"
   },
   "https://www.preprints.org/manuscript/202610.0435": {
-    "checked_at": "2026-11-01",
+    "checked_at": "2026-11-08",
     "error": "HTTPError",
     "name": null,
     "source": "https://www.preprints.org/manuscript/202610.0435"
@@ -2036,6 +2076,12 @@
     "error": "HTTPError",
     "name": null,
     "source": "https://www.sciencedirect.com/science/article/pii/S1532046426001139"
+  },
+  "https://www.sciencedirect.com/science/article/pii/S2352220826000830": {
+    "checked_at": "2026-11-08",
+    "error": "HTTPError",
+    "name": null,
+    "source": "https://www.sciencedirect.com/science/article/pii/S2352220826000830"
   },
   "https://www.sciencedirect.com/science/article/pii/S2468696426000030": {
     "checked_at": "2026-11-06",
