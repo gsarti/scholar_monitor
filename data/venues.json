@@ -415,6 +415,11 @@
     "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
     "source": "https://aclanthology.org/2026.findings-emnlp.1980/"
   },
+  "https://aclanthology.org/2026.findings-emnlp.2187/": {
+    "checked_at": "2026-11-09",
+    "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    "source": "https://aclanthology.org/2026.findings-emnlp.2187/"
+  },
   "https://aclanthology.org/2026.findings-emnlp.2433/": {
     "checked_at": "2026-10-28",
     "name": "Findings of the Association for Computational Linguistics: EMNLP 2026",
@@ -702,7 +707,7 @@
     "name": null
   },
   "https://clic2026.unipa.it/wp-content/uploads/2026/09/24_main_long.pdf": {
-    "checked_at": "2026-11-02",
+    "checked_at": "2026-11-09",
     "name": null
   },
   "https://cruxevals.com/open-world-evaluations.pdf": {
@@ -1978,7 +1983,7 @@
     "source": "https://www.preprints.org/manuscript/202610.1867"
   },
   "https://www.preprints.org/manuscript/202610.2861": {
-    "checked_at": "2026-11-02",
+    "checked_at": "2026-11-09",
     "error": "HTTPError",
     "name": null,
     "source": "https://www.preprints.org/manuscript/202610.2861"
@@ -2000,7 +2005,7 @@
     "source": "https://www.research-collection.ethz.ch/bitstreams/f4073b47-2050-4194-8540-a8a43eaf8ecb/download"
   },
   "https://www.research-collection.ethz.ch/items/45e07812-8083-4cfe-9161-0afc2da1948b": {
-    "checked_at": "2026-11-02",
+    "checked_at": "2026-11-09",
     "error": "HTTPError",
     "name": null,
     "source": "https://www.research-collection.ethz.ch/items/45e07812-8083-4cfe-9161-0afc2da1948b"
