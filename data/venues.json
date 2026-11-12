@@ -4,7 +4,7 @@
     "name": null
   },
   "http://injoere.com/index.php/injoere/article/view/2156": {
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-12",
     "name": null
   },
   "http://ojs.iscram.org/index.php/Proceedings/article/view/228": {
@@ -662,7 +662,7 @@
     "source": "https://api.crossref.org/works/10.1111/bju.16873"
   },
   "https://bonndoc.ulb.uni-bonn.de/xmlui/handle/20.500.11811/14677": {
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-12",
     "name": null,
     "source": "https://bonndoc.ulb.uni-bonn.de/xmlui/handle/20.500.11811/14677"
   },
@@ -1070,7 +1070,8 @@
     "source": "https://ieeexplore.ieee.org/abstract/document/11699070/"
   },
   "https://ieeexplore.ieee.org/abstract/document/11736957/": {
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-12",
+    "error": "HTTPError",
     "name": null,
     "source": "https://ieeexplore.ieee.org/abstract/document/11736957/"
   },
@@ -1602,7 +1603,7 @@
     "source": "https://repository.gatech.edu/entities/publication/c610d5ee-98d1-41bc-9a81-e13e4723637e"
   },
   "https://repository.ihu.gr/items/fab59d03-2f30-455d-9b47-bf214f6c91c9": {
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-12",
     "name": null,
     "source": "https://repository.ihu.gr/items/fab59d03-2f30-455d-9b47-bf214f6c91c9"
   },
@@ -1613,7 +1614,7 @@
     "source": "https://s-space.snu.ac.kr/handle/10371/233855"
   },
   "https://search.proquest.com/openview/0962b423bc009f73911e004e23a5737e/1?pq-origsite=gscholar&cbl=2061777": {
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-12",
     "name": null,
     "source": "https://search.proquest.com/openview/0962b423bc009f73911e004e23a5737e/1?pq-origsite=gscholar&cbl=2061777"
   },
@@ -1677,7 +1678,7 @@
     "source": "https://search.proquest.com/openview/ab4a38401b34d33c46c9a323884df2a5/1?pq-origsite=gscholar&cbl=18750&diss=y"
   },
   "https://search.proquest.com/openview/cee81db8fb0095677ad63138fe09179e/1?pq-origsite=gscholar&cbl=18750&diss=y": {
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-12",
     "name": null,
     "source": "https://search.proquest.com/openview/cee81db8fb0095677ad63138fe09179e/1?pq-origsite=gscholar&cbl=18750&diss=y"
   },
@@ -1807,7 +1808,7 @@
     "source": "https://www.diva-portal.org/smash/record.jsf?pid=diva2:2059679"
   },
   "https://www.elibrary.imf.org/downloadpdf/view/journals/001/2026/231/001.2026.issue-231-en.pdf": {
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-12",
     "name": null
   },
   "https://www.emerald.com/ftinr/article-abstract/20/5/381/1405849": {
