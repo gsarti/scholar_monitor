@@ -1,8 +1,8 @@
 {
   "scholar_id": "sK0B_08AAAAJ",
   "name": "Gabriele Sarti",
-  "affiliation": "Parallax & Northeastern University",
-  "email": "Verified email at northeastern.edu",
+  "affiliation": "Co-founder & Technical Director, Parallax",
+  "email": "Verified email at parallx.ai",
   "homepage": "http://gsarti.com/",
   "thumbnail": "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=sK0B_08AAAAJ&citpid=8",
   "labels": [
@@ -1832,6 +1832,15 @@
     },
     {
       "date": "2026-11-12",
+      "citations": 2268,
+      "citations_recent": 2249,
+      "h_index": 14,
+      "h_index_recent": 14,
+      "i10_index": 20,
+      "i10_index_recent": 19
+    },
+    {
+      "date": "2026-11-13",
       "citations": 2268,
       "citations_recent": 2249,
       "h_index": 14,
