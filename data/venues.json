@@ -520,7 +520,7 @@
     "source": "https://aisel.aisnet.org/ecis2026/resp_AI/resp_AI/7/"
   },
   "https://aisel.aisnet.org/icis2026/security/security/15/": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "name": null,
     "source": "https://aisel.aisnet.org/icis2026/security/security/15/"
   },
@@ -679,7 +679,7 @@
     "name": null
   },
   "https://books.google.com/books?hl=en&lr=&id=Aw0iEgAAQBAJ&oi=fnd&pg=PR3&ots=fC88euY2Zi&sig=24vty6Dgc3a-fIqQ9iX-lxdODHI": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "name": null
   },
   "https://books.google.com/books?hl=en&lr=&id=DeDCEQAAQBAJ&oi=fnd&pg=PA77&ots=SwIbtaldqG&sig=YoGL_q0z9nnqcrvxdGQq1Xaajk0": {
@@ -699,7 +699,7 @@
     "name": null
   },
   "https://cdn.amazon.science/06/02/46c7e444450b8b44186904e853d7/scipub-approval152134-50035516-testtime-augmentation-for-llms-where-to-inject-diversity-at-inference-time.pdf": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "name": null
   },
   "https://cdn.amazon.science/96/54/5f11b00d46329111a49e2285ef1f/scipub-approval152129-44354875-rethinking-gold-standards-coevolving-benchmarks-and-agents-for-deep-research-factuality.pdf": {
@@ -874,6 +874,11 @@
     "name": "ACM Computing Surveys",
     "source": "https://api.crossref.org/works/10.1145/3846173"
   },
+  "https://dl.acm.org/doi/abs/10.1145/3847352.3848109": {
+    "checked_at": "2026-11-14",
+    "name": "Proceedings of the 19th ACM Workshop on Artificial Intelligence and Security",
+    "source": "https://api.crossref.org/works/10.1145/3847352.3848109"
+  },
   "https://dspace.bracu.ac.bd/xmlui/handle/10361/27391": {
     "checked_at": "2026-11-13",
     "error": "HTTPError",
@@ -957,11 +962,11 @@
     "source": "https://heisenpub.com/index.php/ACSBSS/article/view/2026-08-04"
   },
   "https://huggingface.co/datasets/sarathkavuru/anthroly-research/resolve/main/papers/contamination-resistant-agent-benchmarks/main.pdf": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "name": null
   },
   "https://huggingface.co/datasets/sarathkavuru/anthroly-research/resolve/main/papers/expert-annotated-data-post-training/main.pdf": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "name": null
   },
   "https://ieeexplore.ieee.org/abstract/document/11084299/": {
@@ -1067,7 +1072,7 @@
     "source": "https://ieeexplore.ieee.org/abstract/document/11691368/"
   },
   "https://ieeexplore.ieee.org/abstract/document/11699070/": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "name": null,
     "source": "https://ieeexplore.ieee.org/abstract/document/11699070/"
   },
@@ -1093,7 +1098,7 @@
     "source": "https://iris.uniroma1.it/handle/11573/1764443"
   },
   "https://iris.uniroma1.it/handle/11573/1778403": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "name": null,
     "source": "https://iris.uniroma1.it/handle/11573/1778403"
   },
@@ -1502,7 +1507,7 @@
     "source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7603518"
   },
   "https://pelayananpasca.ipb.ac.id/administrasi2020/public/Ujian/M0503241031/Artikel_Jurnal_Ilmiah/01_Revision2_Jurnal_Ikhlas_TEMPLATE_ISI_VOL7-I.pdf": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "name": null
   },
   "https://periodicos.ufmg.br/index.php/kriterion/article/view/59382": {
@@ -1746,7 +1751,7 @@
     "source": "https://tesidottorato.depositolegale.it/handle/20.500.14242/364917"
   },
   "https://tesidottorato.depositolegale.it/handle/20.500.14242/381666": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "name": null,
     "source": "https://tesidottorato.depositolegale.it/handle/20.500.14242/381666"
   },
@@ -1760,7 +1765,7 @@
     "source": "https://ualberta.scholaris.ca/items/1005844f-ab41-479b-aec7-620fcc847426"
   },
   "https://upcommons.upc.edu/entities/publication/431fb2a6-10be-4be5-b879-192a8e2a5673": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "error": "HTTPError",
     "name": null,
     "source": "https://upcommons.upc.edu/entities/publication/431fb2a6-10be-4be5-b879-192a8e2a5673"
@@ -1825,7 +1830,7 @@
     "source": "https://api.crossref.org/works/10.3389/frai.2025.1730614/full"
   },
   "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1900073/full": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "error": "HTTPError",
     "name": null,
     "source": "https://api.crossref.org/works/10.3389/fpsyg.2026.1900073/full"
@@ -1847,7 +1852,7 @@
     "source": "https://www.igi-global.com/chapter/potential-curriculum-models-for-intentionally-incorporating-generative-ai-in-higher-education/392157"
   },
   "https://www.intechopen.com/online-first/1261859": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "name": null,
     "source": "https://www.intechopen.com/online-first/1261859"
   },
@@ -1983,7 +1988,7 @@
     "source": "https://www.preprints.org/manuscript/202610.0808"
   },
   "https://www.preprints.org/manuscript/202610.1867": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "error": "HTTPError",
     "name": null,
     "source": "https://www.preprints.org/manuscript/202610.1867"
@@ -2000,7 +2005,7 @@
     "source": "https://www.raco.cat/index.php/TSC/article/view/980000009409"
   },
   "https://www.repository.cam.ac.uk/items/272cac85-673b-41df-ae02-18c6e8d4f3a5": {
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "name": null,
     "source": "https://www.repository.cam.ac.uk/items/272cac85-673b-41df-ae02-18c6e8d4f3a5"
   },
