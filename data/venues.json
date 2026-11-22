@@ -1072,6 +1072,16 @@
     "name": null,
     "source": "https://ieeexplore.ieee.org/abstract/document/11736957/"
   },
+  "https://ieeexplore.ieee.org/abstract/document/11779666/": {
+    "checked_at": "2026-11-22",
+    "name": null,
+    "source": "https://ieeexplore.ieee.org/abstract/document/11779666/"
+  },
+  "https://ieeexplore.ieee.org/abstract/document/11794480/": {
+    "checked_at": "2026-11-22",
+    "name": null,
+    "source": "https://ieeexplore.ieee.org/abstract/document/11794480/"
+  },
   "https://inria.hal.science/hal-05650807/": {
     "checked_at": "2026-11-20",
     "name": null,
@@ -1366,7 +1376,7 @@
     "name": null
   },
   "https://openreview.net/forum?id=nDHs6Q4a9b": {
-    "checked_at": "2026-11-15",
+    "checked_at": "2026-11-22",
     "name": null
   },
   "https://openreview.net/forum?id=qKQlfKER2P": {
@@ -1378,7 +1388,7 @@
     "name": null
   },
   "https://openreview.net/forum?id=rUGOJeJp6N": {
-    "checked_at": "2026-11-15",
+    "checked_at": "2026-11-22",
     "name": null
   },
   "https://openreview.net/forum?id=u6JLh0BO5h": {
@@ -1590,7 +1600,7 @@
     "source": "https://rave.ohiolink.edu/etdc/view?acc_num=ucin1787577302724685"
   },
   "https://raw.githubusercontent.com/mlresearch/v350/main/assets/yesmin26a/yesmin26a.pdf": {
-    "checked_at": "2026-11-15",
+    "checked_at": "2026-11-22",
     "name": null
   },
   "https://repo.uni-hannover.de/items/0c488a0f-ca4f-4aeb-aaf9-46d00510cbd2": {
@@ -1776,7 +1786,7 @@
     "source": "https://upcommons.upc.edu/entities/publication/878e8cbb-3a6b-4ff7-84af-8825d9a90cdb"
   },
   "https://uwspace.uwaterloo.ca/items/03e646e7-1f37-4ae1-b77b-efe51e308057": {
-    "checked_at": "2026-11-15",
+    "checked_at": "2026-11-22",
     "name": null,
     "source": "https://uwspace.uwaterloo.ca/items/03e646e7-1f37-4ae1-b77b-efe51e308057"
   },
@@ -1845,7 +1855,7 @@
     "source": "https://api.crossref.org/works/10.3389/fpsyg.2026.1900073/full"
   },
   "https://www.gw.uni-jena.de/phifakmedia/200046/book-of-abstracts.pdf#page=15": {
-    "checked_at": "2026-11-15",
+    "checked_at": "2026-11-22",
     "name": null
   },
   "https://www.igi-global.com/chapter/explainable-ai-xai-for-classical-ml-and-llms/409349": {
@@ -1871,7 +1881,7 @@
     "source": "https://api.crossref.org/works/10.1075/dt.25018.rod"
   },
   "https://www.jmir.org/2026/1/e96886/": {
-    "checked_at": "2026-11-15",
+    "checked_at": "2026-11-22",
     "name": null,
     "source": "https://www.jmir.org/2026/1/e96886/"
   },
@@ -1979,7 +1989,7 @@
     "source": "https://www.preprints.org/manuscript/202609.0757"
   },
   "https://www.preprints.org/manuscript/202610.0435": {
-    "checked_at": "2026-11-15",
+    "checked_at": "2026-11-22",
     "error": "HTTPError",
     "name": null,
     "source": "https://www.preprints.org/manuscript/202610.0435"
@@ -2111,7 +2121,7 @@
     "source": "https://www.sciencedirect.com/science/article/pii/S1532046426001139"
   },
   "https://www.sciencedirect.com/science/article/pii/S2352220826000830": {
-    "checked_at": "2026-11-15",
+    "checked_at": "2026-11-22",
     "error": "HTTPError",
     "name": null,
     "source": "https://www.sciencedirect.com/science/article/pii/S2352220826000830"

@@ -856,15 +856,19 @@
       {
         "date": "2026-11-21",
         "count": 1076
+      },
+      {
+        "date": "2026-11-22",
+        "count": 1079
       }
     ],
     "citations_per_year": {
       "2024": 5,
       "2025": 320,
-      "2026": 744
+      "2026": 747
     },
-    "citations_per_year_count": 1076,
-    "citations_per_year_updated": "2026-11-20"
+    "citations_per_year_count": 1079,
+    "citations_per_year_updated": "2026-11-22"
   },
   {
     "id": "sK0B_08AAAAJ:M3ejUd6NZC8C",
@@ -1722,6 +1726,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 219
+      },
+      {
+        "date": "2026-11-22",
         "count": 219
       }
     ],
@@ -2589,6 +2597,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 133
+      },
+      {
+        "date": "2026-11-22",
         "count": 133
       }
     ],
@@ -3458,14 +3470,18 @@
       {
         "date": "2026-11-21",
         "count": 130
+      },
+      {
+        "date": "2026-11-22",
+        "count": 131
       }
     ],
     "citations_per_year": {
       "2025": 2,
-      "2026": 126
+      "2026": 127
     },
-    "citations_per_year_count": 130,
-    "citations_per_year_updated": "2026-11-20"
+    "citations_per_year_count": 131,
+    "citations_per_year_updated": "2026-11-22"
   },
   {
     "id": "sK0B_08AAAAJ:qxL8FJ1GzNcC",
@@ -4323,6 +4339,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 125
+      },
+      {
+        "date": "2026-11-22",
         "count": 125
       }
     ],
@@ -5193,15 +5213,19 @@
       {
         "date": "2026-11-21",
         "count": 105
+      },
+      {
+        "date": "2026-11-22",
+        "count": 106
       }
     ],
     "citations_per_year": {
       "2024": 3,
       "2025": 32,
-      "2026": 69
+      "2026": 70
     },
-    "citations_per_year_count": 105,
-    "citations_per_year_updated": "2026-11-20"
+    "citations_per_year_count": 106,
+    "citations_per_year_updated": "2026-11-22"
   },
   {
     "id": "sK0B_08AAAAJ:mVmsd5A6BfQC",
@@ -6059,6 +6083,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 65
+      },
+      {
+        "date": "2026-11-22",
         "count": 65
       }
     ],
@@ -6926,6 +6954,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 65
+      },
+      {
+        "date": "2026-11-22",
         "count": 65
       }
     ],
@@ -7796,6 +7828,10 @@
       {
         "date": "2026-11-21",
         "count": 44
+      },
+      {
+        "date": "2026-11-22",
+        "count": 44
       }
     ],
     "citations_per_year": {
@@ -8663,6 +8699,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 39
+      },
+      {
+        "date": "2026-11-22",
         "count": 39
       }
     ],
@@ -9533,6 +9573,10 @@
       {
         "date": "2026-11-21",
         "count": 36
+      },
+      {
+        "date": "2026-11-22",
+        "count": 36
       }
     ],
     "citations_per_year": {
@@ -10400,6 +10444,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 32
+      },
+      {
+        "date": "2026-11-22",
         "count": 32
       }
     ],
@@ -11269,6 +11317,10 @@
       {
         "date": "2026-11-21",
         "count": 23
+      },
+      {
+        "date": "2026-11-22",
+        "count": 23
       }
     ],
     "citations_per_year": {
@@ -12136,6 +12188,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 22
+      },
+      {
+        "date": "2026-11-22",
         "count": 22
       }
     ],
@@ -13006,6 +13062,10 @@
       {
         "date": "2026-11-21",
         "count": 13
+      },
+      {
+        "date": "2026-11-22",
+        "count": 13
       }
     ],
     "citations_per_year": {
@@ -13871,6 +13931,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 13
+      },
+      {
+        "date": "2026-11-22",
         "count": 13
       }
     ],
@@ -14742,6 +14806,10 @@
       {
         "date": "2026-11-21",
         "count": 13
+      },
+      {
+        "date": "2026-11-22",
+        "count": 13
       }
     ],
     "citations_per_year": {
@@ -15612,6 +15680,10 @@
       {
         "date": "2026-11-21",
         "count": 12
+      },
+      {
+        "date": "2026-11-22",
+        "count": 12
       }
     ],
     "citations_per_year": {
@@ -16477,6 +16549,10 @@
       {
         "date": "2026-11-21",
         "count": 12
+      },
+      {
+        "date": "2026-11-22",
+        "count": 12
       }
     ],
     "citations_per_year": {
@@ -17131,6 +17207,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 10
+      },
+      {
+        "date": "2026-11-22",
         "count": 10
       }
     ],
@@ -17996,6 +18076,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 10
+      },
+      {
+        "date": "2026-11-22",
         "count": 10
       }
     ],
@@ -18866,6 +18950,10 @@
       {
         "date": "2026-11-21",
         "count": 9
+      },
+      {
+        "date": "2026-11-22",
+        "count": 9
       }
     ],
     "citations_per_year": {
@@ -19731,6 +19819,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 9
+      },
+      {
+        "date": "2026-11-22",
         "count": 9
       }
     ],
@@ -20599,6 +20691,10 @@
       {
         "date": "2026-11-21",
         "count": 8
+      },
+      {
+        "date": "2026-11-22",
+        "count": 8
       }
     ],
     "citations_per_year": {
@@ -21463,6 +21559,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 8
+      },
+      {
+        "date": "2026-11-22",
         "count": 8
       }
     ],
@@ -22329,6 +22429,10 @@
       {
         "date": "2026-11-21",
         "count": 7
+      },
+      {
+        "date": "2026-11-22",
+        "count": 7
       }
     ],
     "citations_per_year": {
@@ -23193,6 +23297,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 7
+      },
+      {
+        "date": "2026-11-22",
         "count": 7
       }
     ],
@@ -24062,6 +24170,10 @@
       {
         "date": "2026-11-21",
         "count": 6
+      },
+      {
+        "date": "2026-11-22",
+        "count": 6
       }
     ],
     "citations_per_year": {
@@ -24926,6 +25038,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 6
+      },
+      {
+        "date": "2026-11-22",
         "count": 6
       }
     ],
@@ -25793,6 +25909,10 @@
       {
         "date": "2026-11-21",
         "count": 5
+      },
+      {
+        "date": "2026-11-22",
+        "count": 5
       }
     ],
     "citations_per_year": {
@@ -26459,6 +26579,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 4
+      },
+      {
+        "date": "2026-11-22",
         "count": 4
       }
     ],
@@ -27325,6 +27449,10 @@
       {
         "date": "2026-11-21",
         "count": 4
+      },
+      {
+        "date": "2026-11-22",
+        "count": 4
       }
     ],
     "citations_per_year": {
@@ -28189,6 +28317,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 4
+      },
+      {
+        "date": "2026-11-22",
         "count": 4
       }
     ],
@@ -29057,6 +29189,10 @@
       {
         "date": "2026-11-21",
         "count": 3
+      },
+      {
+        "date": "2026-11-22",
+        "count": 3
       }
     ],
     "citations_per_year": {
@@ -29921,6 +30057,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 3
+      },
+      {
+        "date": "2026-11-22",
         "count": 3
       }
     ],
@@ -30787,6 +30927,10 @@
       {
         "date": "2026-11-21",
         "count": 3
+      },
+      {
+        "date": "2026-11-22",
+        "count": 3
       }
     ],
     "citations_per_year": {
@@ -30864,6 +31008,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 2
+      },
+      {
+        "date": "2026-11-22",
         "count": 2
       }
     ],
@@ -31553,6 +31701,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 2
+      },
+      {
+        "date": "2026-11-22",
         "count": 2
       }
     ],
@@ -32419,6 +32571,10 @@
       {
         "date": "2026-11-21",
         "count": 2
+      },
+      {
+        "date": "2026-11-22",
+        "count": 2
       }
     ],
     "citations_per_year": {
@@ -33283,6 +33439,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 2
+      },
+      {
+        "date": "2026-11-22",
         "count": 2
       }
     ],
@@ -34149,6 +34309,10 @@
       {
         "date": "2026-11-21",
         "count": 2
+      },
+      {
+        "date": "2026-11-22",
+        "count": 2
       }
     ],
     "citations_per_year": {
@@ -34585,6 +34749,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 1
+      },
+      {
+        "date": "2026-11-22",
         "count": 1
       }
     ],
@@ -35451,6 +35619,10 @@
       {
         "date": "2026-11-21",
         "count": 1
+      },
+      {
+        "date": "2026-11-22",
+        "count": 1
       }
     ],
     "citations_per_year": {
@@ -36315,6 +36487,10 @@
       },
       {
         "date": "2026-11-21",
+        "count": 1
+      },
+      {
+        "date": "2026-11-22",
         "count": 1
       }
     ],
@@ -37181,11 +37357,15 @@
       {
         "date": "2026-11-21",
         "count": 0
+      },
+      {
+        "date": "2026-11-22",
+        "count": 0
       }
     ],
     "citations_per_year": {},
     "citations_per_year_count": 0,
-    "citations_per_year_updated": "2026-11-21"
+    "citations_per_year_updated": "2026-11-22"
   },
   {
     "id": "sK0B_08AAAAJ:xtRiw3GOFMkC",
@@ -37216,11 +37396,15 @@
       {
         "date": "2026-11-21",
         "count": 0
+      },
+      {
+        "date": "2026-11-22",
+        "count": 0
       }
     ],
     "citations_per_year": {},
     "citations_per_year_count": 0,
-    "citations_per_year_updated": "2026-11-21"
+    "citations_per_year_updated": "2026-11-22"
   },
   {
     "id": "sK0B_08AAAAJ:bFI3QPDXJZMC",
@@ -37531,11 +37715,15 @@
       {
         "date": "2026-11-21",
         "count": 0
+      },
+      {
+        "date": "2026-11-22",
+        "count": 0
       }
     ],
     "citations_per_year": {},
     "citations_per_year_count": 0,
-    "citations_per_year_updated": "2026-11-21"
+    "citations_per_year_updated": "2026-11-22"
   },
   {
     "id": "sK0B_08AAAAJ:b0M2c_1WBrUC",
@@ -37634,11 +37822,15 @@
       {
         "date": "2026-11-21",
         "count": 0
+      },
+      {
+        "date": "2026-11-22",
+        "count": 0
       }
     ],
     "citations_per_year": {},
     "citations_per_year_count": 0,
-    "citations_per_year_updated": "2026-11-21"
+    "citations_per_year_updated": "2026-11-22"
   },
   {
     "id": "sK0B_08AAAAJ:RHpTSmoSYBkC",
