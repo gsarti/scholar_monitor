@@ -531,7 +531,7 @@
     "source": "https://aisel.aisnet.org/pacis2026/ai_ml/ai_ml/17/"
   },
   "https://algointellect.org/index.php/jaia/article/view/2": {
-    "checked_at": "2026-11-16",
+    "checked_at": "2026-11-23",
     "name": null,
     "source": "https://algointellect.org/index.php/jaia/article/view/2"
   },
@@ -712,7 +712,7 @@
     "name": null
   },
   "https://clic2026.unipa.it/wp-content/uploads/2026/09/24_main_long.pdf": {
-    "checked_at": "2026-11-16",
+    "checked_at": "2026-11-23",
     "name": null
   },
   "https://cruxevals.com/open-world-evaluations.pdf": {
@@ -1224,7 +1224,7 @@
     "source": "https://api.crossref.org/works/10.1007/978-3-032-06264-2"
   },
   "https://link.springer.com/content/pdf/10.1007/s42114-026-02165-z_reference.pdf": {
-    "checked_at": "2026-11-16",
+    "checked_at": "2026-11-23",
     "error": "HTTPError",
     "name": null,
     "source": "https://api.crossref.org/works/10.1007/s42114-026-02165-z_reference"
@@ -1340,7 +1340,7 @@
     "name": null
   },
   "https://openreview.net/forum?id=NIwL22qGYy": {
-    "checked_at": "2026-11-16",
+    "checked_at": "2026-11-23",
     "name": null
   },
   "https://openreview.net/forum?id=Sx5Qth8Wmz": {
@@ -2013,7 +2013,7 @@
     "source": "https://www.preprints.org/manuscript/202610.1867"
   },
   "https://www.preprints.org/manuscript/202610.2861": {
-    "checked_at": "2026-11-16",
+    "checked_at": "2026-11-23",
     "error": "HTTPError",
     "name": null,
     "source": "https://www.preprints.org/manuscript/202610.2861"
@@ -2035,7 +2035,7 @@
     "source": "https://www.research-collection.ethz.ch/bitstreams/f4073b47-2050-4194-8540-a8a43eaf8ecb/download"
   },
   "https://www.research-collection.ethz.ch/items/45e07812-8083-4cfe-9161-0afc2da1948b": {
-    "checked_at": "2026-11-16",
+    "checked_at": "2026-11-23",
     "error": "HTTPError",
     "name": null,
     "source": "https://www.research-collection.ethz.ch/items/45e07812-8083-4cfe-9161-0afc2da1948b"
