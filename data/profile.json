@@ -1964,15 +1964,24 @@
       "h_index_recent": 14,
       "i10_index": 21,
       "i10_index_recent": 20
+    },
+    {
+      "date": "2026-11-27",
+      "citations": 2321,
+      "citations_recent": 2303,
+      "h_index": 14,
+      "h_index_recent": 14,
+      "i10_index": 21,
+      "i10_index_recent": 20
     }
   ],
   "citations_per_year": {
     "2020": 7,
     "2021": 10,
-    "2022": 37,
-    "2023": 101,
+    "2022": 36,
+    "2023": 102,
     "2024": 183,
     "2025": 625,
-    "2026": 1336
+    "2026": 1341
   }
 }
